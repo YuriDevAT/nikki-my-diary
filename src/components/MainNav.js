@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const MainNav = () => (
-  <div className="container h-16 flex">
+  <div className="w-72 flex justify-around">
     <NavLink to="/" exact activeClassName="">
       <svg
         className="h-8 w-8"

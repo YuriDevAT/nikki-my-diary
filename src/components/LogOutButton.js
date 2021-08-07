@@ -8,28 +8,14 @@ const LogOutButton = () => {
     <button
       type="button"
       title="Sign out"
-      className="bg-white border-0"
+      className="font-semibold text-sm rounded w-20 h-12 cursor-pointer text-pink-300 border border-pink-300 shadow-md"
       onClick={() =>
         logout({
           returnTo: window.location.origin,
         })
       }
     >
-      <svg
-        className="w-8 mr-6 cursor-pointer bg-white border-0"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3
-                                3 0 013 3v1"
-        ></path>
-      </svg>
+      Sign Out
     </button>
   );
 };
