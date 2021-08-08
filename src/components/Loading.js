@@ -1,10 +1,15 @@
 import React from "react";
-const loadingImg = "https://loading.svg";
+import Loader from "react-loader-spinner";
 
 const Loading = () => (
-  <div className="">
-    <img src={loadingImg} alt="Loading..." />
-  </div>
+  <Loader
+    type="TailSpin"
+    alt="Loading..."
+    color="#00000059"
+    height={70}
+    width={70}
+    className="flex justify-center mt-12"
+  />
 );
 
 export default Loading;
