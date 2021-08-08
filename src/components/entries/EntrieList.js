@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-const EntrieList = ({ entries }) => {
+const EntrieList = ({ entries, setEntries }) => {
+
+
+
   return (
-    <ul>
-      {entries.map((entrie) => (
-        <li key={entrie.id}>{entrie.text}</li>
-      ))}
-    </ul>
+   
   );
 };
 
