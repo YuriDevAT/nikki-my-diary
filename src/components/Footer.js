@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => (
-  <footer className="container bg-green-300 fixed bottom-0 text-center py-6">
+  <footer className="container fixed bottom-0 text-center py-6">
     <p>
       Auth0 x Hashnode Hackathon project provided by{" "}
       <a

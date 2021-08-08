@@ -14,9 +14,9 @@ function App() {
   }
 
   return (
-    <div className="bg-gray-300 container mx-auto h-screen">
+    <div className="container mx-auto h-screen">
       <NavBar />
-      <div className="bg-gray-600 mt-10 px-10">
+      <div className="mt-10 px-10">
         <Switch>
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />

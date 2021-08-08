@@ -4,7 +4,7 @@ import AuthNav from "./AuthNav";
 
 const NavBar = () => {
   return (
-    <div className="container h-36 mx-auto bg-purple-300">
+    <div className="container h-36 mx-auto">
       <nav className="flex justify-around h-full align-middle">
         <div className="flex items-center align-items">
           <img src="/img/logo.png" alt="" className="w-6/12" />
