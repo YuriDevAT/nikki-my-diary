@@ -3,8 +3,8 @@ import { Hero, HomeContent } from "../components";
 
 const Home = () => (
   <Fragment>
-    <Hero />
     <hr />
+    <Hero />
     <HomeContent />
   </Fragment>
 );
