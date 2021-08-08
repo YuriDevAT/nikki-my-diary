@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ExternalApi = () => {
+const Calender = () => {
   const [message, setMessage] = useState("");
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -42,7 +42,7 @@ const ExternalApi = () => {
 
   return (
     <div>
-      <h1>External API</h1>
+      <h1>Calender</h1>
       <p>Blabla...</p>
       <div
         className=""
@@ -71,4 +71,4 @@ const ExternalApi = () => {
   );
 };
 
-export default ExternalApi;
+export default Calender;

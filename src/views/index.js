@@ -1,5 +1,5 @@
-import ExternalApi from "./external-api";
+import Calender from "./calender";
 import Home from "./home";
 import Profile from "./profile";
 
-export { ExternalApi, Home, Profile };
+export { Calender, Home, Profile };
