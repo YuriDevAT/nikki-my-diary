@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { NavBar, Footer, Loading } from "./components";
+import { NavBar, Loading } from "./components";
 import { Home, Profile, Calender } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 import "./index.css";
@@ -23,7 +23,6 @@ function App() {
           <ProtectedRoute path="/calender" component={Calender} />
         </Switch>
       </div>
-      <Footer />
     </div>
   );
 }

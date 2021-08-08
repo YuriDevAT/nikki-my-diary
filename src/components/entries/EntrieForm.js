@@ -84,7 +84,7 @@ const EntrieForm = () => {
           onAddFormSubmit={handleAddFormSubmit}
         />
       )}
-      <ul>
+      <ul className="bg-green-300 flex flex-wrap justify-around">
         {entries.map((entrie) => (
           <Entrie
             entrie={entrie}
