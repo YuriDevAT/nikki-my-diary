@@ -1,6 +1,6 @@
 import EntrieForm from "./EntrieForm";
 
-const Entries = () => {
+const EntrieList = () => {
   return (
     <>
       <EntrieForm />
@@ -8,4 +8,4 @@ const Entries = () => {
   );
 };
 
-export default Entries;
+export default EntrieList;
