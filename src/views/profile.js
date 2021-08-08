@@ -1,23 +1,20 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import EntrieList from "../components/entries";
 
 const Profile = () => {
   const { user } = useAuth0();
-  const { name, picture, email } = user;
+  const { name } = user;
 
   return (
-    <div>
+    <div className="">
       <div className="">
         <div className="">
-          <img src={picture} alt="profile" className="" />
+          <h2 className="text-right italic text-lg">Hello, {name}!</h2>
         </div>
         <div className="">
-          <h2>{name}</h2>
-          <p className="">{email}</p>
+          <EntrieList />
         </div>
-      </div>
-      <div className="">
-        <pre className="">{JSON.stringify(user, null, 2)}</pre>
       </div>
     </div>
   );
