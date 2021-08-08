@@ -1,7 +1,11 @@
-import React from "react";
+import EntrieForm from "./EntrieForm";
 
-const EntrieList = () => {
-  return <></>;
+const Entries = () => {
+  return (
+    <>
+      <EntrieForm />
+    </>
+  );
 };
 
-export default EntrieList;
+export default Entries;
