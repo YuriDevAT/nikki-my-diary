@@ -1,74 +1,31 @@
 import React, { useState } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import Calender from "react-calendar";
 
-const Calender = () => {
-  const [message, setMessage] = useState("");
-  const serverUrl = process.env.REACT_APP_SERVER_URL;
+const CalenderView = () => {
+  const [date, setDate] = useState(new Date());
 
-  const { getAccessTokenSilently } = useAuth0();
-
-  const callApi = async () => {
-    try {
-      const response = await fetch(`${serverUrl}/api/messages/public-message`);
-
-      const responseData = await response.json();
-
-      setMessage(responseData.message);
-    } catch (error) {
-      setMessage(error.message);
-    }
-  };
-
-  const callSecureApi = async () => {
-    try {
-      const token = await getAccessTokenSilently();
-
-      const response = await fetch(
-        `${serverUrl}/api/messages/protected-message`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      const responseData = await response.json();
-
-      setMessage(responseData.message);
-    } catch (error) {
-      setMessage(error.message);
-    }
+  const onChange = (date) => {
+    setDate(date);
   };
 
   return (
-    <div>
-      <h1>Calender</h1>
-      <p>Blabla...</p>
-      <div
-        className=""
-        role="group"
-        aria-label="External API Requests Examples"
-      >
-        <button type="button" className="" onClick={callApi}>
-          Get Public Message
-        </button>
-        <button type="button" className="" onClick={callSecureApi}>
-          Get Protected Message
-        </button>
-      </div>
-      {message &
-      (
-        <div className="">
-          <h6 className="">Result</h6>
-          <div className="">
-            <div className="">
-              <code className="">{message}</code>
-            </div>
-          </div>
+    <div className="Sample">
+      <header className="">
+        <h1>Calender</h1>
+      </header>
+      <div className="Sample container">
+        <div className="Sample container content">
+          <Calender
+            onChange={onChange}
+            showWeekNumbers
+            value={date}
+            className=""
+            locale="ja-JA"
+          />
         </div>
-      )}
+      </div>
     </div>
   );
 };
 
-export default Calender;
+export default CalenderView;
