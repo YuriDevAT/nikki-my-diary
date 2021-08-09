@@ -9,20 +9,17 @@ const CalenderView = () => {
   };
 
   return (
-    <div className="Sample">
+    <div className="">
       <header className="">
         <h1>Calender</h1>
       </header>
-      <div className="Sample container">
-        <div className="Sample container content">
-          <Calender
-            onChange={onChange}
-            showWeekNumbers
-            value={date}
-            className=""
-            locale="ja-JA"
-          />
-        </div>
+      <div className="sm:w-1/2 h-96 shadow-md p-8 rounded-md">
+        <Calender
+          onChange={onChange}
+          value={date}
+          className=""
+          locale="ja-JA"
+        />
       </div>
     </div>
   );
