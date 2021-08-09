@@ -16,7 +16,9 @@ const CalenderView = () => {
         <h1>Calender</h1>
       </header>
       <div className="w-full p-8 flex justify-around">
-        <Calender onChange={onChange} value={date} locale="ja-JA" />
+        <div className="shadow-lg">
+          <Calender onChange={onChange} value={date} locale="ja-JA" />
+        </div>
         <div>
           <h2>{dateFormat.toLocaleString()}</h2>
         </div>
