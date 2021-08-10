@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
 import Entrie from "./Entrie";
@@ -84,15 +85,24 @@ const EntrieForm = () => {
           onAddFormSubmit={handleAddFormSubmit}
         />
       )}
-      <ul className="bg-green-300 flex flex-wrap justify-around">
-        {entries.map((entrie) => (
-          <Entrie
-            entrie={entrie}
-            onEditClick={handleEditClick}
-            onDeleteClick={handleDeleteClick}
-          />
-        ))}
-      </ul>
+      <div className="mx-auto w-full h-full bg-yellow-200">
+        <ul className="bg-green-300 grid grid-cols-3 gap-8 mt-4 mb-12">
+          {entries.map(
+            (entrie) =>
+              (
+                <Entrie
+                  entrie={entrie}
+                  onEditClick={handleEditClick}
+                  onDeleteClick={handleDeleteClick}
+                />
+              ) || <Skeleton />
+          )}
+        </ul>
+        {!entries ||
+          (entries.length === 0 && (
+            <p>No entries available. Please add some entries.</p>
+          ))}
+      </div>
     </div>
   );
 };
