@@ -21,9 +21,7 @@ const AddEntrie = ({
           className="w-full p-8 border-2 rounded-sm"
         />
       </label>
-      <button type="submit" onClick={() => setEntrie(entrie)}>
-        Add
-      </button>
+      <button type="submit">Add</button>
     </form>
   );
 };
