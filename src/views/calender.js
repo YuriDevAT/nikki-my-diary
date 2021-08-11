@@ -12,15 +12,13 @@ const CalenderView = () => {
 
   return (
     <div className="">
-      <header className="">
-        <h1>Calender</h1>
+      <header className="py-4">
+        <h1 className="text-center text-3xl">What's up for today</h1>
       </header>
       <div className="w-full p-8 flex justify-around">
-        <div className="shadow-lg">
-          <Calender onChange={onChange} value={date} locale="ja-JA" />
-        </div>
+        <Calender onChange={onChange} value={date} locale="ja-JA" />
         <div>
-          <h2>{dateFormat.toLocaleString()}</h2>
+          <h2 className="text-2xl">{dateFormat.toLocaleString()}</h2>
         </div>
       </div>
     </div>
