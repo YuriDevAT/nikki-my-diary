@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Calender from "react-calendar";
 import Hero from "../components/Hero";
 import "react-calendar/dist/Calendar.css";
@@ -6,19 +6,52 @@ import "react-calendar/dist/Calendar.css";
 const CalenderView = () => {
   const [date, setDate] = useState(new Date());
   const dateFormat = new Date();
+  const [entries, setEntries] = useState([]);
+  const [year, setYear] = useState([dateFormat.getFullYear()]);
+  const [month, setMonth] = useState([dateFormat.getMonth() + 1]);
+  const [day, setDay] = useState([dateFormat.getDate()]);
 
   const onChange = (date) => {
     setDate(date);
+  };
+
+  useEffect(() => {
+    const getEntries = async () => {
+      const res = await fetch(`allEntries${year}-${month}-${day}`);
+      const entrie = await res.JSON();
+      setEntries(entrie.entrie);
+    };
+    getEntries();
+  }, [day, month, year]);
+
+  let entrieList = entries.map((entrie) => <li key={entrie.id}>{entries}</li>);
+
+  const onClickDay = (date) => {
+    setMonth(date.getMonth() + 1);
+    setDay(date.getDate());
+    setYear(date.getFullYear());
+    const getEntries = async () => {
+      const res = await fetch(``);
+      const entrie = await res.JSON();
+      setEntries(entrie.entrie);
+    };
+    getEntries();
   };
 
   return (
     <div className="">
       <Hero heading="What's up for today" />
       <div className="w-full p-8 flex justify-around">
-        <Calender onChange={onChange} value={date} locale="ja-JA" />
+        <Calender
+          onChange={onChange}
+          value={date}
+          locale="ja-JA"
+          onClickDay={onClickDay}
+        />
         <div>
           <h2 className="text-2xl">{dateFormat.toLocaleString()}</h2>
         </div>
+        <div>{entrieList}</div>
       </div>
     </div>
   );
