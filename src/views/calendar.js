@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import Hero from "../components/Hero";
 import "react-calendar/dist/Calendar.css";
+import Time from "../hooks/time";
 
 const CalendarView = () => {
   const [date, setDate] = useState(new Date());
@@ -49,7 +50,9 @@ const CalendarView = () => {
           onClickDay={onClickDay}
         />
         <div>
-          <h2 className="text-2xl">{date.toLocaleString().slice(0, 10)}</h2>
+          <h2 className="text-2xl">
+            {date.toLocaleString().slice(0, 10)}, <Time />
+          </h2>
         </div>
         <div>{entrieList}</div>
       </div>
