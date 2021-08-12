@@ -25,7 +25,7 @@ const MainNav = () => (
         </svg>
       </abbr>
     </NavLink>
-    <NavLink to="/calender" exact className="w-8 h-8" activeClassName="">
+    <NavLink to="/calendar" exact className="w-8 h-8" activeClassName="">
       <abbr title="Calendar">
         <svg
           className="h-8 w-8"

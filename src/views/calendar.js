@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Calender from "react-calendar";
+import Calendar from "react-calendar";
 import Hero from "../components/Hero";
 import "react-calendar/dist/Calendar.css";
 
-const CalenderView = () => {
+const CalendarView = () => {
   const [date, setDate] = useState(new Date());
   const dateFormat = new Date();
   const [entries, setEntries] = useState([]);
@@ -18,7 +18,7 @@ const CalenderView = () => {
   useEffect(() => {
     const getEntries = async () => {
       const res = await fetch(`allEntries${year}-${month}-${day}`);
-      const entrie = await res.JSON();
+      const entrie = await res.json();
       setEntries(entrie.entrie);
     };
     getEntries();
@@ -32,7 +32,7 @@ const CalenderView = () => {
     setYear(date.getFullYear());
     const getEntries = async () => {
       const res = await fetch(``);
-      const entrie = await res.JSON();
+      const entrie = await res.json();
       setEntries(entrie.entrie);
     };
     getEntries();
@@ -42,14 +42,14 @@ const CalenderView = () => {
     <div className="">
       <Hero heading="What's up for today" />
       <div className="w-full p-8 flex justify-around">
-        <Calender
+        <Calendar
           onChange={onChange}
           value={date}
           locale="ja-JA"
           onClickDay={onClickDay}
         />
         <div>
-          <h2 className="text-2xl">{dateFormat.toLocaleString()}</h2>
+          <h2 className="text-2xl">{date.toISOString()}</h2>
         </div>
         <div>{entrieList}</div>
       </div>
@@ -57,4 +57,4 @@ const CalenderView = () => {
   );
 };
 
-export default CalenderView;
+export default CalendarView;
