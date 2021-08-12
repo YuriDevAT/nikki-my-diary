@@ -53,8 +53,8 @@ const CalendarView = () => {
           <h2 className="text-2xl">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
+          <div>{entrieList}</div>
         </div>
-        <div>{entrieList}</div>
       </div>
     </div>
   );
