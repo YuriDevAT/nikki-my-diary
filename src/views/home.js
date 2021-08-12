@@ -3,7 +3,7 @@ import { Footer, Hero, HomeContent } from "../components";
 
 const Home = () => (
   <>
-    <Hero />
+    <Hero heading="Welcome to Nikki App" />
     <HomeContent />
     <Footer />
   </>
