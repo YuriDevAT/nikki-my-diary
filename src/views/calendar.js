@@ -49,7 +49,7 @@ const CalendarView = () => {
           onClickDay={onClickDay}
         />
         <div>
-          <h2 className="text-2xl">{date.toISOString()}</h2>
+          <h2 className="text-2xl">{date.toLocaleString().slice(0, 10)}</h2>
         </div>
         <div>{entrieList}</div>
       </div>
