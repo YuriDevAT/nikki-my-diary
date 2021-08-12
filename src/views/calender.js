@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Calender from "react-calendar";
+import Hero from "../components/Hero";
 import "react-calendar/dist/Calendar.css";
 
 const CalenderView = () => {
@@ -12,9 +13,7 @@ const CalenderView = () => {
 
   return (
     <div className="">
-      <header className="py-4">
-        <h1 className="text-center text-3xl">What's up for today</h1>
-      </header>
+      <Hero heading="What's up for today" />
       <div className="w-full p-8 flex justify-around">
         <Calender onChange={onChange} value={date} locale="ja-JA" />
         <div>
