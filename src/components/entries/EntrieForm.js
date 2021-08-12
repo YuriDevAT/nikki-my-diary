@@ -3,6 +3,7 @@ import Skeleton from "react-loading-skeleton";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
 import Entrie from "./Entrie";
+import { uuid } from "uuidv4";
 
 const EntrieForm = () => {
   const [entries, setEntries] = useState(() => {
@@ -16,6 +17,17 @@ const EntrieForm = () => {
   const [entrie, setEntrie] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentEntrie, setCurrentEntrie] = useState({});
+
+  const [mood, setMood] = useState("happy");
+  const [date, setDate] = useState(new Date());
+
+  const handleMoodChange = (e) => {
+    setMood(e.target.value);
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
 
   useEffect(() => {
     localStorage.setItem("entries", JSON.stringify(entries));
@@ -36,7 +48,9 @@ const EntrieForm = () => {
       setEntries([
         ...entries,
         {
-          id: new Date(),
+          id: uuid(),
+          mood: mood,
+          date: date,
           text: entrie.trim(),
         },
       ]);
@@ -83,6 +97,10 @@ const EntrieForm = () => {
           entrie={entrie}
           onAddInputChange={handleAddInputChange}
           onAddFormSubmit={handleAddFormSubmit}
+          mood={mood}
+          date={date}
+          onHandleMoodChange={handleMoodChange}
+          onHandleDateChange={handleDateChange}
         />
       )}
       <div className="mx-auto w-full h-full bg-yellow-200">

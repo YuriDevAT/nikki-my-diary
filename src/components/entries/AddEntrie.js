@@ -2,16 +2,38 @@ import React from "react";
 
 const AddEntrie = ({
   entrie,
-  setEntrie,
   onAddFormSubmit,
   onAddInputChange,
+  onHandleDateChange,
+  onHandleMoodChange,
+  date,
 }) => {
   return (
     <form
       onSubmit={onAddFormSubmit}
       className="bg-blue-300 sm:w-1/2 text-center mx-auto"
     >
-      <h2 className="text-2xl py-6">How was your day?</h2>
+      <h2 className="text-2xl py-6">今日はどうですか。</h2>
+      <label>
+        How are you feeling today?
+        <select onChange={onHandleMoodChange}>
+          <option>Happy</option>
+          <option>Okay</option>
+          <option>Sad</option>
+          <option>Motivated</option>
+          <option>Down</option>
+        </select>
+      </label>
+      <label htmlFor="date">Date:</label>
+      <input
+        type="date"
+        id="date"
+        name="trip-start"
+        value={date.toLocaleTimeString}
+        min="2021-01-01"
+        max="2031-12-31"
+        onChange={onHandleDateChange}
+      ></input>
       <label htmlFor="entrie">
         <textarea
           name="entrie"
