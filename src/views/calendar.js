@@ -19,8 +19,6 @@ const CalendarView = () => {
     setDate(date);
   };
 
-  // let entrieList = entries.map((entrie) => <li key={entrie.id}>{entries}</li>);
-
   return (
     <div className="">
       <Hero heading="What's up for today" />
