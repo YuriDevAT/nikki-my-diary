@@ -29,9 +29,10 @@ const AddEntrie = ({
         type="date"
         id="date"
         name="trip-start"
-        value={date.toLocaleTimeString}
+        value={date.toLocaleString()}
         min="2021-01-01"
         max="2031-12-31"
+        required
         onChange={onHandleDateChange}
       ></input>
       <label htmlFor="entrie">
