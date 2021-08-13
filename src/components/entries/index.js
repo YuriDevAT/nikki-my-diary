@@ -1,6 +1,6 @@
 import EntrieForm from "./EntrieForm";
 
-const EntrieList = () => {
+const AllEntries = () => {
   return (
     <div className="bg-gray-200">
       <EntrieForm />
@@ -8,4 +8,4 @@ const EntrieList = () => {
   );
 };
 
-export default EntrieList;
+export default AllEntries;

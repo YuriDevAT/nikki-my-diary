@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
-import Entrie from "./Entrie";
+import EntrieList from "./EntrieList";
+
 import { uuid } from "uuidv4";
 
 const EntrieForm = () => {
@@ -64,10 +64,12 @@ const EntrieForm = () => {
   };
 
   const handleDeleteClick = (id) => {
-    const removeEntrie = entries.filter((entrie) => {
-      return entrie.id !== id;
-    });
-    setEntries(removeEntrie);
+    if (window.confirm("Are you sure you want to delete this entrie?")) {
+      const removeEntrie = entries.filter((entrie) => {
+        return entrie.id !== id;
+      });
+      setEntries(removeEntrie);
+    }
   };
 
   const handleUpdateEntrie = (id, updatedEntrie) => {
@@ -104,18 +106,11 @@ const EntrieForm = () => {
         />
       )}
       <div className="mx-auto w-full h-full bg-yellow-200">
-        <ul className="bg-green-300 grid grid-cols-3 gap-8 mt-4 mb-12">
-          {entries.map(
-            (entrie) =>
-              (
-                <Entrie
-                  entrie={entrie}
-                  onEditClick={handleEditClick}
-                  onDeleteClick={handleDeleteClick}
-                />
-              ) || <Skeleton />
-          )}
-        </ul>
+        <EntrieList
+          entries={entries}
+          handleEditClick={handleEditClick}
+          handleDeleteClick={handleDeleteClick}
+        />
         {!entries ||
           (entries.length === 0 && (
             <p>No entries available. Please add some entries.</p>
