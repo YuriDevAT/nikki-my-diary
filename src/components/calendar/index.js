@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Time from "../../hooks/time";
+import Reminder from "./Reminder";
 
 const CalendarView = () => {
   const [date, setDate] = useState(new Date());
-  const [entries] = useState(() => {
-    const savedEntries = localStorage.getItem("entries");
-    if (savedEntries) {
-      return JSON.parse(savedEntries);
+  const [reminder, setReminder] = useState(() => {
+    const savedReminder = localStorage.getItem("reminder");
+    if (savedReminder) {
+      return JSON.parse(savedReminder);
     } else {
       return [];
     }
@@ -18,7 +19,7 @@ const CalendarView = () => {
     setDate(date);
   };
 
-  const onClickDay = () => {};
+  const onClickDay = (date) => {};
 
   return (
     <div className="">
@@ -33,16 +34,17 @@ const CalendarView = () => {
           <h2 className="text-2xl">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
-          <h3 className="py-8">Here are the entries for today</h3>
-          <ul>
+          <h3 className="py-8">Here are the reminders for today</h3>
+          <Reminder />
+          {/* <ul>
             {entries.map((entrie) => (
               <li>{entrie.text}</li>
             ))}
           </ul>
           {!entries ||
             (entries.length === 0 && (
-              <p>No entries available. Please add some entries.</p>
-            ))}
+              <p>No reminders available. Set a reminder.</p> 
+          ))} */}
         </div>
       </div>
     </div>
