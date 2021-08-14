@@ -7,10 +7,20 @@ const AddEntrie = ({
   onHandleDateChange,
   onHandleMoodChange,
   date,
+  heading,
+  onHeadingChange,
 }) => {
   return (
     <form onSubmit={onAddFormSubmit} className="sm:w-1/2 text-center mx-auto">
       <h2 className="text-2xl py-6">今日はどうですか。</h2>
+      <label htmlFor="heading">
+        <input
+          type="text"
+          id="heading"
+          onChange={onHeadingChange}
+          value={heading}
+        />
+      </label>
       <label>
         How are you feeling today?
         <select onChange={onHandleMoodChange}>
@@ -18,14 +28,14 @@ const AddEntrie = ({
           <option>Okay</option>
           <option>Sad</option>
           <option>Motivated</option>
-          <option>Down</option>
+          <option>Mixed feelings</option>
         </select>
       </label>
       <label htmlFor="date">Date:</label>
       <input
         type="date"
         id="date"
-        name="trip-start"
+        name="date"
         value={date.toLocaleString()}
         min="2021-01-01"
         max="2031-12-31"

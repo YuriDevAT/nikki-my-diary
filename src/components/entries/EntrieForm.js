@@ -21,6 +21,12 @@ const EntrieForm = () => {
   const [mood, setMood] = useState("happy");
   const [date, setDate] = useState(new Date());
 
+  const [heading, setHeading] = useState("");
+
+  const handleHeadingChange = (e) => {
+    setHeading(e.target.value);
+  };
+
   const handleMoodChange = (e) => {
     setMood(e.target.value);
   };
@@ -103,6 +109,8 @@ const EntrieForm = () => {
           date={date}
           onHandleMoodChange={handleMoodChange}
           onHandleDateChange={handleDateChange}
+          heading={heading}
+          onHeadingChange={handleHeadingChange}
         />
       )}
       <div className="mx-auto w-full h-full">
