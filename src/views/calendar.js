@@ -6,7 +6,7 @@ import Time from "../hooks/time";
 
 const CalendarView = () => {
   const [date, setDate] = useState(new Date());
-  const [entries, setEntries] = useState(() => {
+  const [entries] = useState(() => {
     const savedEntries = localStorage.getItem("entries");
     if (savedEntries) {
       return JSON.parse(savedEntries);
@@ -29,8 +29,6 @@ const CalendarView = () => {
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
           <h3 className="py-8">Here are the entries for today</h3>
-          {/* <div>{entrieList}</div> */}
-
           <ul>
             {entries.map((entrie) => (
               <li>{entrie.text}</li>
