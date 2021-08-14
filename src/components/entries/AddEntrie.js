@@ -9,10 +9,7 @@ const AddEntrie = ({
   date,
 }) => {
   return (
-    <form
-      onSubmit={onAddFormSubmit}
-      className="bg-blue-300 sm:w-1/2 text-center mx-auto"
-    >
+    <form onSubmit={onAddFormSubmit} className="sm:w-1/2 text-center mx-auto">
       <h2 className="text-2xl py-6">今日はどうですか。</h2>
       <label>
         How are you feeling today?

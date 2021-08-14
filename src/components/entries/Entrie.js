@@ -2,7 +2,7 @@ import React from "react";
 
 const Entrie = ({ entrie, onEditClick, onDeleteClick }) => {
   return (
-    <li key={entrie.id} className="h-56 m-2 p-2 bg-white rounded-sm shadow-sm">
+    <li key={entrie.id} className="h-56 m-2 p-2 rounded-sm shadow-sm">
       <p>
         {entrie.mood}
         {entrie.date}

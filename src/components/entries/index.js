@@ -2,7 +2,7 @@ import EntrieForm from "./EntrieForm";
 
 const AllEntries = () => {
   return (
-    <div className="bg-gray-200">
+    <div className="">
       <EntrieForm />
     </div>
   );

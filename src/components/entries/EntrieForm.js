@@ -105,7 +105,7 @@ const EntrieForm = () => {
           onHandleDateChange={handleDateChange}
         />
       )}
-      <div className="mx-auto w-full h-full bg-yellow-200">
+      <div className="mx-auto w-full h-full">
         <EntrieList
           entries={entries}
           handleEditClick={handleEditClick}
