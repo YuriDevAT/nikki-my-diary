@@ -34,7 +34,7 @@ const CalendarView = () => {
           <h2 className="text-2xl">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
-          <h3 className="py-8">Here are the reminders for today</h3>
+          <h3 className="py-8">Here are your reminders for today</h3>
           <Reminder />
           {/* <ul>
             {entries.map((entrie) => (
