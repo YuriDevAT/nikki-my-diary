@@ -13,51 +13,72 @@ const AddEntrie = ({
   return (
     <form
       onSubmit={onAddFormSubmit}
-      className="sm:w-1/2 text-center mx-auto flex flex-col"
+      className="xl:w-1/2 mx-auto bg-gray-200 p-6 rounded-md shadow-lg text-md"
     >
-      <h2 className="text-2xl py-6">今日はどうですか。</h2>
-      <label htmlFor="heading"> Describe your day</label>
-      <input
-        type="text"
-        id="heading"
-        name="heading"
-        className="border"
-        onChange={onHeadingChange}
-        value={heading}
-        required
-      />
-      <label>
-        How are you feeling today?
-        <select onChange={onHandleMoodChange}>
-          <option>Happy</option>
-          <option>Okay</option>
-          <option>Sad</option>
-          <option>Motivated</option>
-          <option>Mixed feelings</option>
-        </select>
-      </label>
-      <label htmlFor="date">Date:</label>
-      <input
-        type="date"
-        id="date"
-        name="date"
-        value={date.toLocaleString()}
-        min="2021-01-01"
-        max="2031-12-31"
-        required
-        onChange={onHandleDateChange}
-      ></input>
-      <label htmlFor="entrie">
-        <textarea
-          name="entrie"
+      <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
+        <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
+          今日はどうですか。
+        </legend>
+        <label htmlFor="heading">Title</label>
+        <input
           type="text"
-          value={entrie}
-          onChange={onAddInputChange}
-          className="w-full p-8 border-2 rounded-sm"
+          id="heading"
+          name="heading"
+          className="py-2 rounded-md pl-2 outline-none focus:border-gray-600 border-2 max-w-full"
+          onChange={onHeadingChange}
+          value={heading}
           required
         />
-      </label>
-      <button type="submit">Add</button>
+        <div className="flex justify-around">
+          <label>
+            How are you feeling today?
+            <select
+              onChange={onHandleMoodChange}
+              aria-label="select in which mood you are"
+              className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+            >
+              <option>Happy</option>
+              <option>Okay</option>
+              <option>Sad</option>
+              <option>Motivated</option>
+              <option>Mixed feelings</option>
+            </select>
+          </label>
+          <label
+            htmlFor="date"
+            className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+          >
+            Date:
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={date.toLocaleString()}
+              min="2021-01-01"
+              max="2031-12-31"
+              required
+              onChange={onHandleDateChange}
+            />
+          </label>
+        </div>
+        <label htmlFor="entrie">
+          Describe your day
+          <textarea
+            name="entrie"
+            type="text"
+            value={entrie}
+            onChange={onAddInputChange}
+            className="w-full p-8 border-2 rounded-md"
+            required
+          />
+        </label>
+        <button
+          type="submit"
+          className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
+        >
+          Add Entie
+        </button>
+      </fieldset>
     </form>
   );
 };
