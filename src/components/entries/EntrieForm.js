@@ -55,6 +55,7 @@ const EntrieForm = () => {
         ...entries,
         {
           id: uuid(),
+          heading: heading,
           mood: mood,
           date: date,
           text: entrie.trim(),
@@ -62,6 +63,7 @@ const EntrieForm = () => {
       ]);
     }
     setEntrie("");
+    setHeading("");
   };
 
   const handleEditFormSubmit = (e) => {
