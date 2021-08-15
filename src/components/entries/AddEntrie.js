@@ -11,16 +11,21 @@ const AddEntrie = ({
   onHeadingChange,
 }) => {
   return (
-    <form onSubmit={onAddFormSubmit} className="sm:w-1/2 text-center mx-auto">
+    <form
+      onSubmit={onAddFormSubmit}
+      className="sm:w-1/2 text-center mx-auto flex flex-col"
+    >
       <h2 className="text-2xl py-6">今日はどうですか。</h2>
-      <label htmlFor="heading">
-        <input
-          type="text"
-          id="heading"
-          onChange={onHeadingChange}
-          value={heading}
-        />
-      </label>
+      <label htmlFor="heading"> Describe your day</label>
+      <input
+        type="text"
+        id="heading"
+        name="heading"
+        className="border"
+        onChange={onHeadingChange}
+        value={heading}
+        required
+      />
       <label>
         How are you feeling today?
         <select onChange={onHandleMoodChange}>
@@ -49,6 +54,7 @@ const AddEntrie = ({
           value={entrie}
           onChange={onAddInputChange}
           className="w-full p-8 border-2 rounded-sm"
+          required
         />
       </label>
       <button type="submit">Add</button>
