@@ -4,7 +4,7 @@ import Reminder from "./Reminder";
 const ReminderList = ({ reminders, handleDeleteClick }) => {
   return (
     <div className="container">
-      <div className="h-screen overflow-auto bg-gray-100 mb-6 w-full">
+      <div className="overflow-auto bg-gray-100 mb-6 w-full">
         {reminders.map((reminder) => (
           <Reminder
             key={reminder.id}
