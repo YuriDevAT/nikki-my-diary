@@ -54,8 +54,6 @@ const AddEntrie = ({
               id="date"
               name="date"
               value={date.toLocaleString()}
-              min="2021-01-01"
-              max="2031-12-31"
               required
               onChange={onHandleDateChange}
             />

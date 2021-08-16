@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import EntrieButton from "./EntrieButton";
-import Entrie from "./Entrie";
 
 const EntrieList = ({ entries, handleEditClick, handleDeleteClick }) => {
   const entrieCount = entries.length;

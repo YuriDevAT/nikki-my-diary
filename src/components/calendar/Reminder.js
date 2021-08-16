@@ -1,35 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { uuid } from "uuidv4";
-import AddModal from "./AddModal";
+import React from "react";
 
-const Reminder = () => {
-  const [show, setShow] = useState(false);
-  const [reminder, setReminder] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [reminders, setReminders] = useState(() => {
-    const savedReminder = localStorage.getItem("reminders");
-    if (savedReminder) {
-      return JSON.parse(savedReminder);
-    } else {
-      return [];
-    }
-  });
-
-  useEffect(() => {
-    localStorage.setItem("reminders", JSON.stringify(reminders));
-  }, [reminders]);
-
+const Reminder = ({ reminder, handleDeleteClick }) => {
   return (
-    <>
-      <button
-        type="button"
-        className="bg-green-200 py-4 px-3"
-        onClick={() => setShow(true)}
-      >
-        Set a reminder
+    <div className="w-full h-20 bg-purple-400">
+      <p>{reminder.date}</p>
+      <p>{reminder.text}</p>
+      <button onClick={() => handleDeleteClick(reminder.id)} className="">
+        <abbr title="Delete">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            width="20px"
+          >
+            <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z" />
+          </svg>
+        </abbr>
       </button>
-      <AddModal onClose={() => setShow(false)} show={show} />
-    </>
+    </div>
   );
 };
 
