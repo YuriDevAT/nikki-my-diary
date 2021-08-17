@@ -74,7 +74,7 @@ const AddEntrie = ({
           type="submit"
           className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
         >
-          Add Entie
+          Add Entrie
         </button>
       </fieldset>
     </form>
