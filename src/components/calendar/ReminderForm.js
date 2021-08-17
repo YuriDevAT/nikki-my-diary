@@ -62,6 +62,16 @@ const ReminderForm = () => {
     }
   };
 
+  const compareDates = (date, reminderDate) => {
+    if (date.toISOString().slice(0, 10) === reminderDate) {
+      return "block";
+    } else {
+      return "hidden";
+    }
+  };
+  console.log(date.toISOString().slice(0, 10));
+  console.log(reminderDate);
+
   return (
     <div className="">
       <div className="w-full p-8 flex justify-around">
@@ -86,6 +96,7 @@ const ReminderForm = () => {
           <ReminderList
             reminders={reminders}
             handleDeleteClick={handleDeleteClick}
+            compareDates={compareDates}
           />
           {!reminders ||
             (reminders.length === 0 && (
