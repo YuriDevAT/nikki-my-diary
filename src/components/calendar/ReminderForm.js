@@ -81,7 +81,7 @@ const ReminderForm = () => {
           locale="ja-JA"
           onClickDay={onClickDay}
         />
-        <div className="w-1/2 text-center">
+        <div className="w-1/2 text-center relative">
           <h2 className="text-2xl">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>

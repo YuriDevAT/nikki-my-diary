@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import ModalReminder from "./ModalReminder";
 
 const AddReminder = ({
   reminder,
@@ -7,46 +8,33 @@ const AddReminder = ({
   date,
   handleDateChange,
 }) => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   return (
-    <form
-      onSubmit={handleReminderSubmitForm}
-      className="xl:w-1/2 mx-auto bg-gray-200 p-6 rounded-md shadow-lg text-md"
-    >
-      <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
-        <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
-          What do you want to be reminded of?
-        </legend>
-        <label htmlFor="reminder">
-          <input
-            type="text"
-            name="reminder"
-            id="reminder"
-            value={reminder}
-            onChange={handleReminderChange}
-            className="w-full p-3 border-2 rounded-md"
-          />
-        </label>
-        <label
-          htmlFor="dateReminder"
-          className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
-        >
-          Date:
-          <input
-            type="date"
-            name="date"
-            value={date.toLocaleString()}
-            required
-            onChange={handleDateChange}
-          />
-        </label>
+    <>
+      <div>
         <button
           type="submit"
           className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
+          onClick={handleShow}
         >
           Set reminder
         </button>
-      </fieldset>
-    </form>
+      </div>
+      <ModalReminder
+        reminder={reminder}
+        handleReminderChange={handleReminderChange}
+        handleReminderSubmitForm={handleReminderSubmitForm}
+        date={date}
+        handleDateChange={handleDateChange}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        onClose={handleClose}
+      />
+    </>
   );
 };
 
