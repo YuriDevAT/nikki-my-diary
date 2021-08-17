@@ -18,13 +18,14 @@ const ReminderForm = () => {
 
   const [reminder, setReminder] = useState("");
   const [date, setDate] = useState(new Date());
+  const [reminderDate, setReminderDate] = useState(new Date());
+
+  const handleDateChange = (e) => {
+    setReminderDate(e.target.value);
+  };
 
   const handleReminderChange = (e) => {
     setReminder(e.target.value);
-  };
-
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
   };
 
   useEffect(() => {
@@ -44,7 +45,7 @@ const ReminderForm = () => {
         ...reminders,
         {
           id: uuid(),
-          date: date,
+          date: reminderDate,
           text: reminder.trim(),
         },
       ]);
@@ -79,8 +80,8 @@ const ReminderForm = () => {
             reminder={reminder}
             handleReminderChange={handleReminderChange}
             handleReminderSubmitForm={handleReminderSubmitForm}
+            date={reminderDate}
             handleDateChange={handleDateChange}
-            date={date}
           />
           <ReminderList
             reminders={reminders}

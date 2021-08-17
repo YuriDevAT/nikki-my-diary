@@ -4,8 +4,8 @@ const AddReminder = ({
   reminder,
   handleReminderChange,
   handleReminderSubmitForm,
-  handleDateChange,
   date,
+  handleDateChange,
 }) => {
   return (
     <form
@@ -20,7 +20,7 @@ const AddReminder = ({
         Date:
         <input
           type="date"
-          name="dateReminder"
+          name="date"
           value={date.toLocaleString()}
           required
           onChange={handleDateChange}
