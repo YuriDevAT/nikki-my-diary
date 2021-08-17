@@ -3,7 +3,7 @@ import React from "react";
 const Entrie = ({ entrie, onEditClick, onDeleteClick, active }) => {
   return (
     <div
-      className={`w-2/3 bg-white float-right h-96 px-14 py-2 mt-2 mr-2" ${
+      className={`container w-2/3 bg-white float-right h-full px-14 py-2 mt-2 mr-2" ${
         active ? "block" : "hidden"
       }`}
     >
@@ -11,7 +11,7 @@ const Entrie = ({ entrie, onEditClick, onDeleteClick, active }) => {
       <h2 className="text-2xl">{entrie.heading}</h2>
       <p>{entrie.mood}</p>
       <p>{entrie.text}</p>
-      <div className="absolute bottom-0 left-0 w-full flex justify-around py-8 border-t-2">
+      <div className="w-full flex justify-around py-8 border-t-2">
         <button onClick={() => onEditClick(entrie)} className="">
           <abbr title="Edit">
             <svg
