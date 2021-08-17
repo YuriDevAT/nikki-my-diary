@@ -9,7 +9,7 @@ const EntrieButton = ({ entrie, handleEditClick, handleDeleteClick }) => {
   };
 
   return (
-    <div className="w-full bg-blue-300 relative">
+    <div className="w-full bg-blue-300">
       <button
         key={entrie.id}
         className="my-2 ml-2 rounded-sm shadow-sm overflow-hidden w-1/4"
