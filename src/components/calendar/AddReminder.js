@@ -7,10 +7,14 @@ const AddReminder = ({
   handleReminderSubmitForm,
   date,
   handleDateChange,
+  setReminder,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleClose = () => setShowModal(false);
+  const handleClose = () => {
+    setShowModal(false);
+    setReminder("");
+  };
   const handleShow = () => setShowModal(true);
 
   return (

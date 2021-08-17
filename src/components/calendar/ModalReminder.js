@@ -10,6 +10,7 @@ const ModalReminder = ({
   onClose,
 }) => {
   const showHideModal = showModal ? "block" : "hidden";
+  const isInvalid = reminder === "" || date === "";
 
   return (
     <div className={`w-full h-96 absolute z-50 inset-0 py-14 ${showHideModal}`}>
@@ -47,7 +48,9 @@ const ModalReminder = ({
           <button
             type="submit"
             onClick={onClose}
-            className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
+            className={`bg-pink-300 py-4 rounded-md shadow-sm uppercase ${
+              isInvalid && "opacity-50"
+            }`}
           >
             Set reminder
           </button>

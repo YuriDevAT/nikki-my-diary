@@ -36,7 +36,7 @@ const ReminderForm = () => {
     setDate(date);
   };
 
-  const onClickDay = (date) => {};
+  const onClickDay = (date, setReminder) => {};
 
   const handleReminderSubmitForm = (e) => {
     e.preventDefault();
@@ -88,6 +88,7 @@ const ReminderForm = () => {
           <h3 className="py-8">Here are your reminders for today</h3>
           <AddReminder
             reminder={reminder}
+            setReminder={setReminder}
             handleReminderChange={handleReminderChange}
             handleReminderSubmitForm={handleReminderSubmitForm}
             date={reminderDate}
