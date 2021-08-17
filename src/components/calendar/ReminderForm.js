@@ -36,8 +36,6 @@ const ReminderForm = () => {
     setDate(date);
   };
 
-  const onClickDay = (date, setReminder) => {};
-
   const handleReminderSubmitForm = (e) => {
     e.preventDefault();
     if (reminder !== "") {
@@ -62,25 +60,10 @@ const ReminderForm = () => {
     }
   };
 
-  const compareDates = (date, reminderDate) => {
-    if (date.toISOString().slice(0, 10) === reminderDate) {
-      return "block";
-    } else {
-      return "hidden";
-    }
-  };
-  console.log(date.toISOString().slice(0, 10));
-  console.log(reminderDate);
-
   return (
     <div className="">
       <div className="w-full p-8 flex justify-around">
-        <Calendar
-          onChange={onChange}
-          value={date}
-          locale="ja-JA"
-          onClickDay={onClickDay}
-        />
+        <Calendar onChange={onChange} value={date} locale="ja-JA" />
         <div className="w-1/2 text-center relative">
           <h2 className="text-2xl">
             {date.toLocaleString().slice(0, 10)}, <Time />
@@ -97,7 +80,6 @@ const ReminderForm = () => {
           <ReminderList
             reminders={reminders}
             handleDeleteClick={handleDeleteClick}
-            compareDates={compareDates}
           />
           {!reminders ||
             (reminders.length === 0 && (
