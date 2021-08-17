@@ -3,7 +3,7 @@ import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
 import EntrieList from "./EntrieList";
 
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 
 const EntrieForm = () => {
   const [entries, setEntries] = useState(() => {

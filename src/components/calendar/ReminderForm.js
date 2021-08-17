@@ -3,12 +3,10 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Time from "../../hooks/time";
 import AddReminder from "./AddReminder";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 import ReminderList from "./ReminderList";
 
 const ReminderForm = () => {
-  const [date, setDate] = useState(new Date());
-  const [reminder, setReminder] = useState("");
   const [reminders, setReminders] = useState(() => {
     const savedReminders = localStorage.getItem("reminders");
     if (savedReminders) {
@@ -18,23 +16,26 @@ const ReminderForm = () => {
     }
   });
 
-  useEffect(() => {
-    localStorage.setItem("reminders", JSON.stringify(reminders));
-  }, [reminders]);
+  const [reminder, setReminder] = useState("");
+  const [date, setDate] = useState(new Date());
 
   const handleReminderChange = (e) => {
     setReminder(e.target.value);
   };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("reminders", JSON.stringify(reminders));
+  }, [reminders]);
 
   const onChange = (date) => {
     setDate(date);
   };
 
   const onClickDay = (date) => {};
-
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
 
   const handleReminderSubmitForm = (e) => {
     e.preventDefault();
