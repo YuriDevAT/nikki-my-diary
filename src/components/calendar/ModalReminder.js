@@ -12,12 +12,10 @@ const ModalReminder = ({
   const showHideModal = showModal ? "block" : "hidden";
 
   return (
-    <div
-      className={`w-full h-full absolute z-50 inset-0 py-14 ${showHideModal}`}
-    >
+    <div className={`w-full h-96 absolute z-50 inset-0 py-14 ${showHideModal}`}>
       <form
         onSubmit={handleReminderSubmitForm}
-        className="w-1/2 h-96 mx-auto bg-white p-6 rounded-md shadow-lg text-md"
+        className="w-1/2 mx-auto bg-gray-200 p-6 rounded-md shadow-lg text-md"
       >
         <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
           <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
