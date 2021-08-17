@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Entrie from "./Entrie";
 
 const EntrieButton = ({ entrie, handleEditClick, handleDeleteClick }) => {
-  const [showEntrie, setShowEntrie] = useState(false);
+  const [active, setActive] = useState(false);
 
-  const handleShowEntrie = () => {
-    setShowEntrie(true);
+  const handleSetActive = () => {
+    setActive(!active);
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-blue-300 relative">
       <button
         key={entrie.id}
         className="my-2 ml-2 rounded-sm shadow-sm overflow-hidden w-1/4"
-        onClick={handleShowEntrie}
+        onClick={handleSetActive}
       >
         <div className="flex justify-between w-full overflow-hidden">
           <p className="bg-purple-300 w-1/4 px-2 py-4">{entrie.date}</p>
@@ -24,7 +24,7 @@ const EntrieButton = ({ entrie, handleEditClick, handleDeleteClick }) => {
         entrie={entrie}
         onEditClick={handleEditClick}
         onDeleteClick={handleDeleteClick}
-        showEntrie={showEntrie}
+        active={active}
       />
     </div>
   );

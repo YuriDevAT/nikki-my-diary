@@ -1,12 +1,12 @@
 import React from "react";
 
-const Entrie = ({ entrie, onEditClick, onDeleteClick, showEntrie }) => {
-  if (!showEntrie) {
-    return null;
-  }
-
+const Entrie = ({ entrie, onEditClick, onDeleteClick, active }) => {
   return (
-    <div className="w-2/3 bg-white float-right h-96 px-14 py-2 relative mt-2 mr-2">
+    <div
+      className={`w-2/3 bg-white float-right h-96 px-14 py-2 mt-2 mr-2" ${
+        active ? "block" : "hidden"
+      }`}
+    >
       <p className="">{entrie.date}</p>
       <h2 className="text-2xl">{entrie.heading}</h2>
       <p>{entrie.mood}</p>
