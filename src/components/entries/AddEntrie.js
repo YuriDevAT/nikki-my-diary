@@ -3,17 +3,24 @@ import ModalEntrie from "./ModalEntrie";
 
 const AddEntrie = ({
   entrie,
+  setEntrie,
   onAddFormSubmit,
   onAddInputChange,
   onHandleDateChange,
   onHandleMoodChange,
   date,
   heading,
+  setHeading,
   onHeadingChange,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleClose = () => setShowModal(false);
+  const handleClose = () => {
+    setShowModal(false);
+    setEntrie("");
+    setHeading("");
+  };
+
   const handleShow = () => setShowModal(true);
 
   return (

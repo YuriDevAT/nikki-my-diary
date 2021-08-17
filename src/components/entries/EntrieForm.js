@@ -105,6 +105,7 @@ const EntrieForm = () => {
       ) : (
         <AddEntrie
           entrie={entrie}
+          setEntrie={setEntrie}
           onAddInputChange={handleAddInputChange}
           onAddFormSubmit={handleAddFormSubmit}
           mood={mood}
@@ -112,6 +113,7 @@ const EntrieForm = () => {
           onHandleMoodChange={handleMoodChange}
           onHandleDateChange={handleDateChange}
           heading={heading}
+          setHeading={setHeading}
           onHeadingChange={handleHeadingChange}
         />
       )}

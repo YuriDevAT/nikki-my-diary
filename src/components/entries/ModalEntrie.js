@@ -13,6 +13,7 @@ const ModalEntrie = ({
   onHeadingChange,
 }) => {
   const showHideModal = showModal ? "block" : "hidden";
+  const isInvalid = entrie === "" || heading === "";
   return (
     <div className={`w-full h-96 absolute z-50 inset-0 py-14 ${showHideModal}`}>
       <form
@@ -77,7 +78,9 @@ const ModalEntrie = ({
           <button
             type="submit"
             onClick={onClose}
-            className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
+            className={`bg-pink-300 py-4 rounded-md shadow-sm uppercase ${
+              isInvalid && "opacity-50"
+            }`}
           >
             Add Entrie
           </button>
