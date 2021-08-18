@@ -7,6 +7,9 @@ import { v4 as uuid } from "uuid";
 import ReminderList from "./ReminderList";
 
 const CalendarView = () => {
+  const [reminder, setReminder] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [reminderDate, setReminderDate] = useState(new Date());
   const [reminders, setReminders] = useState(() => {
     const savedReminders = localStorage.getItem("reminders");
     if (savedReminders) {
@@ -16,25 +19,9 @@ const CalendarView = () => {
     }
   });
 
-  const [reminder, setReminder] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [reminderDate, setReminderDate] = useState(new Date());
-
-  const handleDateChange = (e) => {
-    setReminderDate(e.target.value);
-  };
-
-  const handleReminderChange = (e) => {
-    setReminder(e.target.value);
-  };
-
   useEffect(() => {
     localStorage.setItem("reminders", JSON.stringify(reminders));
   }, [reminders]);
-
-  const onChange = (date) => {
-    setDate(date);
-  };
 
   const handleReminderSubmitForm = (e) => {
     e.preventDefault();
@@ -51,6 +38,18 @@ const CalendarView = () => {
     setReminder("");
   };
 
+  const handleDateChange = (e) => {
+    setReminderDate(e.target.value);
+  };
+
+  const handleReminderChange = (e) => {
+    setReminder(e.target.value);
+  };
+
+  const onCalendarChange = (date) => {
+    setDate(date);
+  };
+
   const handleDeleteClick = (id) => {
     if (window.confirm("Are you sure you want to delete this entrie?")) {
       const removeReminder = reminders.filter((reminder) => {
@@ -63,20 +62,12 @@ const CalendarView = () => {
   return (
     <div className="">
       <div className="w-full p-8 flex justify-around">
-        <Calendar onChange={onChange} value={date} locale="ja-JA" />
+        <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
         <div className="w-1/2 text-center relative">
           <h2 className="text-2xl">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
           <h3 className="py-8">Here are your reminders for today</h3>
-          <AddReminder
-            reminder={reminder}
-            setReminder={setReminder}
-            handleReminderChange={handleReminderChange}
-            handleReminderSubmitForm={handleReminderSubmitForm}
-            date={reminderDate}
-            handleDateChange={handleDateChange}
-          />
           <ReminderList
             reminders={reminders}
             handleDeleteClick={handleDeleteClick}
@@ -85,6 +76,14 @@ const CalendarView = () => {
             (reminders.length === 0 && (
               <p>No reminders available. Set a reminder.</p>
             ))}
+          <AddReminder
+            reminder={reminder}
+            setReminder={setReminder}
+            handleReminderChange={handleReminderChange}
+            handleReminderSubmitForm={handleReminderSubmitForm}
+            date={reminderDate}
+            handleDateChange={handleDateChange}
+          />
         </div>
       </div>
     </div>

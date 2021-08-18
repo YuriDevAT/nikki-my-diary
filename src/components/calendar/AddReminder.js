@@ -7,7 +7,6 @@ const AddReminder = ({
   handleReminderSubmitForm,
   date,
   handleDateChange,
-  setReminder,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -16,10 +15,10 @@ const AddReminder = ({
 
   return (
     <>
-      <div>
+      <div className="bg-pink-100 w-24 mx-auto rounded-sm">
         <button
           type="submit"
-          className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
+          className="bg-pink-300 py-4 rounded-sm shadow-md uppercase transform translate-x-2 translate-y-2"
           onClick={handleShow}
         >
           Set reminder
