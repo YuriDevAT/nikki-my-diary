@@ -1,5 +1,5 @@
 import React from "react";
-import EntrieButton from "./EntrieButton";
+import Entries from "./Entries";
 
 const EntrieList = ({ entries, handleEditClick, handleDeleteClick }) => {
   const entrieCount = entries.length;
@@ -12,7 +12,7 @@ const EntrieList = ({ entries, handleEditClick, handleDeleteClick }) => {
       </h2>
       <div className="h-screen overflow-auto bg-gray-100 mb-6 w-full">
         {entries.map((entrie) => (
-          <EntrieButton
+          <Entries
             key={entrie.id}
             entrie={entrie}
             handleEditClick={handleEditClick}

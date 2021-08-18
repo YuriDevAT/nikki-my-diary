@@ -1,133 +1,95 @@
-import React, { useEffect, useState } from "react";
-import AddEntrie from "./AddEntrie";
-import EditEntrie from "./EditEntrie";
-import EntrieList from "./EntrieList";
+import React from "react";
 
-import { v4 as uuid } from "uuid";
-
-const EntrieForm = () => {
-  const [entries, setEntries] = useState(() => {
-    const savedEntries = localStorage.getItem("entries");
-    if (savedEntries) {
-      return JSON.parse(savedEntries);
-    } else {
-      return [];
-    }
-  });
-  const [entrie, setEntrie] = useState("");
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentEntrie, setCurrentEntrie] = useState({});
-
-  const [mood, setMood] = useState("happy");
-  const [date, setDate] = useState(new Date());
-
-  const [heading, setHeading] = useState("");
-
-  const handleHeadingChange = (e) => {
-    setHeading(e.target.value);
-  };
-
-  const handleMoodChange = (e) => {
-    setMood(e.target.value);
-  };
-
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-  };
-
-  useEffect(() => {
-    localStorage.setItem("entries", JSON.stringify(entries));
-  }, [entries]);
-
-  const handleAddInputChange = (e) => {
-    setEntrie(e.target.value);
-  };
-
-  const handleEditInputChange = (e) => {
-    setCurrentEntrie({ ...currentEntrie, text: e.target.value });
-  };
-
-  const handleAddFormSubmit = (e) => {
-    e.preventDefault();
-
-    if (entrie !== "") {
-      setEntries([
-        ...entries,
-        {
-          id: uuid(),
-          heading: heading,
-          mood: mood,
-          date: date,
-          text: entrie.trim(),
-        },
-      ]);
-    }
-    setEntrie("");
-    setHeading("");
-  };
-
-  const handleEditFormSubmit = (e) => {
-    e.preventDefault();
-    handleUpdateEntrie(currentEntrie.id, currentEntrie);
-  };
-
-  const handleDeleteClick = (id) => {
-    if (window.confirm("Are you sure you want to delete this entrie?")) {
-      const removeEntrie = entries.filter((entrie) => {
-        return entrie.id !== id;
-      });
-      setEntries(removeEntrie);
-    }
-  };
-
-  const handleUpdateEntrie = (id, updatedEntrie) => {
-    const updatedItem = entries.map((entrie) => {
-      return entrie.id === id ? updatedEntrie : entrie;
-    });
-    setIsEditing(false);
-    setEntries(updatedItem);
-  };
-
-  const handleEditClick = (entrie) => {
-    setIsEditing(true);
-    setCurrentEntrie({ ...entrie });
-  };
+const EntrieForm = ({
+  entrie,
+  onAddFormSubmit,
+  onAddInputChange,
+  onHandleDateChange,
+  onHandleMoodChange,
+  date,
+  heading,
+  showModal,
+  onClose,
+  onHeadingChange,
+}) => {
+  const showHideModal = showModal ? "block" : "hidden";
+  const isInvalid = entrie === "" || heading === "";
 
   return (
-    <div>
-      {isEditing ? (
-        <EditEntrie
-          currentEntrie={currentEntrie}
-          setIsEditing={setIsEditing}
-          onEditInputChange={handleEditInputChange}
-          onEditFormSubmit={handleEditFormSubmit}
-        />
-      ) : (
-        <AddEntrie
-          entrie={entrie}
-          setEntrie={setEntrie}
-          onAddInputChange={handleAddInputChange}
-          onAddFormSubmit={handleAddFormSubmit}
-          mood={mood}
-          date={date}
-          onHandleMoodChange={handleMoodChange}
-          onHandleDateChange={handleDateChange}
-          heading={heading}
-          setHeading={setHeading}
-          onHeadingChange={handleHeadingChange}
-        />
-      )}
-      <div className="mx-auto w-full h-full">
-        <EntrieList
-          entries={entries}
-          handleEditClick={handleEditClick}
-          handleDeleteClick={handleDeleteClick}
-        />
-        {!entries ||
-          (entries.length === 0 && (
-            <p>No entries available. Please add some entries.</p>
-          ))}
-      </div>
+    <div className={`w-full h-96 absolute z-50 inset-0 py-14 ${showHideModal}`}>
+      <form
+        onSubmit={onAddFormSubmit}
+        className="xl:w-1/2 mx-auto bg-gray-200 p-6 rounded-md shadow-lg text-md"
+      >
+        <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
+          <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
+            今日はどうですか。
+          </legend>
+          <label htmlFor="heading">Title</label>
+          <input
+            type="text"
+            id="heading"
+            name="heading"
+            className="py-2 rounded-md pl-2 outline-none focus:border-gray-600 border-2 max-w-full"
+            onChange={onHeadingChange}
+            value={heading}
+            required
+          />
+          <div className="flex justify-around">
+            <label>
+              How are you feeling today?
+              <select
+                onChange={onHandleMoodChange}
+                aria-label="select in which mood you are"
+                className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+              >
+                <option>Happy</option>
+                <option>Okay</option>
+                <option>Sad</option>
+                <option>Motivated</option>
+                <option>Mixed feelings</option>
+              </select>
+            </label>
+            <label
+              htmlFor="date"
+              className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+            >
+              Date:
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={date.toLocaleString()}
+                required
+                onChange={onHandleDateChange}
+              />
+            </label>
+          </div>
+          <label htmlFor="entrie">
+            Describe your day
+            <textarea
+              name="entrie"
+              type="text"
+              value={entrie}
+              onChange={onAddInputChange}
+              className="w-full p-8 border-2 rounded-md"
+              required
+            />
+          </label>
+          <button
+            type="submit"
+            onClick={onClose}
+            className={`bg-pink-300 py-4 rounded-md shadow-sm uppercase ${
+              isInvalid && "opacity-50"
+            }`}
+          >
+            Add Entrie
+          </button>
+          <button type="button" onClick={onClose}>
+            Close
+          </button>
+        </fieldset>
+      </form>
     </div>
   );
 };

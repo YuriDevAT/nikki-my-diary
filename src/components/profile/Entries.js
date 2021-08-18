@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Entrie from "./Entrie";
 
-const EntrieButton = ({ entrie, handleEditClick, handleDeleteClick }) => {
+const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
   const [active, setActive] = useState(false);
 
   const handleSetActive = () => {
@@ -30,4 +30,4 @@ const EntrieButton = ({ entrie, handleEditClick, handleDeleteClick }) => {
   );
 };
 
-export default EntrieButton;
+export default Entries;

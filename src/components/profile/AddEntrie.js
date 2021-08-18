@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import ModalEntrie from "./ModalEntrie";
+import EntrieForm from "./EntrieForm";
 
 const AddEntrie = ({
   entrie,
-  setEntrie,
   onAddFormSubmit,
   onAddInputChange,
   onHandleDateChange,
   onHandleMoodChange,
   date,
   heading,
-  setHeading,
   onHeadingChange,
 }) => {
   const [showModal, setShowModal] = useState(false);
@@ -29,7 +27,7 @@ const AddEntrie = ({
           Add an Entrie
         </button>
       </div>
-      <ModalEntrie
+      <EntrieForm
         entrie={entrie}
         onAddInputChange={onAddInputChange}
         onAddFormSubmit={onAddFormSubmit}
