@@ -22,16 +22,15 @@ const ReminderForm = ({
           <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
             What do you want to be reminded of?
           </legend>
-          <label htmlFor="reminder">
-            <input
-              type="text"
-              name="reminder"
-              id="reminder"
-              value={reminder}
-              onChange={handleReminderChange}
-              className="w-full p-3 border-2 rounded-md"
-            />
-          </label>
+          <input
+            type="text"
+            name="reminder"
+            aria-label={reminder}
+            aria-required="true"
+            value={reminder}
+            onChange={handleReminderChange}
+            className="w-full p-3 border-2 rounded-md"
+          />
           <label
             htmlFor="dateReminder"
             className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
@@ -40,6 +39,7 @@ const ReminderForm = ({
             <input
               type="date"
               name="date"
+              id="dateReminder"
               value={date.toLocaleString()}
               required
               onChange={handleDateChange}

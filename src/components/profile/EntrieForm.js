@@ -40,7 +40,7 @@ const EntrieForm = ({
               How are you feeling today?
               <select
                 onChange={onHandleMoodChange}
-                aria-label="select in which mood you are"
+                aria-label="your mood"
                 className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
               >
                 <option>Happy</option>
@@ -70,6 +70,7 @@ const EntrieForm = ({
             <textarea
               name="entrie"
               type="text"
+              id="entrie"
               value={entrie}
               onChange={onAddInputChange}
               className="w-full p-8 border-2 rounded-md"
