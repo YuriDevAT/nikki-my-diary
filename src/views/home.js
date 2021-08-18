@@ -1,11 +1,11 @@
 import React from "react";
 import { Footer, Hero } from "../components";
-import HomeContent from "../components/home/HomeContent";
+import HomeView from "../components/home";
 
 const Home = () => (
   <>
     <Hero heading="Welcome to Nikki App" />
-    <HomeContent />
+    <HomeView />
     <Footer />
   </>
 );

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Loading from "../Loading";
 
-const HomeContent = () => {
+const Quote = () => {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +40,7 @@ const HomeContent = () => {
         </p>
       )}
       {isLoading ? (
-        <p>Loading...</p>
+        <Loading />
       ) : (
         <div>
           <h2>{quote}</h2>
@@ -50,4 +51,4 @@ const HomeContent = () => {
   );
 };
 
-export default HomeContent;
+export default Quote;

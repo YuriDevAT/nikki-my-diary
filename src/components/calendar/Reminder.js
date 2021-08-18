@@ -4,10 +4,7 @@ const Reminder = ({ reminder, handleDeleteClick }) => {
   return (
     <div>
       <li className="w-3/4 flex justify-around mx-auto">
-        <input
-          type="checkbox"
-          className="checked:bg-pink-500 checked:border-transparent"
-        />
+        <input type="checkbox" className="" />
         <p>{reminder.date}</p>
         <p>{reminder.text}</p>
         <button onClick={() => handleDeleteClick(reminder.id)} className="">
