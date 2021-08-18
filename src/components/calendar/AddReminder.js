@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModalReminder from "./ModalReminder";
+import ReminderForm from "./ReminderForm";
 
 const AddReminder = ({
   reminder,
@@ -25,7 +25,7 @@ const AddReminder = ({
           Set reminder
         </button>
       </div>
-      <ModalReminder
+      <ReminderForm
         reminder={reminder}
         handleReminderChange={handleReminderChange}
         handleReminderSubmitForm={handleReminderSubmitForm}
