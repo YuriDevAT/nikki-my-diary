@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Footer, Hero, HomeContent } from "../components";
 
 const Home = () => (
   <>
-    <Hero />
+    <Hero heading="Welcome to Nikki App" />
     <HomeContent />
     <Footer />
   </>

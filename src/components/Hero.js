@@ -1,12 +1,8 @@
 import React from "react";
 
-const logo = "http://logo.png";
-
-const Hero = () => (
-  <div className="">
-    <img className="" src={logo} alt="" width="120" />
-    <h1 className="">Julies Project</h1>
-    <p className="">Julies Project</p>
+const Hero = (props) => (
+  <div className="py-4">
+    <h1 className="text-center text-3xl">{props.heading}</h1>
   </div>
 );
 

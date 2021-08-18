@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import ModalEntrie from "./ModalEntrie";
+import ModalReminder from "./ModalReminder";
 
-const AddEntrie = ({
-  entrie,
-  setEntrie,
-  onAddFormSubmit,
-  onAddInputChange,
-  onHandleDateChange,
-  onHandleMoodChange,
+const AddReminder = ({
+  reminder,
+  handleReminderChange,
+  handleReminderSubmitForm,
   date,
-  heading,
-  setHeading,
-  onHeadingChange,
+  handleDateChange,
+  setReminder,
 }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -26,18 +22,15 @@ const AddEntrie = ({
           className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
           onClick={handleShow}
         >
-          Add an Entrie
+          Set reminder
         </button>
       </div>
-      <ModalEntrie
-        entrie={entrie}
-        onAddInputChange={onAddInputChange}
-        onAddFormSubmit={onAddFormSubmit}
+      <ModalReminder
+        reminder={reminder}
+        handleReminderChange={handleReminderChange}
+        handleReminderSubmitForm={handleReminderSubmitForm}
         date={date}
-        onHandleMoodChange={onHandleMoodChange}
-        onHandleDateChange={onHandleDateChange}
-        heading={heading}
-        onHeadingChange={onHeadingChange}
+        handleDateChange={handleDateChange}
         showModal={showModal}
         setShowModal={setShowModal}
         onClose={handleClose}
@@ -46,4 +39,4 @@ const AddEntrie = ({
   );
 };
 
-export default AddEntrie;
+export default AddReminder;

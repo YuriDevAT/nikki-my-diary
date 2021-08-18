@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
-import Entrie from "./Entrie";
+import EntrieList from "./EntrieList";
+
+import { v4 as uuid } from "uuid";
 
 const EntrieForm = () => {
   const [entries, setEntries] = useState(() => {
@@ -16,6 +17,23 @@ const EntrieForm = () => {
   const [entrie, setEntrie] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentEntrie, setCurrentEntrie] = useState({});
+
+  const [mood, setMood] = useState("happy");
+  const [date, setDate] = useState(new Date());
+
+  const [heading, setHeading] = useState("");
+
+  const handleHeadingChange = (e) => {
+    setHeading(e.target.value);
+  };
+
+  const handleMoodChange = (e) => {
+    setMood(e.target.value);
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
 
   useEffect(() => {
     localStorage.setItem("entries", JSON.stringify(entries));
@@ -36,12 +54,16 @@ const EntrieForm = () => {
       setEntries([
         ...entries,
         {
-          id: new Date(),
+          id: uuid(),
+          heading: heading,
+          mood: mood,
+          date: date,
           text: entrie.trim(),
         },
       ]);
     }
     setEntrie("");
+    setHeading("");
   };
 
   const handleEditFormSubmit = (e) => {
@@ -50,10 +72,12 @@ const EntrieForm = () => {
   };
 
   const handleDeleteClick = (id) => {
-    const removeEntrie = entries.filter((entrie) => {
-      return entrie.id !== id;
-    });
-    setEntries(removeEntrie);
+    if (window.confirm("Are you sure you want to delete this entrie?")) {
+      const removeEntrie = entries.filter((entrie) => {
+        return entrie.id !== id;
+      });
+      setEntries(removeEntrie);
+    }
   };
 
   const handleUpdateEntrie = (id, updatedEntrie) => {
@@ -81,23 +105,24 @@ const EntrieForm = () => {
       ) : (
         <AddEntrie
           entrie={entrie}
+          setEntrie={setEntrie}
           onAddInputChange={handleAddInputChange}
           onAddFormSubmit={handleAddFormSubmit}
+          mood={mood}
+          date={date}
+          onHandleMoodChange={handleMoodChange}
+          onHandleDateChange={handleDateChange}
+          heading={heading}
+          setHeading={setHeading}
+          onHeadingChange={handleHeadingChange}
         />
       )}
-      <div className="mx-auto w-full h-full bg-yellow-200">
-        <ul className="bg-green-300 grid grid-cols-3 gap-8 mt-4 mb-12">
-          {entries.map(
-            (entrie) =>
-              (
-                <Entrie
-                  entrie={entrie}
-                  onEditClick={handleEditClick}
-                  onDeleteClick={handleDeleteClick}
-                />
-              ) || <Skeleton />
-          )}
-        </ul>
+      <div className="mx-auto w-full h-full">
+        <EntrieList
+          entries={entries}
+          handleEditClick={handleEditClick}
+          handleDeleteClick={handleDeleteClick}
+        />
         {!entries ||
           (entries.length === 0 && (
             <p>No entries available. Please add some entries.</p>

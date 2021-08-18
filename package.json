@@ -2,6 +2,22 @@
   "name": "nikki-my-diary",
   "version": "0.1.0",
   "private": true,
+  "description": "App to pen down your daily thoughts to improve your Japanese skills",
+  "keywords": [
+    "online journal",
+    "japanese",
+    "diary",
+    "progress"
+  ],
+  "bugs": {
+    "url": "https://github.com/YuriDevAT/nikki-my-diary/issues"
+  },
+  "license": "MIT",
+  "author": "Juia Undeutsch",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuriDevAT/nikki-my-diary"
+  },
   "dependencies": {
     "@auth0/auth0-react": "^1.6.0",
     "@craco/craco": "^6.2.0",
@@ -12,10 +28,10 @@
     "react-calendar": "^3.4.0",
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
-    "react-loading-skeleton": "^2.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "uuidv4": "^6.2.11"
   },
   "scripts": {
     "start": "cross-env PORT=3000 craco start",
