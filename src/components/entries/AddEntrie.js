@@ -15,12 +15,7 @@ const AddEntrie = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleClose = () => {
-    setShowModal(false);
-    setEntrie("");
-    setHeading("");
-  };
-
+  const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   return (

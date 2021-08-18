@@ -11,10 +11,7 @@ const AddReminder = ({
 }) => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleClose = () => {
-    setShowModal(false);
-    setReminder("");
-  };
+  const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
   return (
