@@ -17,16 +17,14 @@ const AddEntrie = ({
   const handleShow = () => setShowModal(true);
 
   return (
-    <>
-      <div>
-        <button
-          type="submit"
-          className="bg-pink-300 py-4 rounded-md shadow-sm uppercase"
-          onClick={handleShow}
-        >
-          Add an Entrie
-        </button>
-      </div>
+    <div className="bg-green-300 mx-auto w-full h-full relative">
+      <button
+        type="submit"
+        className="w-20 h-20 mr-4 rounded-full bg-pink-300 shadow-2xl fixed bottom-4 right-56 animate-bounce"
+        onClick={handleShow}
+      >
+        <img src="/img/icons/plus.svg" alt="add" className="" />
+      </button>
       <EntrieForm
         entrie={entrie}
         onAddInputChange={onAddInputChange}
@@ -40,7 +38,7 @@ const AddEntrie = ({
         setShowModal={setShowModal}
         onClose={handleClose}
       />
-    </>
+    </div>
   );
 };
 
