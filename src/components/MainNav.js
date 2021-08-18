@@ -5,17 +5,27 @@ const MainNav = () => (
   <div className="w-72 flex justify-around">
     <NavLink to="/" exact className="h-8 w-8">
       <abbr title="Home">
-        <img src="/img/icons/home.svg" alt="home" />
+        <img src="/img/icons/home.svg" alt="homeview" width="50" height="50" />
       </abbr>
     </NavLink>
     <NavLink to="/profile" exact className="w-8 h-8">
       <abbr title="Profile">
-        <img src="/img/icons/user-solid-circle.svg" alt="" />
+        <img
+          src="/img/icons/user-solid-circle.svg"
+          alt="profileview"
+          width="50"
+          height="50"
+        />
       </abbr>
     </NavLink>
     <NavLink to="/calendar" exact className="w-8 h-8">
       <abbr title="Calendar">
-        <img src="/img/icons/calendar.svg" alt="" />
+        <img
+          src="/img/icons/calendar.svg"
+          alt="calendarview"
+          width="50"
+          height="50"
+        />
       </abbr>
     </NavLink>
   </div>
