@@ -25,7 +25,7 @@ const ReminderForm = ({
           <input
             type="text"
             name="reminder"
-            aria-label={reminder}
+            aria-label="reminder"
             aria-required="true"
             value={reminder}
             onChange={handleReminderChange}

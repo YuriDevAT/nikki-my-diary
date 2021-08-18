@@ -2,9 +2,9 @@ import React from "react";
 
 const Reminder = ({ reminder, handleDeleteClick }) => {
   return (
-    <div>
+    <>
       <li className="w-3/4 flex justify-around mx-auto">
-        <input type="checkbox" className="" />
+        <input type="checkbox" className="" aria-label="checkbox" />
         <p>{reminder.date}</p>
         <p>{reminder.text}</p>
         <button onClick={() => handleDeleteClick(reminder.id)} className="">
@@ -13,7 +13,7 @@ const Reminder = ({ reminder, handleDeleteClick }) => {
           </abbr>
         </button>
       </li>
-    </div>
+    </>
   );
 };
 
