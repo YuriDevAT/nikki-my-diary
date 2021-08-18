@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import AllEntries from "../components/entries";
+import AllEntries from "../components/profile";
 import { Footer, Hero } from "../components";
 
 const Profile = () => {
