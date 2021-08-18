@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Loading } from "./components";
-import { Home, Profile, Calendar } from "./views";
 import ProtectedRoute from "./auth/protected-route";
 import "./index.css";
+
+const Home = lazy(() => import("./views/home"));
+const Profile = lazy(() => import("./views/profile"));
+const Calendar = lazy(() => import("./views/calendar"));
 
 function App() {
   const { isLoading } = useAuth0();
@@ -14,16 +17,16 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto h-screen">
+    <>
       <NavBar />
-      <div className="mt-10 px-10">
+      <Suspense fallback={<Loading />}>
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route exact path="/" component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/calendar" component={Calendar} />
         </Switch>
-      </div>
-    </div>
+      </Suspense>
+    </>
   );
 }
 
