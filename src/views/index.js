@@ -1,5 +1,5 @@
-import CalendarView from "./calendar";
+import Calendar from "./calendar";
 import Home from "./home";
 import Profile from "./profile";
 
-export { CalendarView, Home, Profile };
+export { Calendar, Home, Profile };

@@ -1,5 +1,6 @@
 import React from "react";
-import { Footer, Hero, HomeContent } from "../components";
+import { Footer, Hero } from "../components";
+import HomeContent from "../components/home/HomeContent";
 
 const Home = () => (
   <>
