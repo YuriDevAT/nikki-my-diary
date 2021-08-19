@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
 body {
   font-family: "Dosis", monospace;
+  background-color: #fafafa;
 }
 
 @tailwind components;
