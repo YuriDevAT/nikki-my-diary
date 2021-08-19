@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className="container mx-auto bg-black-faded h-screen">
       <NavBar />
       <Suspense fallback={<Loading />}>
         <Switch>
@@ -26,7 +26,7 @@ function App() {
           <ProtectedRoute path="/calendar" component={Calendar} />
         </Switch>
       </Suspense>
-    </>
+    </div>
   );
 }
 
