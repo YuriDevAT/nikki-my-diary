@@ -1,15 +1,16 @@
 import React from "react";
 
 const Footer = () => (
-  <footer className="container fixed bottom-0 text-center py-6">
+  <footer className="container fixed bottom-0 text-center py-6 text-lg tracking-wider">
     <p>
-      Made with ❤ and ♫ 2021 all rights reserved by{" "}
+      made with <span className="text-pink-400">&#10084;</span> and &#9835; 2021
+      by{" "}
       <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://julia-undeutsch.netlify.app/"
       >
-        Julia Undeutsch
+        <span className="underline">julia undeutsch</span>. all rights reserved.
       </a>
     </p>
   </footer>
