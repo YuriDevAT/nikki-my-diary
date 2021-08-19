@@ -15,10 +15,10 @@ const AddReminder = ({
 
   return (
     <>
-      <div className="bg-pink-100 w-24 mx-auto rounded-sm">
+      <div className="bg-rose-light w-26 mx-auto rounded-sm">
         <button
           type="submit"
-          className="bg-pink-300 py-4 rounded-sm shadow-md uppercase transform translate-x-2 translate-y-2"
+          className="bg-rose-middle py-4 px-2 text-sm rounded-sm shadow-md uppercase transform translate-x-2 translate-y-2"
           onClick={handleShow}
         >
           Set reminder

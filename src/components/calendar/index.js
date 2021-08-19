@@ -60,31 +60,31 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="">
-      <div className="w-full p-8 flex justify-around">
+    <div className="container p-8 flex justify-around text-lg">
+      <div className="shadow-lg">
         <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
-        <div className="w-1/2 text-center relative">
-          <h2 className="text-2xl">
-            {date.toLocaleString().slice(0, 10)}, <Time />
-          </h2>
-          <h3 className="py-8">Here are your reminders for today</h3>
-          <ReminderList
-            reminders={reminders}
-            handleDeleteClick={handleDeleteClick}
-          />
-          {!reminders ||
-            (reminders.length === 0 && (
-              <p>No reminders available. Set a reminder.</p>
-            ))}
-          <AddReminder
-            reminder={reminder}
-            setReminder={setReminder}
-            handleReminderChange={handleReminderChange}
-            handleReminderSubmitForm={handleReminderSubmitForm}
-            date={reminderDate}
-            handleDateChange={handleDateChange}
-          />
-        </div>
+      </div>
+      <div className="w-1/2 text-center relative flex flex-col justify-around">
+        <h2 className="text-2xl">
+          {date.toLocaleString().slice(0, 10)}, <Time />
+        </h2>
+        <h3>Here are your reminders for today:</h3>
+        <ReminderList
+          reminders={reminders}
+          handleDeleteClick={handleDeleteClick}
+        />
+        {!reminders ||
+          (reminders.length === 0 && (
+            <p>No reminders available. Set a reminder.</p>
+          ))}
+        <AddReminder
+          reminder={reminder}
+          setReminder={setReminder}
+          handleReminderChange={handleReminderChange}
+          handleReminderSubmitForm={handleReminderSubmitForm}
+          date={reminderDate}
+          handleDateChange={handleDateChange}
+        />
       </div>
     </div>
   );
