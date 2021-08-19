@@ -3,9 +3,9 @@ import Quote from "./Quote";
 
 const HomeView = () => {
   return (
-    <>
+    <div className="">
       <Quote />
-    </>
+    </div>
   );
 };
 

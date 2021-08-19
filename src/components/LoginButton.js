@@ -6,7 +6,7 @@ const LoginButton = () => {
 
   return (
     <button
-      className="font-semibold text-sm rounded w-20 h-12 cursor-pointer bg-pink-200 shadow-md"
+      className="font-semibold text-sm rounded w-20 h-12 cursor-pointer bg-rose-light shadow-md"
       onClick={() => loginWithRedirect()}
     >
       Log In

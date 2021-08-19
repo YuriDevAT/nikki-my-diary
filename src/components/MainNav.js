@@ -2,17 +2,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const MainNav = () => (
-  <div className="w-72 flex justify-around">
+  <div className="w-72 flex justify-around m-2">
     <NavLink to="/" exact className="h-8 w-8">
       <abbr title="Home">
-        <img src="/img/icons/home.svg" alt="homeview" width="50" height="50" />
+        <img src="/img/icons/home.svg" alt="home view" width="50" height="50" />
       </abbr>
     </NavLink>
     <NavLink to="/profile" exact className="w-8 h-8">
       <abbr title="Profile">
         <img
           src="/img/icons/user-solid-circle.svg"
-          alt="profileview"
+          alt="profile view"
           width="50"
           height="50"
         />
@@ -22,7 +22,7 @@ const MainNav = () => (
       <abbr title="Calendar">
         <img
           src="/img/icons/calendar.svg"
-          alt="calendarview"
+          alt="calendar view"
           width="50"
           height="50"
         />

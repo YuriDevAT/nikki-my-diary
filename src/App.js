@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto bg-black-faded h-screen">
+    <div className="container mx-auto h-screen">
       <NavBar />
       <Suspense fallback={<Loading />}>
         <Switch>

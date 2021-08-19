@@ -33,7 +33,7 @@ const Quote = () => {
   };
 
   return (
-    <div className="bg-gray-400 h-36 flex justify-center items-center">
+    <div className="h-36 flex justify-center items-center text-lg sm:mx-44 mx-2">
       {error && (
         <p>
           I would be a motivating quote but unfortunately something went wrong.
@@ -44,7 +44,7 @@ const Quote = () => {
       ) : (
         <div>
           <h2>{quote}</h2>
-          <p className="float-right">- {author}</p>
+          <p className="text-right italic text-sm">- {author}</p>
         </div>
       )}
     </div>

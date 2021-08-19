@@ -4,18 +4,18 @@ import AuthNav from "./AuthNav";
 
 const NavBar = () => {
   return (
-    <div className="container h-36 mx-auto">
-      <nav className="flex justify-around h-full align-middle">
-        <div className="flex items-center align-items">
+    <div className="container min-h-36 mx-auto">
+      <nav className="h-full flex justify-around flex-wrap">
+        <div className="flex items-center py-4">
           <img
             src="/img/logo.png"
             alt="welcome message"
             className="w-6/12"
             width="50"
-            height="50"
+            height="20"
           />
         </div>
-        <div className="flex items-center justify-around h-full">
+        <div className="flex items-center flex-wrap">
           <MainNav />
           <AuthNav />
         </div>
