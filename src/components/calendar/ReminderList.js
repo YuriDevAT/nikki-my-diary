@@ -1,7 +1,7 @@
 import React from "react";
 import Reminder from "./Reminder";
 
-const ReminderList = ({ reminders, handleDeleteClick }) => {
+const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => {
   return (
     <div>
       <ul>
@@ -9,6 +9,8 @@ const ReminderList = ({ reminders, handleDeleteClick }) => {
           <Reminder
             key={reminder.id}
             reminder={reminder}
+            reminders={reminders}
+            setReminders={setReminders}
             handleDeleteClick={handleDeleteClick}
           />
         ))}

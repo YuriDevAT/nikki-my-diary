@@ -32,6 +32,7 @@ const CalendarView = () => {
           id: uuid(),
           date: reminderDate,
           text: reminder.trim(),
+          completed: false,
         },
       ]);
     }
@@ -71,6 +72,7 @@ const CalendarView = () => {
         <h3>Here are your reminders for today:</h3>
         <ReminderList
           reminders={reminders}
+          setReminders={setReminders}
           handleDeleteClick={handleDeleteClick}
         />
         {!reminders ||
