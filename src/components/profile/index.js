@@ -10,7 +10,7 @@ const ProfileView = () => {
   const [currentEntrie, setCurrentEntrie] = useState({});
   const [mood, setMood] = useState("happy");
   const [date, setDate] = useState(new Date());
-  const [heading, setHeading] = useState("");
+  const [title, setTitle] = useState("");
   const [entries, setEntries] = useState(() => {
     const savedEntries = localStorage.getItem("entries");
     if (savedEntries) {
@@ -19,6 +19,8 @@ const ProfileView = () => {
       return [];
     }
   });
+
+  const entrieCount = entries.length;
 
   useEffect(() => {
     localStorage.setItem("entries", JSON.stringify(entries));
@@ -32,7 +34,7 @@ const ProfileView = () => {
         ...entries,
         {
           id: uuid(),
-          heading: heading,
+          title: title,
           mood: mood,
           date: date,
           text: entrie.trim(),
@@ -40,11 +42,11 @@ const ProfileView = () => {
       ]);
     }
     setEntrie("");
-    setHeading("");
+    setTitle("");
   };
 
-  const handleHeadingChange = (e) => {
-    setHeading(e.target.value);
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
   };
 
   const handleMoodChange = (e) => {
@@ -91,7 +93,20 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="container p-8 text-lg relative h-full">
+      <h2 className="float-right">
+        You have {entrieCount} {entrieCount === 1 ? `entrie` : `entries`} so
+        far.
+      </h2>
+      <EntrieList
+        entries={entries}
+        handleEditClick={handleEditClick}
+        handleDeleteClick={handleDeleteClick}
+      />
+      {!entries ||
+        (entries.length === 0 && (
+          <p>No entries available. Please add some entries.</p>
+        ))}
       {isEditing ? (
         <EditEntrie
           currentEntrie={currentEntrie}
@@ -109,22 +124,11 @@ const ProfileView = () => {
           date={date}
           onHandleMoodChange={handleMoodChange}
           onHandleDateChange={handleDateChange}
-          heading={heading}
-          setHeading={setHeading}
-          onHeadingChange={handleHeadingChange}
+          title={title}
+          setTitle={setTitle}
+          onTitleChange={handleTitleChange}
         />
       )}
-      <div className="">
-        <EntrieList
-          entries={entries}
-          handleEditClick={handleEditClick}
-          handleDeleteClick={handleDeleteClick}
-        />
-        {!entries ||
-          (entries.length === 0 && (
-            <p>No entries available. Please add some entries.</p>
-          ))}
-      </div>
     </div>
   );
 };

@@ -7,17 +7,17 @@ const EntrieForm = ({
   onHandleDateChange,
   onHandleMoodChange,
   date,
-  heading,
+  title,
   showModal,
   onClose,
-  onHeadingChange,
+  onTitleChange,
 }) => {
   const showHideModal = showModal ? "block" : "hidden";
-  const isInvalid = entrie === "" || heading === "";
+  const isInvalid = entrie === "" || title === "";
 
   return (
     <div
-      className={`container shadow-2xl bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
+      className={`container shadow-2xl bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 px-2 flex justify-around ${showHideModal}`}
     >
       <div className="w-1/2 flex items-end">
         <img src="/img/calendar-graphic.svg" alt="write an entrie" />
@@ -26,18 +26,16 @@ const EntrieForm = ({
         onSubmit={onAddFormSubmit}
         className="bg-white p-6 rounded-md shadow-lg text-md"
       >
-        <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
-          <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
-            今日はどうですか。
-          </legend>
-          <label htmlFor="heading">Title</label>
+        <fieldset className="p-3 border border-gray-primary rounded-md w-full">
+          <legend className="text-md p-2">今日はどうですか。</legend>
+          <label htmlFor="title">Title</label>
           <input
             type="text"
-            id="heading"
-            name="heading"
-            className="py-2 rounded-md pl-2 outline-none focus:border-gray-600 border-2 max-w-full"
-            onChange={onHeadingChange}
-            value={heading}
+            id="title"
+            name="title"
+            className="w-full py-2 border border-gray-primary rounded-md shadow-inner"
+            onChange={onTitleChange}
+            value={title}
             required
           />
           <div className="flex justify-around">
@@ -46,7 +44,7 @@ const EntrieForm = ({
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
-                className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+                className="p-2 pl-2 rounded-md border border-gray-primary m-4 shadow-inner"
               >
                 <option>Happy</option>
                 <option>Okay</option>
@@ -57,7 +55,7 @@ const EntrieForm = ({
             </label>
             <label
               htmlFor="date"
-              className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+              className="py-2 pl-2 rounded-md border border-gray-primary m-4 shadow-inner"
             >
               Date:
               <input
@@ -78,7 +76,7 @@ const EntrieForm = ({
               id="entrie"
               value={entrie}
               onChange={onAddInputChange}
-              className="w-full p-8 border-2 rounded-md"
+              className="w-full py-2 border border-gray-primary rounded-md shadow-inner"
               required
             />
           </label>
@@ -91,11 +89,15 @@ const EntrieForm = ({
           >
             Add Entrie
           </button>
-          <button type="button" onClick={onClose}>
-            Close
-          </button>
         </fieldset>
       </form>
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-4 left-4 rounded-full px-6 py-3 bg-rose-light shadow-2xl"
+      >
+        X
+      </button>
     </div>
   );
 };
