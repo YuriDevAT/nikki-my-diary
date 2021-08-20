@@ -4,6 +4,10 @@ import Reminder from "./Reminder";
 const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => {
   return (
     <div>
+      {!reminders ||
+        (reminders.length === 0 && (
+          <p>No reminders available. Set a reminder.</p>
+        ))}
       <ul>
         {reminders.map((reminder) => (
           <Reminder

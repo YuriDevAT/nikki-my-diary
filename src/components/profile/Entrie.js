@@ -1,10 +1,10 @@
 import React from "react";
 
-const Entrie = ({ entrie, onEditClick, onDeleteClick, active }) => {
+const Entrie = ({ entrie, onEditClick, onDeleteClick }) => {
   return (
     <div
       className={`container w-2/3 bg-white float-right h-full px-14 py-2 mt-2 mr-2" ${
-        active ? "block" : "hidden"
+        entrie.active ? "block" : "hidden"
       }`}
     >
       <p className="">{entrie.date}</p>

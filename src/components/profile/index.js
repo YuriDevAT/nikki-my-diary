@@ -38,6 +38,7 @@ const ProfileView = () => {
           mood: mood,
           date: date,
           text: entrie.trim(),
+          active: false,
         },
       ]);
     }
@@ -100,6 +101,7 @@ const ProfileView = () => {
       </h2>
       <EntrieList
         entries={entries}
+        setEntries={setEntries}
         handleEditClick={handleEditClick}
         handleDeleteClick={handleDeleteClick}
       />

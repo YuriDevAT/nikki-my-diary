@@ -1,7 +1,12 @@
 import React from "react";
 import Entries from "./Entries";
 
-const EntrieList = ({ entries, handleEditClick, handleDeleteClick }) => {
+const EntrieList = ({
+  entries,
+  setEntries,
+  handleEditClick,
+  handleDeleteClick,
+}) => {
   return (
     <div className="h-full">
       <div>
@@ -9,6 +14,8 @@ const EntrieList = ({ entries, handleEditClick, handleDeleteClick }) => {
           <Entries
             key={entrie.id}
             entrie={entrie}
+            entries={entries}
+            setEntries={setEntries}
             handleEditClick={handleEditClick}
             handleDeleteClick={handleDeleteClick}
           />

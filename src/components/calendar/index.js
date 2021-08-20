@@ -33,6 +33,7 @@ const CalendarView = () => {
           date: reminderDate,
           text: reminder.trim(),
           completed: false,
+          show: false,
         },
       ]);
     }
@@ -51,6 +52,22 @@ const CalendarView = () => {
     setDate(date);
   };
 
+  const handleShowReminder = () => {
+    setReminders(
+      reminders.filter((item) => {
+        if (item.date === reminder.date) {
+          console.log(item.date);
+          console.log(reminder.date);
+          return {
+            ...item,
+            show: true,
+          };
+        }
+        return item;
+      })
+    );
+  };
+
   const handleDeleteClick = (id) => {
     if (window.confirm("Are you sure you want to delete this entrie?")) {
       const removeReminder = reminders.filter((reminder) => {
@@ -63,7 +80,12 @@ const CalendarView = () => {
   return (
     <div className="container p-8 flex justify-around text-lg relative bg-green-light">
       <div className="shadow-lg">
-        <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
+        <Calendar
+          onChange={onCalendarChange}
+          value={date}
+          locale="ja-JA"
+          onClickDay={handleShowReminder}
+        />
       </div>
       <div className="w-1/2 text-center relative flex flex-col justify-around">
         <h2 className="text-2xl">
@@ -75,10 +97,6 @@ const CalendarView = () => {
           setReminders={setReminders}
           handleDeleteClick={handleDeleteClick}
         />
-        {!reminders ||
-          (reminders.length === 0 && (
-            <p>No reminders available. Set a reminder.</p>
-          ))}
         <AddReminder
           reminder={reminder}
           setReminder={setReminder}

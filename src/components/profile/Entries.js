@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import Entrie from "./Entrie";
 
-const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
-  const [active, setActive] = useState(false);
-
+const Entries = ({
+  entrie,
+  entries,
+  setEntries,
+  handleEditClick,
+  handleDeleteClick,
+}) => {
   const handleSetActive = () => {
-    setActive(!active);
+    setEntries(
+      entries.map((item) => {
+        if (item.id === entrie.id) {
+          return {
+            ...item,
+            active: !item.active,
+          };
+        }
+        return item;
+      })
+    );
   };
 
   return (
@@ -24,7 +38,6 @@ const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
         entrie={entrie}
         onEditClick={handleEditClick}
         onDeleteClick={handleDeleteClick}
-        active={active}
       />
     </div>
   );
