@@ -13,13 +13,18 @@ const ReminderForm = ({
   const isInvalid = reminder === "" || date === "";
 
   return (
-    <div className={`w-full h-96 absolute z-50 inset-0 py-14 ${showHideModal}`}>
+    <div
+      className={`w-full h-full shadow-2xl bg-gradient-to-tr from-brown-dark to-brown-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
+    >
+      <div className="w-1/2 flex items-end">
+        <img src="/img/calendar-graphic.svg" alt="set a reminder" />
+      </div>
       <form
         onSubmit={handleReminderSubmitForm}
-        className="w-1/2 mx-auto bg-gray-200 p-6 rounded-md shadow-lg text-md"
+        className="bg-white p-6 rounded-md shadow-lg text-md"
       >
-        <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
-          <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">
+        <fieldset className="p-3 border border-gray-primary flex flex-col h-full justify-around rounded-md w-full">
+          <legend className="text-md p-2">
             What do you want to be reminded of?
           </legend>
           <input
@@ -29,11 +34,11 @@ const ReminderForm = ({
             aria-required="true"
             value={reminder}
             onChange={handleReminderChange}
-            className="w-full p-3 border-2 rounded-md"
+            className="w-full py-2 border border-gray-primary rounded-md shadow-inner"
           />
           <label
             htmlFor="dateReminder"
-            className="p-2 pl-2 rounded-md shadow-sm outline-none focus:border-gray-600 border-2 m-4"
+            className="py-2 rounded-md outline-none border border-gray-primary m-4 shadow-inner"
           >
             Date:
             <input
@@ -48,17 +53,21 @@ const ReminderForm = ({
           <button
             type="submit"
             onClick={onClose}
-            className={`bg-pink-300 py-4 rounded-md shadow-sm uppercase ${
+            className={`bg-rose-middle py-4 rounded-md shadow-sm uppercase ${
               isInvalid && "opacity-50"
             }`}
           >
             Set reminder
           </button>
-          <button type="button" onClick={onClose}>
-            Close
-          </button>
         </fieldset>
       </form>
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-4 left-4 rounded-full px-6 py-3 bg-rose-light shadow-2xl"
+      >
+        X
+      </button>
     </div>
   );
 };

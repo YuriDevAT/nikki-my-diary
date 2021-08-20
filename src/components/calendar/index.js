@@ -60,7 +60,7 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="container p-8 flex justify-around text-lg">
+    <div className="container p-8 flex justify-around text-lg relative">
       <div className="shadow-lg">
         <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
       </div>
