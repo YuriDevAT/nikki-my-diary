@@ -10,7 +10,10 @@ const Footer = () => (
         rel="noopener noreferrer"
         href="https://julia-undeutsch.netlify.app/"
       >
-        <span className="underline">julia undeutsch</span>. all rights reserved.
+        <span>
+          <u>julia undeutsch</u>
+        </span>
+        . all rights reserved.
       </a>
     </p>
   </footer>

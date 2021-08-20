@@ -6,13 +6,14 @@ const SignUpButton = () => {
 
   return (
     <button
+      className="text-md rounded-xl w-28 h-16 cursor-pointer bg-rose-middle shadow-md"
       onClick={() =>
         loginWithRedirect({
           screen_hint: "signup",
         })
       }
     >
-      Sign Up
+      Get started
     </button>
   );
 };
