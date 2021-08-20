@@ -50,22 +50,7 @@ const CalendarView = () => {
 
   const onCalendarChange = (date) => {
     setDate(date);
-  };
-
-  const handleShowReminder = () => {
-    setReminders(
-      reminders.filter((item) => {
-        if (item.date === reminder.date) {
-          console.log(item.date);
-          console.log(reminder.date);
-          return {
-            ...item,
-            show: true,
-          };
-        }
-        return item;
-      })
-    );
+    setReminders(reminders.filter((item) => item.date === date));
   };
 
   const handleDeleteClick = (id) => {
@@ -80,12 +65,7 @@ const CalendarView = () => {
   return (
     <div className="container p-8 flex justify-around text-lg relative bg-green-light">
       <div className="shadow-lg">
-        <Calendar
-          onChange={onCalendarChange}
-          value={date}
-          locale="ja-JA"
-          onClickDay={handleShowReminder}
-        />
+        <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
       </div>
       <div className="w-1/2 text-center relative flex flex-col justify-around">
         <h2 className="text-2xl">
