@@ -44,7 +44,7 @@ const Quote = () => {
       ) : (
         <div>
           <h2>{quote}</h2>
-          <p className="text-right italic text-sm">- {author}</p>
+          <p className="text-right italic text-sm">{author}</p>
         </div>
       )}
     </div>
