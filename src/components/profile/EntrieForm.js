@@ -44,7 +44,7 @@ const EntrieForm = ({
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
-                className="p-2 pl-2 rounded-md border border-gray-primary m-4 shadow-inner"
+                className="p-2 pl-2 rounded-md border border-gray-primary m-4 shadow-inner cursor-pointer"
               >
                 <option>Happy</option>
                 <option>Okay</option>
@@ -74,6 +74,7 @@ const EntrieForm = ({
               name="entrie"
               type="text"
               id="entrie"
+              rows="10"
               value={entrie}
               onChange={onAddInputChange}
               className="w-full py-2 border border-gray-primary rounded-md shadow-inner"
