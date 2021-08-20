@@ -91,7 +91,7 @@ const ProfileView = () => {
   };
 
   return (
-    <div>
+    <div className="relative">
       {isEditing ? (
         <EditEntrie
           currentEntrie={currentEntrie}
@@ -114,7 +114,7 @@ const ProfileView = () => {
           onHeadingChange={handleHeadingChange}
         />
       )}
-      <div className="mx-auto w-full h-full">
+      <div className="">
         <EntrieList
           entries={entries}
           handleEditClick={handleEditClick}

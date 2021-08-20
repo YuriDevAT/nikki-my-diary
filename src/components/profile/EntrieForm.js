@@ -16,10 +16,15 @@ const EntrieForm = ({
   const isInvalid = entrie === "" || heading === "";
 
   return (
-    <div className={`w-full h-96 absolute z-50 inset-0 py-14 ${showHideModal}`}>
+    <div
+      className={`container shadow-2xl bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
+    >
+      <div className="w-1/2 flex items-end">
+        <img src="/img/calendar-graphic.svg" alt="write an entrie" />
+      </div>
       <form
         onSubmit={onAddFormSubmit}
-        className="xl:w-1/2 mx-auto bg-gray-200 p-6 rounded-md shadow-lg text-md"
+        className="bg-white p-6 rounded-md shadow-lg text-md"
       >
         <fieldset className="p-3 bg-white flex flex-col rounded-md max-w-full">
           <legend className="text-sm bg-white rounded-sm p-2 shadow-sm">

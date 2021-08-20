@@ -14,7 +14,7 @@ const ReminderForm = ({
 
   return (
     <div
-      className={`w-full h-full shadow-2xl bg-gradient-to-tr from-brown-dark to-brown-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
+      className={`container shadow-2xl bg-gradient-to-tr from-brown-dark to-brown-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
     >
       <div className="w-1/2 flex items-end">
         <img src="/img/calendar-graphic.svg" alt="set a reminder" />
