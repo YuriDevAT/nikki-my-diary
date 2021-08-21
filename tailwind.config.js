@@ -31,7 +31,11 @@ module.exports = {
         dark: "#413C2F",
       },
     },
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 3s ease-in-out infinite",
+      },
+    },
   },
   variants: {
     extend: {},

@@ -20,7 +20,7 @@ const AddEntrie = ({
     <>
       <button
         type="submit"
-        className="w-20 h-20 mr-4 rounded-full bg-rose-middle shadow-2xl fixed bottom-4 right-56 animate-bounce"
+        className="w-20 h-20 mr-4 rounded-full bg-rose-middle shadow-2xl fixed bottom-4 right-56 animate-spin-slow"
         onClick={handleShow}
       >
         <img src="/img/icons/plus.svg" alt="add" className="" />
