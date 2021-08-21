@@ -3,7 +3,7 @@ import Reminder from "./Reminder";
 
 const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => {
   return (
-    <div>
+    <div className="bg-green-dark h-44">
       {!reminders ||
         (reminders.length === 0 && (
           <p>No reminders available. Set a reminder.</p>

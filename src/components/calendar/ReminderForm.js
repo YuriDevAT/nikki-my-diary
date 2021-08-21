@@ -45,7 +45,7 @@ const ReminderForm = ({
               type="date"
               name="date"
               id="dateReminder"
-              value={date.toLocaleString()}
+              value={date}
               required
               onChange={handleDateChange}
             />

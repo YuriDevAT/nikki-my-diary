@@ -18,9 +18,9 @@ const Reminder = ({ reminder, reminders, setReminders, handleDeleteClick }) => {
   return (
     <>
       <li
-        className={`w-96 flex mx-auto relative rounded-md border-2 border-brown-light pl-2 py-2 ${
+        className={`w-96 mx-auto relative rounded-md border-2 border-brown-light pl-2 py-2 bg-rose-dark ${
           reminder.completed ? "line-through opacity-60" : ""
-        }`}
+        } ${reminder.show ? "flex" : "hidden"}`}
       >
         <input type="checkbox" onClick={handleComplete} aria-label="checkbox" />
         <p className="mx-4 w-18">{reminder.date}</p>

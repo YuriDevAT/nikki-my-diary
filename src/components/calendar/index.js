@@ -50,7 +50,21 @@ const CalendarView = () => {
 
   const onCalendarChange = (date) => {
     setDate(date);
-    setReminders(reminders.filter((item) => item.date === date));
+    reminders.map((item) => {
+      const itemDate = item.date
+        .toLocaleString()
+        .slice(0, 10)
+        .replace(/\D/g, "");
+      const calDate = date.toLocaleDateString().split("/").reverse().join("");
+      console.log(itemDate === calDate);
+      if (itemDate === calDate) {
+        return {
+          ...item,
+          show: true,
+        };
+      }
+      return item;
+    });
   };
 
   const handleDeleteClick = (id) => {
