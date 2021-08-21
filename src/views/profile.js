@@ -1,7 +1,7 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileView from "../components/profile";
-import { Footer, Hero } from "../components";
+import { Hero } from "../components";
 
 const Profile = () => {
   const { user } = useAuth0();
@@ -11,7 +11,6 @@ const Profile = () => {
     <>
       <Hero heading={`How was your day, ${name}?`} />
       <ProfileView />
-      <Footer />
     </>
   );
 };
