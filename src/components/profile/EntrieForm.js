@@ -24,7 +24,7 @@ const EntrieForm = ({
       </div>
       <form
         onSubmit={onAddFormSubmit}
-        className="bg-white p-6 rounded-md shadow-lg text-md"
+        className="bg-white p-6 rounded-md shadow-lg text-md h-3/4"
       >
         <fieldset className="p-3 border border-gray-primary rounded-md w-full">
           <legend className="text-md p-2">今日はどうですか。</legend>

@@ -94,7 +94,7 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="container p-8 text-lg relative h-full">
+    <div className="container p-8 text-lg relative">
       <h2 className="float-right">
         You have {entrieCount} {entrieCount === 1 ? `entrie` : `entries`} so
         far.

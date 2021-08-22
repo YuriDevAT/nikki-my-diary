@@ -50,21 +50,6 @@ const CalendarView = () => {
 
   const onCalendarChange = (date) => {
     setDate(date);
-    reminders.map((item) => {
-      const itemDate = item.date
-        .toLocaleString()
-        .slice(0, 10)
-        .replace(/\D/g, "");
-      const calDate = date.toLocaleDateString().split("/").reverse().join("");
-      console.log(itemDate === calDate);
-      if (itemDate === calDate) {
-        return {
-          ...item,
-          show: true,
-        };
-      }
-      return item;
-    });
   };
 
   const handleDeleteClick = (id) => {
@@ -78,7 +63,7 @@ const CalendarView = () => {
 
   return (
     <div className="container p-8 flex justify-around text-lg relative bg-green-light">
-      <div className="shadow-lg">
+      <div className="shadow-lg h-full">
         <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
       </div>
       <div className="w-1/2 text-center relative flex flex-col justify-around">
