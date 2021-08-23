@@ -94,15 +94,7 @@ const CalendarView = () => {
           setReminders={setReminders}
           handleDeleteClick={handleDeleteClick}
         />
-        <AddReminder
-          reminder={reminder}
-          setReminder={setReminder}
-          handleReminderChange={handleReminderChange}
-          handleReminderSubmitForm={handleReminderSubmitForm}
-          date={reminderDate}
-          handleDateChange={handleDateChange}
-          handleShow={handleShow}
-        />
+        <AddReminder handleShow={handleShow} />
       </div>
     </div>
   );
