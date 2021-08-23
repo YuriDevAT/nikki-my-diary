@@ -31,7 +31,7 @@ const Entries = ({
       >
         <div className="flex justify-between w-full overflow-hidden">
           <p className="bg-purple-300 w-1/4 px-2 py-4">{entrie.date}</p>
-          <p className="bg-yellow-300 w-3/4 px-2 py-4">{entrie.heading}</p>
+          <p className="bg-yellow-300 w-3/4 px-2 py-4">{entrie.title}</p>
         </div>
       </button>
       <Entrie

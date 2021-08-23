@@ -8,7 +8,11 @@ const EntrieList = ({
   handleDeleteClick,
 }) => {
   return (
-    <div className="h-full">
+    <div className="h-full bg-green-light">
+      {!entries ||
+        (entries.length === 0 && (
+          <p>No entries available. Please add some entries.</p>
+        ))}
       <div>
         {entries.map((entrie) => (
           <Entries

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
 import EntrieList from "./EntrieList";
+import EntrieForm from "./EntrieForm";
 import { v4 as uuid } from "uuid";
 
 const ProfileView = () => {
@@ -21,6 +22,11 @@ const ProfileView = () => {
   });
 
   const entrieCount = entries.length;
+
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
   useEffect(() => {
     localStorage.setItem("entries", JSON.stringify(entries));
@@ -94,7 +100,23 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="container p-8 text-lg relative">
+    <div className="container text-lg relative h-3/5">
+      <EntrieForm
+        entrie={entrie}
+        onAddInputChange={handleAddInputChange}
+        onAddFormSubmit={handleAddFormSubmit}
+        date={date}
+        onHandleMoodChange={handleMoodChange}
+        onHandleDateChange={handleDateChange}
+        title={title}
+        onTitleChange={handleTitleChange}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        onClose={handleClose}
+      />
+      {showModal && (
+        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+      )}
       <h2 className="float-right">
         You have {entrieCount} {entrieCount === 1 ? `entrie` : `entries`} so
         far.
@@ -105,10 +127,6 @@ const ProfileView = () => {
         handleEditClick={handleEditClick}
         handleDeleteClick={handleDeleteClick}
       />
-      {!entries ||
-        (entries.length === 0 && (
-          <p>No entries available. Please add some entries.</p>
-        ))}
       {isEditing ? (
         <EditEntrie
           currentEntrie={currentEntrie}
@@ -117,19 +135,7 @@ const ProfileView = () => {
           onEditFormSubmit={handleEditFormSubmit}
         />
       ) : (
-        <AddEntrie
-          entrie={entrie}
-          setEntrie={setEntrie}
-          onAddInputChange={handleAddInputChange}
-          onAddFormSubmit={handleAddFormSubmit}
-          mood={mood}
-          date={date}
-          onHandleMoodChange={handleMoodChange}
-          onHandleDateChange={handleDateChange}
-          title={title}
-          setTitle={setTitle}
-          onTitleChange={handleTitleChange}
-        />
+        <AddEntrie handleShow={handleShow} />
       )}
     </div>
   );

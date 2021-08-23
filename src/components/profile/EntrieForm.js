@@ -17,16 +17,13 @@ const EntrieForm = ({
 
   return (
     <div
-      className={`container shadow-2xl bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 px-2 flex justify-around ${showHideModal}`}
+      className={`container shadow-2xl h-auto -top-60 -bottom-20 mt-16 flex justify-center items-center bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 ${showHideModal}`}
     >
-      <div className="w-1/2 flex items-end">
-        <img src="/img/calendar-graphic.svg" alt="write an entrie" />
-      </div>
       <form
         onSubmit={onAddFormSubmit}
-        className="bg-white p-6 rounded-md shadow-lg text-md h-3/4"
+        className="bg-white p-6 rounded-md shadow-lg text-md h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-25"
       >
-        <fieldset className="p-3 border border-gray-primary rounded-md w-full">
+        <fieldset className="p-3 border border-white rounded-md w-full">
           <legend className="text-md p-2">今日はどうですか。</legend>
           <label htmlFor="title">Title</label>
           <input
@@ -53,15 +50,13 @@ const EntrieForm = ({
                 <option>Mixed feelings</option>
               </select>
             </label>
-            <label
-              htmlFor="date"
-              className="py-2 pl-2 rounded-md border border-gray-primary m-4 shadow-inner"
-            >
+            <label htmlFor="date" className="py-2 pl-2 rounded-md m-4 ">
               Date:
               <input
                 type="date"
                 id="date"
                 name="date"
+                className="shadow-inner rounded-md ml-2"
                 value={date.toLocaleString()}
                 required
                 onChange={onHandleDateChange}
@@ -74,7 +69,7 @@ const EntrieForm = ({
               name="entrie"
               type="text"
               id="entrie"
-              rows="10"
+              rows="9"
               value={entrie}
               onChange={onAddInputChange}
               className="w-full py-2 border border-gray-primary rounded-md shadow-inner"
@@ -84,7 +79,7 @@ const EntrieForm = ({
           <button
             type="submit"
             onClick={onClose}
-            className={`bg-pink-300 py-4 rounded-md shadow-sm uppercase ${
+            className={`bg-rose-dark w-full py-4 mt-2 rounded-md shadow-sm uppercase ${
               isInvalid && "opacity-50"
             }`}
           >
@@ -95,9 +90,9 @@ const EntrieForm = ({
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-4 left-4 rounded-full px-6 py-3 bg-rose-light shadow-2xl"
+        className="absolute top-4 left-4 rounded-full w-10 h-10 flex justify-center bg-rose-light shadow-2xl"
       >
-        X
+        <img src="/img/icons/close.svg" alt="X" width="20" height="20" />
       </button>
     </div>
   );
