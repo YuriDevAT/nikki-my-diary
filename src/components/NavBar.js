@@ -15,7 +15,7 @@ const NavBar = () => {
             height="20"
           />
         </div>
-        <div className="flex items-center flex-wrap">
+        <div className="flex items-center flex-wrap justify-center">
           <MainNav />
           <AuthNav />
         </div>

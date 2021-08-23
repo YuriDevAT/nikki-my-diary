@@ -62,12 +62,12 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="container p-8 flex justify-around text-lg relative bg-green-light">
-      <div className="shadow-lg h-full">
+    <div className="container p-8 flex flex-wrap justify-around text-lg relative">
+      <div className="shadow-lg h-full max-w-full">
         <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
       </div>
-      <div className="w-1/2 text-center relative flex flex-col justify-around">
-        <h2 className="text-2xl">
+      <div className="sm:w-1/2 text-center relative flex flex-col justify-around">
+        <h2 className="text-2xl py-2">
           {date.toLocaleString().slice(0, 10)}, <Time />
         </h2>
         <h3>Here are your reminders for today:</h3>

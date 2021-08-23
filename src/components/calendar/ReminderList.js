@@ -3,10 +3,12 @@ import Reminder from "./Reminder";
 
 const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => {
   return (
-    <div className="h-full py-2">
+    <div className="h-full py-2 w-full">
       {!reminders ||
         (reminders.length === 0 && (
-          <p>No reminders available. Set a reminder.</p>
+          <div className="h-full flex justify-center items-center">
+            <p>No reminders available. Set a reminder.</p>
+          </div>
         ))}
       <ul>
         {reminders.map((reminder) => (
