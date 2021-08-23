@@ -117,7 +117,7 @@ const ProfileView = () => {
       {showModal && (
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
       )}
-      <h2 className="float-right">
+      <h2 className="text-right">
         You have {entrieCount} {entrieCount === 1 ? `entrie` : `entries`} so
         far.
       </h2>
