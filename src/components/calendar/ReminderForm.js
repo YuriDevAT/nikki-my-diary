@@ -14,16 +14,16 @@ const ReminderForm = ({
 
   return (
     <div
-      className={`container h-full shadow-2xl bg-gradient-to-tr from-brown-dark to-brown-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
+      className={`sm:w-2/3 sm:h-full h-3/5 shadow-2xl mx-auto bg-gradient-to-tr from-brown-dark to-brown-light rounded-md absolute z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
     >
-      <div className="w-1/2 flex items-end">
+      <div className="lg:flex hidden w-2/5 items-end">
         <img src="/img/calendar-graphic.svg" alt="set a reminder" />
       </div>
       <form
         onSubmit={handleReminderSubmitForm}
         className="bg-white p-6 rounded-md shadow-lg text-md"
       >
-        <fieldset className="p-3 border border-gray-primary flex flex-col h-full justify-around rounded-md w-full">
+        <fieldset className="p-3 border border-gray-primary flex flex-col sm:h-full justify-around rounded-md w-full">
           <legend className="text-md p-2">
             What do you want to be reminded of?
           </legend>
@@ -64,9 +64,9 @@ const ReminderForm = ({
       <button
         type="button"
         onClick={onClose}
-        className="absolute top-4 left-4 rounded-full px-6 py-3 bg-rose-light shadow-2xl"
+        className="absolute top-4 left-4 rounded-full w-10 h-10 flex justify-center bg-rose-light shadow-2xl"
       >
-        X
+        <img src="/img/icons/close.svg" alt="X" width="20" height="20" />
       </button>
     </div>
   );

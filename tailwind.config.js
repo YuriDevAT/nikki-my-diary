@@ -14,7 +14,7 @@ module.exports = {
       },
       black: {
         light: "#262626",
-        faded: "rgba(0,0,0,0.5)",
+        dark: "#000",
       },
       green: {
         light: "#D2E4C8",

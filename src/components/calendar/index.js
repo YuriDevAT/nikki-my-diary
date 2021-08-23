@@ -5,6 +5,7 @@ import Time from "./Time";
 import AddReminder from "./AddReminder";
 import { v4 as uuid } from "uuid";
 import ReminderList from "./ReminderList";
+import ReminderForm from "./ReminderForm";
 
 const CalendarView = () => {
   const [reminder, setReminder] = useState("");
@@ -18,6 +19,10 @@ const CalendarView = () => {
       return [];
     }
   });
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
 
   useEffect(() => {
     localStorage.setItem("reminders", JSON.stringify(reminders));
@@ -63,10 +68,23 @@ const CalendarView = () => {
 
   return (
     <div className="container sm:p-8 flex flex-wrap-reverse justify-around text-lg relative">
+      <ReminderForm
+        reminder={reminder}
+        handleReminderChange={handleReminderChange}
+        handleReminderSubmitForm={handleReminderSubmitForm}
+        date={reminderDate}
+        handleDateChange={handleDateChange}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        onClose={handleClose}
+      />
+      {showModal && (
+        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+      )}
       <div className="shadow-lg h-full max-w-full">
         <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
       </div>
-      <div className="sm:w-1/2 text-center relative flex flex-col justify-around py-4 sm:py-0">
+      <div className="sm:w-1/2 text-center relative flex flex-col justify-around pb-10 sm:py-0">
         <h2 className="text-2xl sm:py-2">
           {date.toLocaleString().slice(0, 10)}, <Time />
         </h2>
@@ -83,6 +101,7 @@ const CalendarView = () => {
           handleReminderSubmitForm={handleReminderSubmitForm}
           date={reminderDate}
           handleDateChange={handleDateChange}
+          handleShow={handleShow}
         />
       </div>
     </div>
