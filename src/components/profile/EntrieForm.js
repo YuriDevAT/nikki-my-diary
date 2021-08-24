@@ -50,13 +50,13 @@ const EntrieForm = ({
                 <option>Mixed feelings</option>
               </select>
             </label>
-            <label htmlFor="date" className="py-2 pl-2 rounded-md m-4 ">
+            <label htmlFor="date" className="pl-2 rounded-md m-4 ">
               Date:
               <input
                 type="date"
                 id="date"
                 name="date"
-                className="shadow-inner rounded-md ml-2"
+                className="shadow-inner rounded-md ml-2 py-2"
                 value={date.toLocaleString()}
                 required
                 onChange={onHandleDateChange}
