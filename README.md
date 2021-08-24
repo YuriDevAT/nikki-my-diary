@@ -28,7 +28,7 @@ I am currently designing the app with Figma. The home view needs much styling, t
 
 ## Profile view
 
-Until now, all entries are stored in localStorage. I want to connect the app to a database. The functionality to view the content of each entrie is still not working as expected.
+Everything works as expected. Styling needs to be done.
 
 ## Calendar view
 
