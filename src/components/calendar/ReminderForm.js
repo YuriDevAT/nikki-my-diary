@@ -38,7 +38,7 @@ const ReminderForm = ({
           />
           <label
             htmlFor="dateReminder"
-            className="py-2 rounded-md outline-none border border-gray-primary m-4 shadow-inner"
+            className="p-2 rounded-md outline-none border border-gray-primary w-full shadow-inner"
           >
             Date:
             <input

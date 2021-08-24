@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Time = () => {
+export default function Time() {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -13,6 +13,4 @@ const Time = () => {
   });
 
   return <>{time.toLocaleTimeString()}</>;
-};
-
-export default Time;
+}

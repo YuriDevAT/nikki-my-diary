@@ -24,7 +24,7 @@ const EntrieForm = ({
         className="bg-white p-6 rounded-md shadow-lg text-md h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-25"
       >
         <fieldset className="p-3 border border-white rounded-md w-full">
-          <legend className="text-md p-2">今日はどうですか。</legend>
+          <legend className="text-md p-2">How was your day?</legend>
           <label htmlFor="title">Title</label>
           <input
             type="text"

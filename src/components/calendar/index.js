@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import Time from "./Time";
+import Time from "../../utils/Time";
 import AddReminder from "./AddReminder";
 import { v4 as uuid } from "uuid";
 import ReminderList from "./ReminderList";
@@ -81,7 +81,7 @@ const CalendarView = () => {
       {showModal && (
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
       )}
-      <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
+      <Calendar onChange={onCalendarChange} value={date} locale="en-EN" />
       <div className="lg:w-1/2 text-center relative flex flex-col justify-around pb-10">
         <h2 className="text-2xl sm:py-2">
           {date.toLocaleString().slice(0, 10)}, <Time />

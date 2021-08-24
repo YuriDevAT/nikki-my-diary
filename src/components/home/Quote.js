@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Loading from "../Loading";
+import Loading from "../../utils/Loading";
 
 const Quote = () => {
   const [quote, setQuote] = useState("");

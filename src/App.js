@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { Route, Switch } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { NavBar, Loading } from "./components";
+import { NavBar } from "./components";
+import Loading from "./utils/Loading";
 import ProtectedRoute from "./auth/protected-route";
 import "./index.css";
 
