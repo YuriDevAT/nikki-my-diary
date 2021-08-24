@@ -52,7 +52,6 @@ const ReminderForm = ({
           </label>
           <button
             type="submit"
-            onClick={onClose}
             className={`bg-rose-middle py-4 rounded-md shadow-sm uppercase ${
               isInvalid && "opacity-50"
             }`}

@@ -78,7 +78,6 @@ const EntrieForm = ({
           </label>
           <button
             type="submit"
-            onClick={onClose}
             className={`bg-rose-dark w-full py-4 mt-2 rounded-md shadow-sm uppercase ${
               isInvalid && "opacity-50"
             }`}
