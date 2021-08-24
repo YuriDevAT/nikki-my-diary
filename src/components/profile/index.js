@@ -28,6 +28,11 @@ const ProfileView = () => {
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
 
+  const [showEntrie, setShowEntrie] = useState(false);
+
+  const handleEntrieClose = () => setShowEntrie(false);
+  const handleEntrieShow = () => setShowEntrie(true);
+
   useEffect(() => {
     localStorage.setItem("entries", JSON.stringify(entries));
   }, [entries]);
@@ -111,7 +116,6 @@ const ProfileView = () => {
         title={title}
         onTitleChange={handleTitleChange}
         showModal={showModal}
-        setShowModal={setShowModal}
         onClose={handleClose}
       />
       {showModal && (
@@ -121,11 +125,17 @@ const ProfileView = () => {
         You have {entrieCount} {entrieCount === 1 ? `entrie` : `entries`} so
         far.
       </h2>
+      {showEntrie && (
+        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+      )}
       <EntrieList
         entries={entries}
         setEntries={setEntries}
         handleEditClick={handleEditClick}
         handleDeleteClick={handleDeleteClick}
+        showEntrie={showEntrie}
+        handleEntrieShow={handleEntrieShow}
+        handleEntrieClose={handleEntrieClose}
       />
       {isEditing && (
         <>
