@@ -72,7 +72,7 @@ const EntrieForm = ({
               rows="9"
               value={entrie}
               onChange={onAddInputChange}
-              className="w-full py-2 border border-gray-primary rounded-md shadow-inner"
+              className="w-full py-2 border border-gray-primary rounded-md shadow-inner resize-none"
               required
             />
           </label>

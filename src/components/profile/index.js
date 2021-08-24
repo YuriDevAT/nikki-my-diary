@@ -127,16 +127,18 @@ const ProfileView = () => {
         handleEditClick={handleEditClick}
         handleDeleteClick={handleDeleteClick}
       />
-      {isEditing ? (
-        <EditEntrie
-          currentEntrie={currentEntrie}
-          setIsEditing={setIsEditing}
-          onEditInputChange={handleEditInputChange}
-          onEditFormSubmit={handleEditFormSubmit}
-        />
-      ) : (
-        <AddEntrie handleShow={handleShow} />
+      {isEditing && (
+        <>
+          <EditEntrie
+            currentEntrie={currentEntrie}
+            setIsEditing={setIsEditing}
+            onEditInputChange={handleEditInputChange}
+            onEditFormSubmit={handleEditFormSubmit}
+          />
+          <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+        </>
       )}
+      <AddEntrie handleShow={handleShow} />
     </div>
   );
 };
