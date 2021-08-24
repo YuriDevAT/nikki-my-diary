@@ -18,7 +18,7 @@ const Reminder = ({ reminder, reminders, setReminders, handleDeleteClick }) => {
   return (
     <>
       <li
-        className={`sm:w-96 mx-auto relative rounded-md border-2 border-brown-light pl-2 py-2 flex my-2 ${
+        className={`sm:w-96 mx-auto relative pl-2 py-2 flex my-2 ${
           reminder.completed ? "line-through opacity-60" : ""
         }`}
       >

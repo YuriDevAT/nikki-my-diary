@@ -81,10 +81,8 @@ const CalendarView = () => {
       {showModal && (
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
       )}
-      <div className="shadow-lg h-full max-w-full">
-        <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
-      </div>
-      <div className="sm:w-1/2 text-center relative flex flex-col justify-around pb-10 sm:py-0">
+      <Calendar onChange={onCalendarChange} value={date} locale="ja-JA" />
+      <div className="lg:w-1/2 text-center relative flex flex-col justify-around pb-10">
         <h2 className="text-2xl sm:py-2">
           {date.toLocaleString().slice(0, 10)}, <Time />
         </h2>
