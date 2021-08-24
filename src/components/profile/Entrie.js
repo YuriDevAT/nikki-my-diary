@@ -11,7 +11,7 @@ const Entrie = ({
 
   return (
     <div
-      className={`container w-2/3 mx-auto z-50 bg-white h-full px-14 py-2 absolute inset-0 ${showHideModal}`}
+      className={`container modal w-2/3 mx-auto z-50 bg-white h-full px-14 py-2 absolute inset-0 ${showHideModal}`}
     >
       <div className="h-4/5 text-center">
         <p className="text-left">{entrie.date}</p>
