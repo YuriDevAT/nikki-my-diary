@@ -5,7 +5,7 @@ const Entrie = ({
   onEditClick,
   onDeleteClick,
   showEntrie,
-  onClose,
+  handleEntrieClose,
 }) => {
   const showHideModal = showEntrie ? "block" : "hidden";
 
@@ -37,7 +37,7 @@ const Entrie = ({
       </div>
       <button
         type="button"
-        onClick={onClose}
+        onClick={handleEntrieClose}
         className="absolute top-4 right-4 rounded-full w-10 h-10 flex justify-center bg-rose-light shadow-2xl"
       >
         <img src="/img/icons/close.svg" alt="X" width="20" height="20" />

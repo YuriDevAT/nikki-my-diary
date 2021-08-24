@@ -17,7 +17,7 @@ const EntrieForm = ({
 
   return (
     <div
-      className={`container shadow-2xl h-auto -top-60 -bottom-20 mt-16 flex justify-center items-center bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 ${showHideModal}`}
+      className={`container modal shadow-2xl h-auto -top-60 -bottom-20 mt-16 flex justify-center items-center bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 ${showHideModal}`}
     >
       <form
         onSubmit={onAddFormSubmit}
