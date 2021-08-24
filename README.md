@@ -1,4 +1,4 @@
-:bangbang: In progress. I am updating my progress on the app every day.
+:bangbang: In progress. I am updating my progress here after every finished step.
 
 :exclamation:This is a project created for the Auth0 x Hashnode Hackathon in August 2021.
 
