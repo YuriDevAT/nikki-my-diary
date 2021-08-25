@@ -9,7 +9,7 @@ const ProfileView = () => {
   const [entrie, setEntrie] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentEntrie, setCurrentEntrie] = useState({});
-  const [mood, setMood] = useState("happy");
+  const [mood, setMood] = useState("");
   const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState("");
   const [entries, setEntries] = useState(() => {
