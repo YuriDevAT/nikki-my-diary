@@ -1,4 +1,9 @@
 import React from "react";
+import sad from "./img/sad.png";
+import happy from "./img/happy.png";
+import mixed from "./img/mixed-feelings.png";
+import motivated from "./img/motivated.png";
+import okay from "./img/okay.png";
 
 const Entrie = ({
   entrie,
@@ -13,10 +18,26 @@ const Entrie = ({
     <div
       className={`container modal w-2/3 mx-auto z-50 bg-white h-full px-14 py-2 absolute inset-0 ${showHideModal}`}
     >
+      <div>
+        <img
+          src={
+            entrie.mood === "Happy"
+              ? happy
+              : entrie.mood === "Sad"
+              ? sad
+              : entrie.mood === "Okay"
+              ? okay
+              : entrie.mood === "Motivated"
+              ? motivated
+              : mixed
+          }
+          alt="I feel how I feel."
+          className="absolute h-44 left-2 top-6 opacity-50"
+        />
+      </div>
       <div className="h-4/5 text-center">
         <p className="text-left">{entrie.date}</p>
         <h2 className="text-3xl pb-4">{entrie.title}</h2>
-        <p className="text-right italic pb-2">{entrie.mood}</p>
         <p>{entrie.text}</p>
       </div>
       <div className="w-full flex justify-around py-8 border-t-2 border-gray-primary absolute bottom-0 left-0">
