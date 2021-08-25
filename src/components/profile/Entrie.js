@@ -32,7 +32,7 @@ const Entrie = ({
               : mixed
           }
           alt="I feel how I feel."
-          className="absolute h-44 left-2 top-6 opacity-50"
+          className="absolute h-44 left-2 top-6 opacity-20 sm:opacity-50"
         />
       </div>
       <div className="h-4/5 text-center">

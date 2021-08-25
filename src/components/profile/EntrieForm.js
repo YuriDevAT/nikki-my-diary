@@ -17,11 +17,11 @@ const EntrieForm = ({
 
   return (
     <div
-      className={`container w-4/5 mx-auto modal shadow-2xl h-auto -top-60 -bottom-20 mt-16 flex justify-center items-center bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 ${showHideModal}`}
+      className={`container sm:w-4/5 mx-auto modal shadow-2xl h-auto -top-60 -bottom-20 mt-16 flex justify-center items-center bg-gradient-to-tr from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 ${showHideModal}`}
     >
       <form
         onSubmit={onAddFormSubmit}
-        className="bg-white p-6 rounded-md shadow-lg text-md h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-25"
+        className="bg-white max-w-4/5 p-6 rounded-md shadow-lg text-md h-full sm:h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-25"
       >
         <fieldset className="p-3 border border-white rounded-md w-full">
           <legend className="text-md p-2">How was your day?</legend>
@@ -35,7 +35,7 @@ const EntrieForm = ({
             value={title}
             required
           />
-          <div className="flex justify-around">
+          <div className="flex justify-around flex-wrap">
             <label>
               How are you feeling today?
               <select
@@ -69,10 +69,9 @@ const EntrieForm = ({
               name="entrie"
               type="text"
               id="entrie"
-              rows="9"
               value={entrie}
               onChange={onAddInputChange}
-              className="w-full py-2 border border-gray-primary rounded-md shadow-inner resize-none"
+              className="w-full h-52 py-2 border border-gray-primary rounded-md shadow-inner sm:resize-none"
               required
             />
           </label>

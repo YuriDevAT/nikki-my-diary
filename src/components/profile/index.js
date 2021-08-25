@@ -100,7 +100,7 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="container text-lg relative h-3/5">
+    <div className="container text-lg relative sm:h-3/5 h-full">
       <EntrieForm
         entrie={entrie}
         onAddInputChange={handleAddInputChange}
