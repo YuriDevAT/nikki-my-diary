@@ -67,7 +67,7 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="container flex flex-wrap-reverse justify-around text-lg relative h-full pt-72">
+    <div className="container sm:p-8 flex flex-wrap-reverse justify-around text-lg relative">
       <ReminderForm
         reminder={reminder}
         handleReminderChange={handleReminderChange}
@@ -81,9 +81,7 @@ const CalendarView = () => {
       {showModal && (
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
       )}
-      <div className="flex items-start">
-        <Calendar onChange={onCalendarChange} value={date} locale="en-EN" />
-      </div>
+      <Calendar onChange={onCalendarChange} value={date} locale="en-EN" />
       <div className="lg:w-1/2 text-center relative flex flex-col pb-32">
         <h2 className="text-2xl sm:pb-2">
           {date.toLocaleString().slice(0, 10)}, <Time />
