@@ -6,6 +6,7 @@ import AddReminder from "./AddReminder";
 import { v4 as uuid } from "uuid";
 import ReminderList from "./ReminderList";
 import ReminderForm from "./ReminderForm";
+import { Text } from "../../context/Language";
 
 const CalendarView = () => {
   const [reminder, setReminder] = useState("");
@@ -68,6 +69,11 @@ const CalendarView = () => {
 
   return (
     <div className="container sm:p-8 flex flex-wrap-reverse justify-around text-lg relative">
+      <div className="container py-8">
+        <h1 className="text-center text-3xl">
+          <Text tid="homeHeader" />
+        </h1>
+      </div>
       <ReminderForm
         reminder={reminder}
         handleReminderChange={handleReminderChange}

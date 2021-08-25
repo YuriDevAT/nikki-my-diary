@@ -5,6 +5,8 @@ import { NavBar } from "./components";
 import Loading from "./utils/Loading";
 import ProtectedRoute from "./auth/protected-route";
 import "./index.css";
+import { LanguageProvider } from "./context/Language";
+import LanguageSelector from "./components/LanguageSelector";
 
 const Home = lazy(() => import("./views/home"));
 const Profile = lazy(() => import("./views/profile"));
@@ -18,16 +20,19 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto h-screen">
-      <NavBar />
-      <Suspense fallback={<Loading />}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <ProtectedRoute path="/profile" component={Profile} />
-          <ProtectedRoute path="/calendar" component={Calendar} />
-        </Switch>
-      </Suspense>
-    </div>
+    <LanguageProvider>
+      <div className="container mx-auto h-screen">
+        <NavBar />
+        <LanguageSelector />
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <ProtectedRoute path="/profile" component={Profile} />
+            <ProtectedRoute path="/calendar" component={Calendar} />
+          </Switch>
+        </Suspense>
+      </div>
+    </LanguageProvider>
   );
 }
 

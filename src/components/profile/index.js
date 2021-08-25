@@ -4,6 +4,7 @@ import EditEntrie from "./EditEntrie";
 import EntrieList from "./EntrieList";
 import EntrieForm from "./EntrieForm";
 import { v4 as uuid } from "uuid";
+import { Text } from "../../context/Language";
 
 const ProfileView = () => {
   const [entrie, setEntrie] = useState("");
@@ -101,6 +102,11 @@ const ProfileView = () => {
 
   return (
     <div className="container text-lg relative sm:h-3/5 h-full">
+      <div className="container py-8">
+        <h1 className="text-center text-3xl">
+          <Text tid="homeHeader" />
+        </h1>
+      </div>
       <EntrieForm
         entrie={entrie}
         onAddInputChange={handleAddInputChange}
