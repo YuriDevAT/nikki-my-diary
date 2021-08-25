@@ -14,7 +14,7 @@ const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
       )}
       <button
         key={entrie.id}
-        className="shadow-md overflow-hidden w-64"
+        className="shadow-md w-64"
         onClick={handleEntrieShow}
       >
         <div className="flex flex-col justify-between overflow-hidden">

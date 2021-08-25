@@ -13,7 +13,7 @@ const EntrieList = ({
         (entries.length === 0 && (
           <p>No entries available. Please add some entries.</p>
         ))}
-      <div className="grid grid-cols-5 gap-4 mt-8 p-2 h-full overflow-auto w-full relative">
+      <div className="mt-8 p-2 h-full w-full relative flex justify-around flex-wrap">
         {entries.map((entrie) => (
           <Entries
             key={entrie.id}
