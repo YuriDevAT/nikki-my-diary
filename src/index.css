@@ -6,10 +6,10 @@ body {
 }
 
 .react-calendar {
-  min-width: 500px;
   border-radius: 8px;
+  border: none !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: "Dosis", monospace;
+  font-family: "Dosis", monospace !important;
 }
 
 .react-calendar__navigation {
@@ -20,6 +20,39 @@ body {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #f4d8db !important;
+}
+
+.react-calendar__tile--now {
+  background: #f4d8db !important;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #f4d8db !important;
+}
+
+.react-calendar__tile--hasActive {
+  background: #db7582 !important;
+}
+
+.react-calendar__tile--hasActive:enabled:hover,
+.react-calendar__tile--hasActive:enabled:focus {
+  background: #db7582 !important;
+}
+
+.react-calendar__tile--active {
+  background: #db7582 !important;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #db7582 !important;
+}
+
 @tailwind components;
 
 .modal {
