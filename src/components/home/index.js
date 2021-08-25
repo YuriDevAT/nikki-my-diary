@@ -3,7 +3,7 @@ import Quote from "./Quote";
 
 const HomeView = () => {
   return (
-    <div className="">
+    <div className="h-full pt-72">
       <Quote />
     </div>
   );

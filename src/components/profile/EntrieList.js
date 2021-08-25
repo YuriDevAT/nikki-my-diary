@@ -8,7 +8,7 @@ const EntrieList = ({
   handleDeleteClick,
 }) => {
   return (
-    <div className="container h-full">
+    <div className="container h-full -mt-16 pt-16">
       {!entries ||
         (entries.length === 0 && (
           <p>No entries available. Please add some entries.</p>
