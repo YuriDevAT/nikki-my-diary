@@ -1,5 +1,6 @@
 import React from "react";
 import Entries from "./Entries";
+import { Text } from "../../context/Language";
 
 const EntrieList = ({
   entries,
@@ -9,10 +10,7 @@ const EntrieList = ({
 }) => {
   return (
     <div className="container h-full">
-      {!entries ||
-        (entries.length === 0 && (
-          <p>No entries available. Please add some entries.</p>
-        ))}
+      {!entries || (entries.length === 0 && <Text tid="entrieWarning" />)}
       <div className="mt-8 p-2 h-full w-full relative flex justify-around flex-wrap">
         {entries.map((entrie) => (
           <Entries

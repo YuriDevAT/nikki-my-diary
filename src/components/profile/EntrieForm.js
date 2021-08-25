@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Text, LanguageContext } from "../../context/Language";
 
 const EntrieForm = ({
   entrie,
@@ -14,6 +15,7 @@ const EntrieForm = ({
 }) => {
   const showHideModal = showModal ? "block" : "hidden";
   const isInvalid = entrie === "" || title === "";
+  const { dictionary } = useContext(LanguageContext);
 
   return (
     <div
@@ -24,8 +26,12 @@ const EntrieForm = ({
         className="bg-white max-w-4/5 p-6 rounded-md shadow-lg text-md h-full sm:h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-25"
       >
         <fieldset className="p-3 border border-white rounded-md w-full">
-          <legend className="text-md p-2">How was your day?</legend>
-          <label htmlFor="title">Title</label>
+          <legend className="text-md p-2">
+            <Text tid="entrieFormLegend" />
+          </legend>
+          <label htmlFor="title">
+            <Text tid="entrieTitle" />
+          </label>
           <input
             type="text"
             id="title"
@@ -37,21 +43,21 @@ const EntrieForm = ({
           />
           <div className="flex justify-around flex-wrap">
             <label>
-              How are you feeling today?
+              <Text tid="entrieMood" />
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
                 className="p-2 pl-2 rounded-md border border-gray-primary m-4 shadow-inner cursor-pointer"
               >
-                <option>Happy</option>
-                <option>Okay</option>
-                <option>Sad</option>
-                <option>Motivated</option>
-                <option>Mixed feelings</option>
+                <option>{dictionary.entrieMood1}</option>
+                <option>{dictionary.entrieMood2}</option>
+                <option>{dictionary.entrieMood3}</option>
+                <option>{dictionary.entrieMood4}</option>
+                <option>{dictionary.entrieMood5}</option>
               </select>
             </label>
             <label htmlFor="date" className="pl-2 rounded-md m-4 ">
-              Date:
+              <Text tid="formDate" />
               <input
                 type="date"
                 id="date"
@@ -64,7 +70,7 @@ const EntrieForm = ({
             </label>
           </div>
           <label htmlFor="entrie">
-            Describe your day
+            <Text tid="entrieEntrie" />
             <textarea
               name="entrie"
               type="text"
@@ -81,7 +87,7 @@ const EntrieForm = ({
               isInvalid && "opacity-50"
             }`}
           >
-            Add Entrie
+            <Text tid="entrieButton" />
           </button>
         </fieldset>
       </form>

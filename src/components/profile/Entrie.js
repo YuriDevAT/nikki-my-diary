@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import sad from "./img/sad.png";
 import happy from "./img/happy.png";
 import mixed from "./img/mixed-feelings.png";
 import motivated from "./img/motivated.png";
 import okay from "./img/okay.png";
+import { LanguageContext } from "../../context/Language";
 
 const Entrie = ({
   entrie,
@@ -13,6 +14,7 @@ const Entrie = ({
   handleEntrieClose,
 }) => {
   const showHideModal = showEntrie ? "block" : "hidden";
+  const { dictionary } = useContext(LanguageContext);
 
   return (
     <div
@@ -21,17 +23,17 @@ const Entrie = ({
       <div>
         <img
           src={
-            entrie.mood === "Happy"
+            entrie.mood === dictionary.entrieMood1
               ? happy
-              : entrie.mood === "Sad"
+              : entrie.mood === dictionary.entrieMood3
               ? sad
-              : entrie.mood === "Okay"
+              : entrie.mood === dictionary.entrieMood2
               ? okay
-              : entrie.mood === "Motivated"
+              : entrie.mood === dictionary.entrieMood4
               ? motivated
               : mixed
           }
-          alt="I feel how I feel."
+          alt=""
           className="absolute h-44 left-2 top-6 opacity-20 sm:opacity-50"
         />
       </div>

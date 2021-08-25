@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
 import EntrieList from "./EntrieList";
 import EntrieForm from "./EntrieForm";
 import { v4 as uuid } from "uuid";
-import { Text } from "../../context/Language";
+import { Text, LanguageContext } from "../../context/Language";
 
 const ProfileView = () => {
   const [entrie, setEntrie] = useState("");
@@ -23,6 +23,7 @@ const ProfileView = () => {
   });
 
   const entrieCount = entries.length;
+  const { dictionary } = useContext(LanguageContext);
 
   const [showModal, setShowModal] = useState(false);
 
@@ -92,7 +93,7 @@ const ProfileView = () => {
   };
 
   const handleDeleteClick = (id) => {
-    if (window.confirm("Are you sure you want to delete this entrie?")) {
+    if (window.confirm(dictionary.entrieDelete)) {
       const removeEntrie = entries.filter((entrie) => {
         return entrie.id !== id;
       });
@@ -104,7 +105,7 @@ const ProfileView = () => {
     <div className="container text-lg relative sm:h-3/5 h-full">
       <div className="container py-8">
         <h1 className="text-center text-3xl">
-          <Text tid="homeHeader" />
+          <Text tid="profileHeader" />
         </h1>
       </div>
       <EntrieForm
@@ -123,8 +124,8 @@ const ProfileView = () => {
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
       )}
       <h2 className="text-right">
-        You have {entrieCount} {entrieCount === 1 ? `entrie` : `entries`} so
-        far.
+        {dictionary.entriesCounter}
+        {entrieCount}
       </h2>
       <EntrieList
         entries={entries}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "../../context/Language";
 
 const AddReminder = ({ handleShow }) => {
   return (
@@ -8,7 +9,7 @@ const AddReminder = ({ handleShow }) => {
         className="bg-rose-middle py-4 px-2 text-sm rounded-sm shadow-md uppercase transform translate-x-2 translate-y-2"
         onClick={handleShow}
       >
-        Set reminder
+        <Text tid="calendarButton" />
       </button>
     </div>
   );

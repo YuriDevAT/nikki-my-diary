@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "../../context/Language";
 
 const ReminderForm = ({
   reminder,
@@ -25,7 +26,7 @@ const ReminderForm = ({
       >
         <fieldset className="p-3 border border-gray-primary flex flex-col sm:h-full justify-around rounded-md w-full">
           <legend className="text-md p-2">
-            What do you want to be reminded of?
+            <Text tid="calendarForm" />
           </legend>
           <input
             type="text"
@@ -40,7 +41,7 @@ const ReminderForm = ({
             htmlFor="dateReminder"
             className="p-2 rounded-md outline-none border border-gray-primary w-full shadow-inner"
           >
-            Date:
+            <Text tid="formDate" />
             <input
               type="date"
               name="date"
