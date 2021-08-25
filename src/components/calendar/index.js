@@ -81,11 +81,11 @@ const CalendarView = () => {
       {showModal && (
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
       )}
-      <div className="flex items-center">
+      <div className="flex items-start">
         <Calendar onChange={onCalendarChange} value={date} locale="en-EN" />
       </div>
-      <div className="lg:w-1/2 text-center relative flex flex-col justify-around pb-10">
-        <h2 className="text-2xl sm:py-2">
+      <div className="lg:w-1/2 text-center relative flex flex-col pb-32">
+        <h2 className="text-2xl sm:pb-2">
           {date.toLocaleString().slice(0, 10)}, <Time />
         </h2>
         <h3>Here are your reminders for today:</h3>
