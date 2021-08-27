@@ -1,24 +1,23 @@
-import React, { useEffect, useState, useContext } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-import Time from "../../utils/Time";
-import AddReminder from "./AddReminder";
-import { v4 as uuid } from "uuid";
-import ReminderList from "./ReminderList";
-import ReminderForm from "./ReminderForm";
-import { LanguageContext } from "../../context/Language";
+import React, { useEffect, useState, useContext } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { v4 as uuid } from 'uuid';
+import Time from '../../utils/Time';
+import AddReminder from './AddReminder';
+import ReminderList from './ReminderList';
+import ReminderForm from './ReminderForm';
+import { LanguageContext } from '../../context/Language';
 
 const CalendarView = () => {
-  const [reminder, setReminder] = useState("");
+  const [reminder, setReminder] = useState('');
   const [date, setDate] = useState(new Date());
   const [reminderDate, setReminderDate] = useState(new Date());
   const [reminders, setReminders] = useState(() => {
-    const savedReminders = localStorage.getItem("reminders");
+    const savedReminders = localStorage.getItem('reminders');
     if (savedReminders) {
       return JSON.parse(savedReminders);
-    } else {
-      return [];
     }
+    return [];
   });
   const [showModal, setShowModal] = useState(false);
 
@@ -28,12 +27,12 @@ const CalendarView = () => {
   const { dictionary } = useContext(LanguageContext);
 
   useEffect(() => {
-    localStorage.setItem("reminders", JSON.stringify(reminders));
+    localStorage.setItem('reminders', JSON.stringify(reminders));
   }, [reminders]);
 
   const handleReminderSubmitForm = (e) => {
     e.preventDefault();
-    if (reminder !== "") {
+    if (reminder !== '') {
       setReminders([
         ...reminders,
         {
@@ -45,7 +44,7 @@ const CalendarView = () => {
         },
       ]);
     }
-    setReminder("");
+    setReminder('');
   };
 
   const handleDateChange = (e) => {
@@ -56,15 +55,13 @@ const CalendarView = () => {
     setReminder(e.target.value);
   };
 
-  const onCalendarChange = (date) => {
-    setDate(date);
+  const onCalendarChange = (today) => {
+    setDate(today);
   };
 
   const handleDeleteClick = (id) => {
     if (window.confirm(dictionary.reminderDelete)) {
-      const removeReminder = reminders.filter((reminder) => {
-        return reminder.id !== id;
-      });
+      const removeReminder = reminders.filter((item) => item.id !== id);
       setReminders(removeReminder);
     }
   };
@@ -85,7 +82,7 @@ const CalendarView = () => {
         onClose={handleClose}
       />
       {showModal && (
-        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
       )}
       <div className="flex flex-wrap-reverse justify-around sm:p-8">
         <Calendar

@@ -1,16 +1,16 @@
-import React, { Suspense, lazy } from "react";
-import { Route, Switch } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
-import { NavBar } from "./components";
-import Loading from "./utils/Loading";
-import ProtectedRoute from "./auth/protected-route";
-import "./index.css";
-import { LanguageProvider } from "./context/Language";
-import LanguageSelector from "./components/LanguageSelector";
+import React, { Suspense, lazy } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import { NavBar } from './components';
+import Loading from './utils/Loading';
+import ProtectedRoute from './auth/protected-route';
+import './index.css';
+import { LanguageProvider } from './context/Language';
+import LanguageSelector from './components/LanguageSelector';
 
-const Home = lazy(() => import("./views/home"));
-const Profile = lazy(() => import("./views/profile"));
-const Calendar = lazy(() => import("./views/calendar"));
+const Home = lazy(() => import('./views/home'));
+const Profile = lazy(() => import('./views/profile'));
+const Calendar = lazy(() => import('./views/calendar'));
 
 function App() {
   const { isLoading } = useAuth0();

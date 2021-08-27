@@ -1,0 +1,55 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "no-console": "warn",
+    "no-unused-var": "off",
+    "linebreak-style": "warn",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "quotes": "off",
+    "prefer-const": "warn",
+    "no-new-object": "warn",
+    "object-shorthand": "warn",
+    "quote-props": "error",
+    "no-array-constructor": "warn",
+    "prefer-destructuring": "error",
+    "jsx-quotes": "error",
+    "template-curly-spacing": "error",
+    "arrow-spacing": "error",
+    "spaced-comment": "error",
+    "space-before-blocks": "error",
+    "indent": "error",
+    "object-curly-spacing": "error",
+    "comma-style": "error",
+    "comma-dangle": "off",
+    "semi": "error",
+    "react/prop-types": "off",
+    "prettier/prettier": "off",
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelComponents": ["CustomInputLabel"],
+        "labelAttributes": ["label"],
+        "controlComponents": ["CustomInput"],
+        "depth": 3
+      }
+    ],
+    "no-alert": "off",
+    "import/no-extraneous-dependencies": [
+      "off",
+      { "devDependencies": ["**/*.test.js", "**/*.spec.js"] }
+    ],
+    "global-require": "off"
+  }
+}

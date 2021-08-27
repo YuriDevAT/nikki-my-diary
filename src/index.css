@@ -1,7 +1,7 @@
 @tailwind base;
-@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 body {
-  font-family: "Dosis", monospace;
+  font-family: 'Dosis', monospace;
   background-color: #fafafa;
 }
 
@@ -11,7 +11,7 @@ body {
   min-height: 420px;
   border: none !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: "Dosis", monospace !important;
+  font-family: 'Dosis', monospace !important;
 }
 
 .react-calendar__navigation {

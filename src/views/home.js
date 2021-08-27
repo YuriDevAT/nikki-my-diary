@@ -1,6 +1,6 @@
-import React from "react";
-import { Footer } from "../components";
-import HomeView from "../components/home";
+import React from 'react';
+import { Footer } from '../components';
+import HomeView from '../components/home';
 
 const Home = () => (
   <>

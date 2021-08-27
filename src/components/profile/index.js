@@ -1,28 +1,27 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-import AddEntrie from "./AddEntrie";
-import EditEntrie from "./EditEntrie";
-import EntrieList from "./EntrieList";
-import EntrieForm from "./EntrieForm";
-import { v4 as uuid } from "uuid";
-import { LanguageContext } from "../../context/Language";
+import React, { useEffect, useState, useContext } from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import { v4 as uuid } from 'uuid';
+import AddEntrie from './AddEntrie';
+import EditEntrie from './EditEntrie';
+import EntrieList from './EntrieList';
+import EntrieForm from './EntrieForm';
+import { LanguageContext } from '../../context/Language';
 
 const ProfileView = () => {
   const { user } = useAuth0();
   const { name } = user;
-  const [entrie, setEntrie] = useState("");
+  const [entrie, setEntrie] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [currentEntrie, setCurrentEntrie] = useState({});
-  const [mood, setMood] = useState("");
+  const [mood, setMood] = useState('');
   const [date, setDate] = useState(new Date());
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState('');
   const [entries, setEntries] = useState(() => {
-    const savedEntries = localStorage.getItem("entries");
+    const savedEntries = localStorage.getItem('entries');
     if (savedEntries) {
       return JSON.parse(savedEntries);
-    } else {
-      return [];
     }
+    return [];
   });
 
   const entrieCount = entries.length;
@@ -34,27 +33,27 @@ const ProfileView = () => {
   const handleShow = () => setShowModal(true);
 
   useEffect(() => {
-    localStorage.setItem("entries", JSON.stringify(entries));
+    localStorage.setItem('entries', JSON.stringify(entries));
   }, [entries]);
 
   const handleAddFormSubmit = (e) => {
     e.preventDefault();
 
-    if (entrie !== "") {
+    if (entrie !== '') {
       setEntries([
         ...entries,
         {
           id: uuid(),
-          title: title,
-          mood: mood,
-          date: date,
+          title,
+          mood,
+          date,
           text: entrie.trim(),
           active: false,
         },
       ]);
     }
-    setEntrie("");
-    setTitle("");
+    setEntrie('');
+    setTitle('');
   };
 
   const handleTitleChange = (e) => {
@@ -73,7 +72,7 @@ const ProfileView = () => {
     setEntrie(e.target.value);
   };
 
-  const handleEditClick = (entrie) => {
+  const handleEditClick = () => {
     setIsEditing(true);
     setCurrentEntrie({ ...entrie });
   };
@@ -82,24 +81,22 @@ const ProfileView = () => {
     setCurrentEntrie({ ...currentEntrie, text: e.target.value });
   };
 
+  const handleUpdateEntrie = (id, updatedEntrie) => {
+    const updatedItem = entries.map((item) =>
+      item.id === id ? updatedEntrie : item
+    );
+    setIsEditing(false);
+    setEntries(updatedItem);
+  };
+
   const handleEditFormSubmit = (e) => {
     e.preventDefault();
     handleUpdateEntrie(currentEntrie.id, currentEntrie);
   };
 
-  const handleUpdateEntrie = (id, updatedEntrie) => {
-    const updatedItem = entries.map((entrie) => {
-      return entrie.id === id ? updatedEntrie : entrie;
-    });
-    setIsEditing(false);
-    setEntries(updatedItem);
-  };
-
   const handleDeleteClick = (id) => {
     if (window.confirm(dictionary.entrieDelete)) {
-      const removeEntrie = entries.filter((entrie) => {
-        return entrie.id !== id;
-      });
+      const removeEntrie = entries.filter((item) => item.id !== id);
       setEntries(removeEntrie);
     }
   };
@@ -125,7 +122,7 @@ const ProfileView = () => {
         onClose={handleClose}
       />
       {showModal && (
-        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
       )}
       <h2 className="text-right">
         {dictionary.entriesCounter}
@@ -145,7 +142,7 @@ const ProfileView = () => {
             onEditInputChange={handleEditInputChange}
             onEditFormSubmit={handleEditFormSubmit}
           />
-          <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+          <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
         </>
       )}
       <AddEntrie handleShow={handleShow} />

@@ -1,5 +1,5 @@
-import React from "react";
-import AuthenticationButton from "./AuthenticationButton";
+import React from 'react';
+import AuthenticationButton from './AuthenticationButton';
 
 const AuthNav = () => (
   <div className="mx-auto my-2">

@@ -1,5 +1,5 @@
-import React from "react";
-import ProfileView from "../components/profile";
+import React from 'react';
+import ProfileView from '../components/profile';
 
 const Profile = () => <ProfileView />;
 

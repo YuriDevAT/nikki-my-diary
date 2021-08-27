@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Loading from "../../utils/Loading";
+/* eslint-disable no-use-before-define */
+import React, { useEffect, useState } from 'react';
+import Loading from '../../utils/Loading';
 
 const Quote = () => {
-  const [quote, setQuote] = useState("");
-  const [author, setAuthor] = useState("");
+  const [quote, setQuote] = useState('');
+  const [author, setAuthor] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -22,11 +23,11 @@ const Quote = () => {
     setError(false);
 
     try {
-      const res = await fetch("https://quotes.rest/qod.json?category=inspire");
+      const res = await fetch('https://quotes.rest/qod.json?category=inspire');
       const json = await res.json();
       setQuote(json.contents.quotes[0].quote);
       setAuthor(json.contents.quotes[0].author);
-    } catch (error) {
+    } catch (err) {
       setError(true);
     }
     setIsLoading(false);
@@ -43,7 +44,7 @@ const Quote = () => {
         <Loading />
       ) : (
         <div>
-          <h2>{quote}</h2>
+          <h1>{quote}</h1>
           <p className="text-right italic text-sm">{author}</p>
         </div>
       )}

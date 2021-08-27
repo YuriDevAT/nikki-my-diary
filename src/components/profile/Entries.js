@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Entrie from "./Entrie";
+import React, { useState } from 'react';
+import Entrie from './Entrie';
 
 const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
   const [showEntrie, setShowEntrie] = useState(false);
@@ -10,9 +10,10 @@ const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
   return (
     <div>
       {showEntrie && (
-        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark"></div>
+        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
       )}
       <button
+        type="button"
         key={entrie.id}
         className="shadow-md w-64"
         onClick={handleEntrieShow}
