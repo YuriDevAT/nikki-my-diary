@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Text, LanguageContext } from "../../context/Language";
+import React from "react";
+import { Text } from "../../context/Language";
 
 const EditEntrie = ({
   currentEntrie,
@@ -7,14 +7,15 @@ const EditEntrie = ({
   onEditInputChange,
   onEditFormSubmit,
 }) => {
-  const { dictionary } = useContext(LanguageContext);
   return (
     <form
       onSubmit={onEditFormSubmit}
       className="bg-green-light w-96 py-3 px-6 h-96 rounded-md shadow-lg text-md z-50 backdrop-blur-2xl absolute inset-0 mx-auto"
     >
       <fieldset className="p-3 border border-white rounded-md w-full">
-        <legend className="text-md p-2">{dictionary.entrieEdit}</legend>
+        <legend className="text-md p-2">
+          <Text tid="entrieEdit" />
+        </legend>
         <textarea
           name="editEntrie"
           type="text"

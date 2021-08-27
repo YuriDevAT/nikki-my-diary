@@ -6,7 +6,7 @@ import AddReminder from "./AddReminder";
 import { v4 as uuid } from "uuid";
 import ReminderList from "./ReminderList";
 import ReminderForm from "./ReminderForm";
-import { Text, LanguageContext } from "../../context/Language";
+import { LanguageContext } from "../../context/Language";
 
 const CalendarView = () => {
   const [reminder, setReminder] = useState("");
@@ -61,7 +61,7 @@ const CalendarView = () => {
   };
 
   const handleDeleteClick = (id) => {
-    if (window.confirm("Are you sure you want to delete this entrie?")) {
+    if (window.confirm(dictionary.reminderDelete)) {
       const removeReminder = reminders.filter((reminder) => {
         return reminder.id !== id;
       });
@@ -72,9 +72,7 @@ const CalendarView = () => {
   return (
     <div className="container text-lg relative">
       <div className="container py-8">
-        <h1 className="text-center text-3xl">
-          <Text tid="calendarHeader" />
-        </h1>
+        <h1 className="text-center text-3xl">{dictionary.calendarHeader}</h1>
       </div>
       <ReminderForm
         reminder={reminder}
@@ -99,9 +97,7 @@ const CalendarView = () => {
           <h2 className="text-2xl sm:pb-2">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
-          <h3>
-            <Text tid="calendarText" />
-          </h3>
+          <h3>{dictionary.calendarText}</h3>
           <ReminderList
             reminders={reminders}
             setReminders={setReminders}

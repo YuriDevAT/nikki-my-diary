@@ -1,10 +1,6 @@
 import React from "react";
 import CalendarView from "../components/calendar/index";
 
-const Calendar = () => (
-  <>
-    <CalendarView />
-  </>
-);
+const Calendar = () => <CalendarView />;
 
 export default Calendar;

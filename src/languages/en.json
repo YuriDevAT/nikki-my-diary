@@ -27,6 +27,7 @@
   "calendarWarning": "No reminders available. Set a reminder.",
   "calendarButton": "Set Reminder",
   "calendarForm": "What do you want to be reminded of?",
+  "reminderDelete": "Are you sure you want to delete this reminder?",
   "loginButton": "Log In",
   "LogOutButton": "Sign out",
   "startButton": "Get started >",

@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import AddEntrie from "./AddEntrie";
 import EditEntrie from "./EditEntrie";
 import EntrieList from "./EntrieList";
 import EntrieForm from "./EntrieForm";
 import { v4 as uuid } from "uuid";
-import { Text, LanguageContext } from "../../context/Language";
+import { LanguageContext } from "../../context/Language";
 
 const ProfileView = () => {
+  const { user } = useAuth0();
+  const { name } = user;
   const [entrie, setEntrie] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [currentEntrie, setCurrentEntrie] = useState({});
@@ -105,7 +108,8 @@ const ProfileView = () => {
     <div className="container text-lg relative sm:h-3/5 h-full">
       <div className="container py-8">
         <h1 className="text-center text-3xl">
-          <Text tid="profileHeader" />
+          {dictionary.profileHeader}
+          {name}?
         </h1>
       </div>
       <EntrieForm

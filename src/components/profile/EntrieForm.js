@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Text, LanguageContext } from "../../context/Language";
+import { LanguageContext } from "../../context/Language";
 
 const EntrieForm = ({
   entrie,
@@ -26,12 +26,8 @@ const EntrieForm = ({
         className="bg-white max-w-4/5 p-6 rounded-md shadow-lg text-md h-full sm:h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white border-opacity-25"
       >
         <fieldset className="p-3 border border-white rounded-md w-full">
-          <legend className="text-md p-2">
-            <Text tid="entrieFormLegend" />
-          </legend>
-          <label htmlFor="title">
-            <Text tid="entrieTitle" />
-          </label>
+          <legend className="text-md p-2">{dictionary.entrieFormLegend}</legend>
+          <label htmlFor="title">{dictionary.entrieTitle}</label>
           <input
             type="text"
             id="title"
@@ -43,7 +39,7 @@ const EntrieForm = ({
           />
           <div className="flex justify-around flex-wrap">
             <label>
-              <Text tid="entrieMood" />
+              {dictionary.entrieMood}
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
@@ -57,7 +53,7 @@ const EntrieForm = ({
               </select>
             </label>
             <label htmlFor="date" className="pl-2 rounded-md m-4 ">
-              <Text tid="formDate" />
+              {dictionary.formDate}
               <input
                 type="date"
                 id="date"
@@ -70,7 +66,7 @@ const EntrieForm = ({
             </label>
           </div>
           <label htmlFor="entrie">
-            <Text tid="entrieEntrie" />
+            {dictionary.entrieEntrie}
             <textarea
               name="entrie"
               type="text"
@@ -87,7 +83,7 @@ const EntrieForm = ({
               isInvalid && "opacity-50"
             }`}
           >
-            <Text tid="entrieButton" />
+            {dictionary.entrieButton}
           </button>
         </fieldset>
       </form>
