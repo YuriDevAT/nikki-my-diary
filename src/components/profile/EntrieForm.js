@@ -37,11 +37,12 @@ const EntrieForm = ({
             type="text"
             id="title"
             name="title"
-            className="w-full py-2 border border-gray-light rounded-md 
+            className="w-full py-2 pl-2 border border-gray-light rounded-md 
             shadow-inner"
             onChange={onTitleChange}
             value={title}
             required
+            placeholder="Add a title to this entry"
           />
           <div className="flex justify-around flex-wrap">
             <label>
@@ -80,9 +81,10 @@ const EntrieForm = ({
               id="entrie"
               value={entrie}
               onChange={onAddInputChange}
-              className="w-full h-52 py-2 border border-gray-primary
+              className="w-full h-52 py-2 border pl-2 border-gray-primary
               rounded-md shadow-inner sm:resize-none"
               required
+              placeholder="Write something..."
             />
           </label>
           <button
