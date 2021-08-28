@@ -23,7 +23,7 @@
   "entrieCancel": "キャンセル",
   "entrieWarning": "エントリーがありません。エントリを追加してください。",
   "calendarHeader": "今日は何をするの？",
-  "calendarText": "今日のリマインダーです。",
+  "calendarText": "今日のリマインダーです >>",
   "calendarWarning": "リマインダーがありません。リマインダーを設定する。",
   "calendarButton": "リマインダーの設定",
   "calendarForm": "思い出したいことは何ですか。",

@@ -69,7 +69,7 @@ const CalendarView = () => {
   return (
     <div
       className="container text-lg relative rounded-3xl bg-white-base
-    bg-opacity-50 pb-8 mb-8"
+    bg-opacity-50 h-2/3"
     >
       <div className="container pt-8 pb-12">
         <h1 className="text-center text-3xl">{dictionary.calendarHeader}</h1>
@@ -85,27 +85,27 @@ const CalendarView = () => {
         onClose={handleClose}
       />
       {showModal && <div className="opacity-30 fixed inset-0 z-40 bg-black" />}
-      <div className="flex justify-between">
-        <div className="w-1/3 mx-24">
+      <div className="flex justify-around h-4/5">
+        <div>
           <Calendar
             onChange={onCalendarChange}
             value={date}
             locale={dictionary.lang}
           />
         </div>
-        <div className="w-1/2 text-right relative">
+        <div className="text-center relative flex flex-col h-full justify-around">
           <h2 className="text-2xl sm:pb-2">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
           <h3>{dictionary.calendarText}</h3>
-          <div className="flex justify-end">
-            <ReminderList
-              reminders={reminders}
-              setReminders={setReminders}
-              handleDeleteClick={handleDeleteClick}
-            />
-          </div>
           <AddReminder handleShow={handleShow} />
+        </div>
+        <div className="shadow-inner bg-white-pure pl-4 py-4 overflow-auto rounded h-4/5">
+          <ReminderList
+            reminders={reminders}
+            setReminders={setReminders}
+            handleDeleteClick={handleDeleteClick}
+          />
         </div>
       </div>
     </div>
