@@ -20,8 +20,8 @@ const Entrie = ({
 
   return (
     <div
-      className={`container modal w-2/3 mx-auto z-50 bg-white-pure h-full px-14 
-      py-2 absolute inset-0 -top-32 shadow-md backdrop-blur-md ${showHideModal}`}
+      className={`container modal w-full mx-auto z-50 bg-white-pure h-full px-14 
+      py-2 absolute inset-0 shadow-md backdrop-blur-md ${showHideModal}`}
     >
       <div>
         <img

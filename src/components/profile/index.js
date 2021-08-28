@@ -104,7 +104,7 @@ const ProfileView = () => {
 
   return (
     <div
-      className="sm:h-3/5 h-full container text-lg relative rounded-3xl 
+      className="sm:h-2/3 h-full container text-lg relative rounded-3xl 
     bg-white-base bg-opacity-50 pb-8 mb-8"
     >
       <div className="container py-8">
@@ -126,11 +126,11 @@ const ProfileView = () => {
         onClose={handleClose}
       />
       {showModal && <div className="opacity-30 fixed inset-0 z-20 bg-black" />}
-      <h2 className="text-right">
+      <h2 className="text-right mr-2">
         {dictionary.entriesCounter}
         {entrieCount}
       </h2>
-      <div className="flex justify-around  h-full">
+      <div className="flex justify-around h-full">
         <div
           className="w-1/4 h-72 bg-blue-dark p-12 border text-white-pure
         border-white-pure bg-opacity-70 rounded-t-2xl rounded-tr-none 
@@ -138,7 +138,7 @@ const ProfileView = () => {
         >
           <Quote />
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 overflow-auto h-4/5">
           <EntrieList
             entries={entries}
             setEntries={setEntries}

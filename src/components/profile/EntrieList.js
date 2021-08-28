@@ -8,11 +8,11 @@ const EntrieList = ({
   handleEditClick,
   handleDeleteClick,
 }) => (
-  <div className="container h-full">
+  <div>
     {!entries || (entries.length === 0 && <Text tid="entrieWarning" />)}
     <div
-      className="mt-8 p-2 h-full w-full relative flex justify-around 
-    flex-wrap"
+      className="mt-4 p-2 w-full relative flex justify-around shadow-inner bg-white-pure
+    flex-wrap rounded"
     >
       {entries.map((entrie) => (
         <Entries
