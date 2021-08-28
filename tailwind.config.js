@@ -7,21 +7,21 @@ module.exports = {
   theme: {
     colors: {
       lila: {
-        light: '#570df8',
-        dark: '#4506cb',
+        light: '#D1C1D7',
+        dark: '#B9A2C3',
       },
       black: '#00000',
       rose: {
-        light: '#f000b8',
-        dark: '#bd0091',
+        light: '#F6CBD1',
+        dark: '#EEA0AA',
       },
       green: {
-        light: '#37cdbe',
-        dark: '#2aa79b',
+        light: '#B4E9D6',
+        dark: '#8CDEC0',
       },
       blue: {
-        light: '#3d4451',
-        dark: '#2a2e37',
+        light: '#70ABC7',
+        dark: '#4B96B9',
       },
 
       white: {
@@ -30,7 +30,7 @@ module.exports = {
       },
       gray: {
         light: '#d1d5db',
-        dark: '#1f2937',
+        dark: '#898D90',
       },
     },
     extend: {
