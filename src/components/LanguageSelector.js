@@ -9,7 +9,11 @@ export default function LanguageSelector() {
   const handleLanguageChange = (e) => userLanguageChange(e.target.value);
 
   return (
-    <select onChange={handleLanguageChange} value={userLanguage}>
+    <select
+      onChange={handleLanguageChange}
+      value={userLanguage}
+      className="rounded-md py-2 my-2"
+    >
       {Object.entries(languageOptions).map(([id, name]) => (
         <option key={id} value={id}>
           {name}

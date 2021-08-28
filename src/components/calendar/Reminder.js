@@ -23,16 +23,20 @@ const Reminder = ({ reminder, reminders, setReminders, handleDeleteClick }) => {
         }`}
       >
         <input type="checkbox" onClick={handleComplete} aria-label="checkbox" />
-        <div className="ml-4 sm:w-56 text-left">
+        <div className="ml-4 text-left">
           <p className="text-xs">{reminder.date}</p>
           <p className="">{reminder.text}</p>
         </div>
-        <button type="button" onClick={() => handleDeleteClick(reminder.id)}>
+        <button
+          type="button"
+          onClick={() => handleDeleteClick(reminder.id)}
+          className="border-l absolute top-5 right-2 h-5 w-14"
+        >
           <abbr title="Delete">
             <img
-              src="/img/icons/trash.svg"
+              src="/img/icons/close.svg"
               alt="delete"
-              className="h-5 w-5 ml-4 absolute top-5 right-2"
+              className="h-4 w-4 ml-5"
             />
           </abbr>
         </button>

@@ -15,19 +15,19 @@ const ReminderForm = ({
 
   return (
     <div
-      className={`modal sm:w-2/3 sm:h-full h-3/5 shadow-2xl mx-auto
-      bg-gradient-to-tr from-brown-dark to-brown-light rounded-md absolute
-      z-50 inset-0 py-14 px-2 flex justify-around ${showHideModal}`}
+      className={`modal sm:w-1/2 h-96 shadow-2xl
+      bg-gradient-to-tr from-green-light to-green-dark rounded-xl absolute
+      z-50 inset-0 top-10 mx-auto px-2 flex justify-around items-center ${showHideModal}`}
     >
-      <div className="lg:flex hidden w-2/5 items-end">
+      <div className="lg:flex hidden w-2/5">
         <img src="/img/calendar-graphic.svg" alt="set a reminder" />
       </div>
       <form
         onSubmit={handleReminderSubmitForm}
-        className="bg-white p-6 rounded-md shadow-lg text-md"
+        className="bg-white-pure p-6 rounded-md shadow-lg text-md h-80"
       >
         <fieldset
-          className="p-3 border border-gray-primary flex flex-col
+          className="p-3 border border-gray-light flex flex-col
         sm:h-full justify-around rounded-md w-full"
         >
           <legend className="text-md p-2">
@@ -40,12 +40,12 @@ const ReminderForm = ({
             aria-required="true"
             value={reminder}
             onChange={handleReminderChange}
-            className="w-full py-2 border border-gray-primary rounded-md
+            className="w-full py-2 border border-gray-light rounded-md
             shadow-inner"
           />
           <label
             htmlFor="dateReminder"
-            className="p-2 rounded-md outline-none border border-gray-primary 
+            className="p-2 rounded-md outline-none border border-gray-dark
             w-full shadow-inner"
           >
             <Text tid="formDate" />
@@ -56,11 +56,12 @@ const ReminderForm = ({
               value={date}
               required
               onChange={handleDateChange}
+              className="rounded ml-2"
             />
           </label>
           <button
             type="submit"
-            className={`bg-rose-middle py-4 rounded-md shadow-sm uppercase ${
+            className={`bg-rose-dark py-4 rounded-md shadow-sm uppercase ${
               isInvalid && 'opacity-50'
             }`}
           >

@@ -69,7 +69,7 @@ const CalendarView = () => {
   return (
     <div
       className="container text-lg relative rounded-3xl bg-white-base
-    bg-opacity-50 pb-8"
+    bg-opacity-50 pb-8 mb-8"
     >
       <div className="container pt-8 pb-12">
         <h1 className="text-center text-3xl">{dictionary.calendarHeader}</h1>
@@ -84,10 +84,8 @@ const CalendarView = () => {
         setShowModal={setShowModal}
         onClose={handleClose}
       />
-      {showModal && (
-        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
-      )}
-      <div className="flex flex-wrap-reverse justify-between">
+      {showModal && <div className="opacity-30 fixed inset-0 z-40 bg-black" />}
+      <div className="flex justify-between">
         <div className="w-1/3 mx-24">
           <Calendar
             onChange={onCalendarChange}
