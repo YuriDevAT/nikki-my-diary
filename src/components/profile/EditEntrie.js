@@ -30,16 +30,16 @@ const EditEntrie = ({
       <button
         type="submit"
         onClick={onEditFormSubmit}
-        className="bg-rose-middle px-3 py-2 mt-2 rounded-md shadow-sm 
-        uppercase"
+        className="bg-green-light border border-black px-3 py-2 mt-2 
+        rounded-md shadow-sm uppercase"
       >
         <Text tid="entrieUpdate" />
       </button>
       <button
         type="button"
         onClick={() => setIsEditing(false)}
-        className="bg-white border-rose-middle border-2 text-rose-dark 
-        px-3 py-2 mt-2 rounded-md shadow-sm uppercase"
+        className="bg-white bg-green-dark px-3 py-2 mt-2 rounded-md shadow-md 
+        uppercase"
       >
         <Text tid="entrieCancel" />
       </button>

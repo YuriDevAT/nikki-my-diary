@@ -19,7 +19,6 @@ const NavBar = () => (
         <AuthNav />
       </div>
     </nav>
-    <hr />
   </div>
 );
 

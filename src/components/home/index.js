@@ -1,5 +1,4 @@
 import React from 'react';
-import Quote from './Quote';
 import { Text } from '../../context/Language';
 
 const HomeView = () => (
@@ -9,7 +8,6 @@ const HomeView = () => (
         <Text tid="homeHeader" />
       </h1>
     </div>
-    <Quote />
   </div>
 );
 

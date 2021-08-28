@@ -6,6 +6,7 @@ import EditEntrie from './EditEntrie';
 import EntrieList from './EntrieList';
 import EntrieForm from './EntrieForm';
 import { LanguageContext } from '../../context/Language';
+import Quote from './Quote';
 
 const ProfileView = () => {
   const { user } = useAuth0();
@@ -102,7 +103,10 @@ const ProfileView = () => {
   };
 
   return (
-    <div className="container text-lg relative sm:h-3/5 h-full">
+    <div
+      className="sm:h-3/5 h-full container text-lg relative rounded-3xl 
+    bg-white-base bg-opacity-50 pb-8 mb-8"
+    >
       <div className="container py-8">
         <h1 className="text-center text-3xl">
           {dictionary.profileHeader}
@@ -121,19 +125,28 @@ const ProfileView = () => {
         showModal={showModal}
         onClose={handleClose}
       />
-      {showModal && (
-        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
-      )}
+      {showModal && <div className="opacity-30 fixed inset-0 z-20 bg-black" />}
       <h2 className="text-right">
         {dictionary.entriesCounter}
         {entrieCount}
       </h2>
-      <EntrieList
-        entries={entries}
-        setEntries={setEntries}
-        handleEditClick={handleEditClick}
-        handleDeleteClick={handleDeleteClick}
-      />
+      <div className="flex justify-around  h-full">
+        <div
+          className="w-1/4 h-72 bg-blue-dark p-12 border text-white-pure
+        border-white-pure bg-opacity-70 rounded-t-2xl rounded-tr-none 
+        rounded-b-2xl rounded-bl-none"
+        >
+          <Quote />
+        </div>
+        <div className="w-1/2">
+          <EntrieList
+            entries={entries}
+            setEntries={setEntries}
+            handleEditClick={handleEditClick}
+            handleDeleteClick={handleDeleteClick}
+          />
+        </div>
+      </div>
       {isEditing && (
         <>
           <EditEntrie
@@ -142,7 +155,7 @@ const ProfileView = () => {
             onEditInputChange={handleEditInputChange}
             onEditFormSubmit={handleEditFormSubmit}
           />
-          <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
+          <div className="opacity-30 fixed inset-0 z-40 bg-black" />
         </>
       )}
       <AddEntrie handleShow={handleShow} />

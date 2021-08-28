@@ -9,9 +9,7 @@ const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
 
   return (
     <div>
-      {showEntrie && (
-        <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
-      )}
+      {showEntrie && <div className="opacity-30 fixed inset-0 z-40 bg-black" />}
       <button
         type="button"
         key={entrie.id}
@@ -19,7 +17,7 @@ const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
         onClick={handleEntrieShow}
       >
         <div className="flex flex-col justify-between overflow-hidden">
-          <p className="bg-rose-light px-2 py-4">{entrie.date}</p>
+          <p className="bg-green-dark px-2 py-4">{entrie.date}</p>
           <p className="bg-white px-2 py-4">{entrie.title}</p>
         </div>
       </button>

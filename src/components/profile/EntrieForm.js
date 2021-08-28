@@ -21,13 +21,13 @@ const EntrieForm = ({
     <div
       className={`container sm:w-4/5 mx-auto modal shadow-2xl h-auto -top-60 
       -bottom-20 mt-16 flex justify-center items-center bg-gradient-to-tr 
-      from-rose-dark to-rose-light rounded-md absolute z-50 inset-0 
+      from-lila-dark to-rose-light rounded-md absolute z-30 inset-0 
       ${showHideModal}`}
     >
       <form
         onSubmit={onAddFormSubmit}
-        className="bg-white-pure max-w-4/5 p-6 rounded-md shadow-lg text-md h-full 
-        sm:h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white 
+        className="bg-white-pure max-w-4/5 p-6 rounded-md shadow-lg text-md
+        h-full sm:h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white-pure 
         border-opacity-25"
       >
         <fieldset className="p-3 border border-white-pure rounded-md w-full">
@@ -87,7 +87,7 @@ const EntrieForm = ({
           </label>
           <button
             type="submit"
-            className={`bg-rose-dark w-full py-4 mt-2 rounded-md shadow-sm
+            className={`bg-lila-dark w-full py-4 mt-2 rounded-md shadow-sm
             uppercase ${isInvalid && 'opacity-50'}`}
           >
             {dictionary.entrieButton}
@@ -98,7 +98,7 @@ const EntrieForm = ({
         type="button"
         onClick={onClose}
         className="absolute top-4 left-4 rounded-full w-10 h-10 flex
-        justify-center bg-rose-light shadow-2xl"
+        justify-center bg-green-light shadow-2xl"
       >
         <img src="/img/icons/close.svg" alt="X" width="20" height="20" />
       </button>

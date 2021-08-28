@@ -8,8 +8,8 @@ const LoginButton = () => {
   return (
     <button
       type="button"
-      className="text-sm rounded w-20 h-12 cursor-pointer bg-rose-light 
-      shadow-md"
+      className="text-sm rounded-full uppercase w-32 h-12 cursor-pointer 
+      bg-rose-dark border shadow-md"
       onClick={() => loginWithRedirect()}
     >
       <Text tid="loginButton" />
