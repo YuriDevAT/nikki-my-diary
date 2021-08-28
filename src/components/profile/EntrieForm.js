@@ -26,18 +26,18 @@ const EntrieForm = ({
     >
       <form
         onSubmit={onAddFormSubmit}
-        className="bg-white max-w-4/5 p-6 rounded-md shadow-lg text-md h-full 
+        className="bg-white-pure max-w-4/5 p-6 rounded-md shadow-lg text-md h-full 
         sm:h-4/5 bg-opacity-20 backdrop-blur-2xl border border-white 
         border-opacity-25"
       >
-        <fieldset className="p-3 border border-white rounded-md w-full">
+        <fieldset className="p-3 border border-white-pure rounded-md w-full">
           <legend className="text-md p-2">{dictionary.entrieFormLegend}</legend>
           <label htmlFor="title">{dictionary.entrieTitle}</label>
           <input
             type="text"
             id="title"
             name="title"
-            className="w-full py-2 border border-gray-primary rounded-md 
+            className="w-full py-2 border border-gray-light rounded-md 
             shadow-inner"
             onChange={onTitleChange}
             value={title}
@@ -49,7 +49,7 @@ const EntrieForm = ({
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
-                className="p-2 pl-2 rounded-md border border-gray-primary m-4 
+                className="p-2 pl-2 rounded-md border border-gray-light m-4 
                 shadow-inner cursor-pointer"
               >
                 <option>{dictionary.entrieMood1}</option>

@@ -3,11 +3,19 @@
 body {
   font-family: 'Dosis', monospace;
   background-color: #fafafa;
+  background-image: linear-gradient(
+    to right,
+    #70abc7 0%,
+    #70abc7 40%,
+    #e7e7e7 40%,
+    #e7e7e7 100%
+  );
 }
 
 .react-calendar {
   border-radius: 8px;
   width: 400px !important;
+  height: 420px;
   min-height: 420px;
   border: none !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

@@ -2,7 +2,7 @@ import React from 'react';
 import Reminder from './Reminder';
 
 const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => (
-  <div className="h-full w-full">
+  <div className="w-96">
     {!reminders ||
       (reminders.length === 0 && (
         <div className="h-full flex justify-center items-center">

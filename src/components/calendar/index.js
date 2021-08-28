@@ -67,8 +67,11 @@ const CalendarView = () => {
   };
 
   return (
-    <div className="container text-lg relative">
-      <div className="container py-8">
+    <div
+      className="container text-lg relative rounded-3xl bg-white-base
+    bg-opacity-50 pb-8"
+    >
+      <div className="container pt-8 pb-12">
         <h1 className="text-center text-3xl">{dictionary.calendarHeader}</h1>
       </div>
       <ReminderForm
@@ -84,22 +87,26 @@ const CalendarView = () => {
       {showModal && (
         <div className="opacity-25 fixed inset-0 z-40 bg-black-dark" />
       )}
-      <div className="flex flex-wrap-reverse justify-around sm:p-8">
-        <Calendar
-          onChange={onCalendarChange}
-          value={date}
-          locale={dictionary.lang}
-        />
-        <div className="lg:w-1/2 text-center relative flex flex-col pb-32">
+      <div className="flex flex-wrap-reverse justify-between">
+        <div className="w-1/3 mx-24">
+          <Calendar
+            onChange={onCalendarChange}
+            value={date}
+            locale={dictionary.lang}
+          />
+        </div>
+        <div className="w-1/2 text-right relative">
           <h2 className="text-2xl sm:pb-2">
             {date.toLocaleString().slice(0, 10)}, <Time />
           </h2>
           <h3>{dictionary.calendarText}</h3>
-          <ReminderList
-            reminders={reminders}
-            setReminders={setReminders}
-            handleDeleteClick={handleDeleteClick}
-          />
+          <div className="flex justify-end">
+            <ReminderList
+              reminders={reminders}
+              setReminders={setReminders}
+              handleDeleteClick={handleDeleteClick}
+            />
+          </div>
           <AddReminder handleShow={handleShow} />
         </div>
       </div>
