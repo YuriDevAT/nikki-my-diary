@@ -37,6 +37,10 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 3s ease-in-out infinite',
       },
+      // eslint-disable-next-line no-unused-vars
+      backgroundImage: (theme) => ({
+        kanji: "url('')",
+      }),
     },
   },
   variants: {

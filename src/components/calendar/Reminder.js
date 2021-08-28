@@ -18,7 +18,7 @@ const Reminder = ({ reminder, reminders, setReminders, handleDeleteClick }) => {
   return (
     <>
       <li
-        className={`relative pl-2 py-2 flex my-2 bg-blue-light rounded-l-xl ${
+        className={`relative pl-2 text-white-base py-2 flex my-2 bg-blue-light rounded-l-xl ${
           reminder.completed ? 'line-through opacity-60' : ''
         }`}
       >
@@ -36,7 +36,7 @@ const Reminder = ({ reminder, reminders, setReminders, handleDeleteClick }) => {
             <img
               src="/img/icons/close.svg"
               alt="delete"
-              className="h-4 w-4 ml-5"
+              className="h-5 w-5 ml-5 bg-white-base rounded-full"
             />
           </abbr>
         </button>

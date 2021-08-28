@@ -10,7 +10,7 @@ const LogOutButton = () => {
       type="button"
       title="Sign out"
       className="text-sm rounded-full uppercase w-32 h-12 cursor-pointer 
-      text-rose-dark border border-rose-dark shadow-md"
+      text-rose-dark border border-rose-dark shadow-md bg-white-base"
       onClick={() =>
         logout({
           returnTo: window.location.origin,
