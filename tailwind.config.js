@@ -1,46 +1,46 @@
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   future: {
     removeDeprecatedGapUtilities: true,
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      white: "#fff",
-      gray: {
-        base: "#616161",
-        background: "#fafafa",
-        primary: "#dbdbdb",
+      lila: {
+        light: '#570df8',
+        dark: '#4506cb',
       },
-      black: {
-        light: "#262626",
-        dark: "#000",
+      black: '#00000',
+      rose: {
+        light: '#f000b8',
+        dark: '#bd0091',
       },
       green: {
-        light: "#D2E4C8",
-        middle: "#7EB363",
-        dark: "#6BA451",
+        light: '#37cdbe',
+        dark: '#2aa79b',
       },
-      rose: {
-        light: "#F4D8DB",
-        middle: "#E7A8B0",
-        dark: "#DB7582",
+      blue: {
+        light: '#3d4451',
+        dark: '#2a2e37',
       },
-      brown: {
-        light: "#988281",
-        dark: "#413C2F",
+
+      white: {
+        pure: '#fffff',
+        base: '#f9fafb',
+      },
+      gray: {
+        light: '#d1d5db',
+        dark: '#1f2937',
       },
     },
     extend: {
       animation: {
-        "spin-slow": "spin 3s ease-in-out infinite",
+        'spin-slow': 'spin 3s ease-in-out infinite',
       },
     },
   },
   variants: {
-    extend: {
-      animation: ["hover", "focus"],
-    },
+    extend: {},
   },
   plugins: [],
 };
