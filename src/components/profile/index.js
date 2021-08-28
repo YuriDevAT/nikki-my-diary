@@ -134,7 +134,7 @@ const ProfileView = () => {
         <div
           className="w-1/4 h-72 bg-blue-dark p-12 border text-white-pure
         border-white-pure bg-opacity-70 rounded-t-2xl rounded-tr-none 
-        rounded-b-2xl rounded-bl-none"
+        rounded-b-2xl rounded-bl-none mt-16"
         >
           <Quote />
         </div>

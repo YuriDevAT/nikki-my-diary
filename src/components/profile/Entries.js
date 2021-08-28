@@ -17,7 +17,7 @@ const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
         onClick={handleEntrieShow}
       >
         <div className="flex flex-col justify-between overflow-hidden rounded">
-          <p className="bg-green-dark px-2 py-4">{entrie.date}</p>
+          <p className="bg-lila-dark px-2 py-4">{entrie.date}</p>
           <p className="bg-white px-2 py-4">{entrie.title}</p>
         </div>
       </button>
