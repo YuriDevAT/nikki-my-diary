@@ -49,7 +49,6 @@ const ProfileView = () => {
           mood,
           date,
           text: entrie.trim(),
-          active: false,
         },
       ]);
     }
@@ -73,7 +72,8 @@ const ProfileView = () => {
     setEntrie(e.target.value);
   };
 
-  const handleEditClick = () => {
+  // eslint-disable-next-line no-shadow
+  const handleEditClick = (entrie) => {
     setIsEditing(true);
     setCurrentEntrie({ ...entrie });
   };
