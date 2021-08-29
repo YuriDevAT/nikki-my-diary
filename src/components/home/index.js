@@ -9,7 +9,7 @@ const HomeView = () => (
         <Text tid="homeHeader" />
       </h1>
       <h3 className="text-3xl">
-        The online journal which helps you improve your Japanese skills.
+        <Text tid="section-1" />
       </h3>
       <img
         src="/img/pics/kanji.png"
@@ -35,9 +35,11 @@ const HomeView = () => (
         className="sm:w-1/4 px-4 sm:px-0 bg-gradient-to-br from-green-light 
       to-green-dark rounded-md shadow-md py-2 relative w-full m-2 sm:m-0 sm:h-96"
       >
-        <h2 className="text-2xl py-4 text-lila-dark">Write everyday</h2>
+        <h2 className="text-2xl py-4 text-lila-dark">
+          <Text tid="sectionHeader-2" />
+        </h2>
         <h3 className="text-xl lg:px-14">
-          Write about your day to bring your Japanese skills to the next level.
+          <Text tid="section-2" />
         </h3>
         <img
           src="/img/pics/kawai1.png"
@@ -50,9 +52,11 @@ const HomeView = () => (
         className="sm:w-1/4 px-4 sm:px-0 bg-gradient-to-br from-lila-light 
       to-lila-dark rounded-md shadow-md py-2 relative w-full m-2 sm:m-0 sm:h-96"
       >
-        <h2 className="text-2xl py-4 text-blue-dark">Set reminders</h2>
+        <h2 className="text-2xl py-4 text-blue-dark">
+          <Text tid="sectionHeader-3" />
+        </h2>
         <h3 className="text-xl lg:px-14">
-          Set reminders to never forget to pen an entry again.
+          <Text tid="section-3" />
         </h3>
         <img
           src="/img/pics/kawai3.png"
@@ -65,9 +69,11 @@ const HomeView = () => (
         className="sm:w-1/4 px-4 sm:px-0 bg-gradient-to-br from-gray-light 
       to-gray-dark rounded-md shadow-md py-2 relative w-full m-2 sm:m-0 sm:h-96"
       >
-        <h2 className="text-2xl py-4 text-gray-dark">Celebrate your success</h2>
+        <h2 className="text-2xl py-4 text-gray-dark">
+          <Text tid="sectionHeader-4" />
+        </h2>
         <h3 className="text-xl lg:px-14">
-          Pay attention of your improvments and celebrate your success.
+          <Text tid="section-4" />
         </h3>
         <img
           src="/img/pics/kawai2.png"
