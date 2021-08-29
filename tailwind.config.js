@@ -37,6 +37,9 @@ module.exports = {
       animation: {
         'spin-slow': 'spin 3s ease-in-out infinite',
       },
+      zIndex: {
+        '-10': '-10',
+      },
     },
   },
   variants: {

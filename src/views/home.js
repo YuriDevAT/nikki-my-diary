@@ -1,12 +1,6 @@
 import React from 'react';
-import { Footer } from '../components';
 import HomeView from '../components/home';
 
-const Home = () => (
-  <>
-    <HomeView />
-    <Footer />
-  </>
-);
+const Home = () => <HomeView />;
 
 export default Home;
