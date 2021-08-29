@@ -13,7 +13,7 @@ const Entries = ({ entry, handleEditClick, handleDeleteClick }) => {
       <button
         type="button"
         key={entry.id}
-        className="shadow-md w-64 m-2 rounded"
+        className="shadow-md w-64 h-32 m-2 rounded"
         onClick={handleEntryShow}
       >
         <div className="flex flex-col justify-between overflow-hidden rounded">

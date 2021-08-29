@@ -89,7 +89,7 @@ const EntryForm = ({
           </label>
           <button
             type="submit"
-            className={`bg-lila-dark w-full py-4 mt-2 rounded-md shadow-sm
+            className={`bg-green-dark w-full py-4 mt-2 rounded-md shadow-sm
             uppercase ${isInvalid && 'opacity-50'}`}
           >
             {dictionary.entryButton}
@@ -100,7 +100,7 @@ const EntryForm = ({
         type="button"
         onClick={onClose}
         className="absolute top-4 left-4 rounded-full w-10 h-10 flex
-        justify-center bg-green-light shadow-2xl"
+        justify-center bg-lila-dark shadow-2xl"
       >
         <img src="/img/icons/close.svg" alt="X" width="20" height="20" />
       </button>

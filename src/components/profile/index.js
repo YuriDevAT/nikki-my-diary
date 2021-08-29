@@ -132,13 +132,25 @@ const ProfileView = () => {
       </h2>
       <div className="flex justify-around h-full">
         <div
-          className="w-1/4 h-72 bg-blue-dark p-12 border text-white-pure
+          className="w-1/4 h-72 bg-blue-dark p-12 border-2 text-white-pure
         border-white-pure bg-opacity-70 rounded-t-2xl rounded-tr-none 
-        rounded-b-2xl rounded-bl-none mt-16"
+        rounded-b-2xl rounded-bl-none mt-16 relative"
         >
+          <img
+            src="/img/pics/flowers-right.png"
+            alt=""
+            width="100"
+            className="absolute -right-8 -top-10"
+          />
           <Quote />
+          <img
+            src="/img/pics/flowers-left.png"
+            alt=""
+            width="70"
+            className="absolute -left-7 -bottom-7"
+          />
         </div>
-        <div className="w-1/2 overflow-auto h-4/5">
+        <div className="container w-2/5 h-4/5 shadow-inner bg-white-pure overflow-auto rounded flex flex-wrap justify-around">
           <EntryList
             entries={entries}
             setEntries={setEntries}

@@ -10,7 +10,7 @@ const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => (
           <p>
             <Text tid="calendarWarning" />
           </p>
-          <img src="/img/pics/kawai2.png" alt="" width="" className="" />
+          <img src="/img/pics/kawai2.png" alt="" />
         </div>
       ))}
     <ul>

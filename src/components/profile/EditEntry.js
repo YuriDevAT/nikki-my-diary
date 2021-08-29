@@ -9,8 +9,8 @@ const EditEntry = ({
 }) => (
   <form
     onSubmit={onEditFormSubmit}
-    className="bg-green-light w-96 py-3 px-6 h-96 rounded-md shadow-lg text-md
-     z-50 backdrop-blur-2xl absolute inset-0 mx-auto"
+    className="bg-gray-light w-1/2 py-3 px-6 h-96 rounded-md shadow-lg text-md
+     z-50 backdrop-blur-2xl absolute top-20 left-0 right-0 mx-auto"
   >
     <fieldset className="p-3 border border-white rounded-md w-full">
       <legend className="text-md p-2">
@@ -21,7 +21,7 @@ const EditEntry = ({
         type="text"
         aria-label="edit Entry"
         rows="8"
-        className="w-full resize-none"
+        className="w-full resize-none pl-2"
         value={currentEntry.text}
         onChange={onEditInputChange}
       />
@@ -30,16 +30,16 @@ const EditEntry = ({
       <button
         type="submit"
         onClick={onEditFormSubmit}
-        className="bg-green-light border border-black px-3 py-2 mt-2 
-        rounded-md shadow-sm uppercase"
+        className="bg-blue-light px-3 py-3 mt-2 text-white-pure
+        rounded-full shadow-md uppercase"
       >
         <Text tid="entryUpdate" />
       </button>
       <button
         type="button"
         onClick={() => setIsEditing(false)}
-        className="bg-white bg-green-dark px-3 py-2 mt-2 rounded-md shadow-md 
-        uppercase"
+        className="bg-white-pure px-3 py-3 mt-2 rounded-full shadow-md 
+        uppercase border border-blue-dark text-blue-dark"
       >
         <Text tid="entryCancel" />
       </button>

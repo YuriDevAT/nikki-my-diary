@@ -20,8 +20,8 @@ const Entry = ({
 
   return (
     <div
-      className={`container modal w-full mx-auto z-50 bg-white-pure h-full px-14 
-      py-2 absolute inset-0 shadow-md backdrop-blur-md ${showHideModal}`}
+      className={`container modal w-4/5 rounded mx-auto z-40 bg-white-pure h-4/5 px-14 
+      py-2 absolute inset-0 top-16 shadow-md backdrop-blur-md ${showHideModal}`}
     >
       <div>
         <img
@@ -47,7 +47,7 @@ const Entry = ({
       </div>
       <div
         className="w-full flex justify-around py-8 border-t-2 
-      border-gray-primary absolute bottom-0 left-0"
+      border-blue-dark absolute bottom-0 left-0"
       >
         <button type="button" onClick={() => onEditClick(entry)} className="">
           <abbr title="Edit">
@@ -72,7 +72,7 @@ const Entry = ({
         type="button"
         onClick={handleEntryClose}
         className="absolute top-4 right-4 rounded-full w-10 h-10 flex 
-        justify-center bg-rose-light shadow-2xl"
+        justify-center bg-blue-light shadow-2xl"
       >
         <img src="/img/icons/close.svg" alt="X" width="20" height="20" />
       </button>

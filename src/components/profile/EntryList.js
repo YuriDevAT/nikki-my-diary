@@ -8,24 +8,27 @@ const EntryList = ({
   handleEditClick,
   handleDeleteClick,
 }) => (
-  <div>
-    {!entries || (entries.length === 0 && <Text tid="entryWarning" />)}
-    <div
-      className="mt-4 p-2 w-full relative flex justify-around shadow-inner bg-white-pure
-    flex-wrap rounded"
-    >
-      {entries.map((entry) => (
-        <Entries
-          key={entry.id}
-          entry={entry}
-          entries={entries}
-          setEntries={setEntries}
-          handleEditClick={handleEditClick}
-          handleDeleteClick={handleDeleteClick}
-        />
+  <>
+    {!entries ||
+      (entries.length === 0 && (
+        <div className="mx-auto h-full flex items-center flex-col px-6 relative justify-around">
+          <p>
+            <Text tid="entryWarning" />
+          </p>
+          <img src="/img/pics/kawai3.png" alt="" width="75%" />
+        </div>
       ))}
-    </div>
-  </div>
+    {entries.map((entry) => (
+      <Entries
+        key={entry.id}
+        entry={entry}
+        entries={entries}
+        setEntries={setEntries}
+        handleEditClick={handleEditClick}
+        handleDeleteClick={handleDeleteClick}
+      />
+    ))}
+  </>
 );
 
 export default EntryList;

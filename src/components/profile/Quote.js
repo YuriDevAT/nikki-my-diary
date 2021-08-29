@@ -34,7 +34,7 @@ const Quote = () => {
   };
 
   return (
-    <div className="text-lg flex items-center h-full">
+    <div className="text-xl flex items-center h-full">
       {error && (
         <p>
           I would be a motivating quote but unfortunately something went wrong.
