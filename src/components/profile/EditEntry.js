@@ -9,8 +9,9 @@ const EditEntry = ({
 }) => (
   <form
     onSubmit={onEditFormSubmit}
-    className="bg-gray-light w-full sm:w-1/2 py-3 px-6 h-96 rounded-md shadow-lg text-md
-     z-50 backdrop-blur-2xl absolute top-20 left-0 right-0 sm:mx-auto"
+    className="bg-gray-light w-full sm:w-1/2 py-3 px-6 h-96 rounded-md 
+    shadow-lg text-md z-50 backdrop-blur-2xl absolute top-20 left-0 right-0 
+    sm:mx-auto"
   >
     <fieldset className="p-3 border border-white rounded-md w-full">
       <legend className="text-md p-2">

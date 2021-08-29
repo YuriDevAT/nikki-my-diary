@@ -19,8 +19,8 @@ const EntryForm = ({
 
   return (
     <div
-      className={`container sm:w-3/5 mx-auto modal shadow-2xl h-3/5 sm:h-full py-8
-      mt-20 flex justify-center items-center bg-gradient-to-tr 
+      className={`container sm:w-3/5 mx-auto modal shadow-2xl h-3/5 sm:h-full 
+      py-8 mt-20 flex justify-center items-center bg-gradient-to-tr 
       from-lila-dark to-rose-light rounded-md absolute z-30 inset-0 
       ${showHideModal}`}
     >
@@ -50,8 +50,8 @@ const EntryForm = ({
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
-                className="p-2 pl-2 rounded-md border w-24 border-gray-light sm:m-4 
-                shadow-inner cursor-pointer"
+                className="p-2 pl-2 rounded-md border w-24 border-gray-light 
+                sm:m-4 shadow-inner cursor-pointer"
               >
                 <option>{dictionary.entryMood1}</option>
                 <option>{dictionary.entryMood2}</option>

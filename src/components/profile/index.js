@@ -132,9 +132,9 @@ const ProfileView = () => {
       </h2>
       <div className="flex justify-around h-full flex-wrap">
         <div
-          className="w-3/5 sm:w-1/4 h-72 bg-blue-dark p-12 border-2 text-white-pure
-        border-white-pure bg-opacity-70 rounded-t-2xl rounded-tr-none 
-        rounded-b-2xl rounded-bl-none mt-16 relative"
+          className="w-3/5 sm:w-1/4 h-72 bg-blue-dark p-12 border-2 
+          text-white-pure border-white-pure bg-opacity-70 rounded-t-2xl 
+          rounded-tr-none rounded-b-2xl rounded-bl-none mt-16 relative"
         >
           <img
             src="/img/pics/flowers-right.png"
