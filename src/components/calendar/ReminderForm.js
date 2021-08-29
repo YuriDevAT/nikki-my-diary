@@ -15,13 +15,10 @@ const ReminderForm = ({
 
   return (
     <div
-      className={`modal sm:w-1/2 h-96 shadow-2xl
-      bg-gradient-to-tr from-green-light to-green-dark rounded-xl absolute
+      className={`modal w-96 h-96 shadow-2xl
+      bg-green-light rounded-xl absolute
       z-50 inset-0 top-10 mx-auto px-2 flex justify-around items-center ${showHideModal}`}
     >
-      <div className="lg:flex hidden w-2/5">
-        <img src="/img/calendar-graphic.svg" alt="set a reminder" />
-      </div>
       <form
         onSubmit={handleReminderSubmitForm}
         className="bg-white-pure p-6 rounded-md shadow-lg text-md h-80"
@@ -65,7 +62,7 @@ const ReminderForm = ({
               isInvalid && 'opacity-50'
             }`}
           >
-            Set reminder
+            <Text tid="calendarButton" />
           </button>
         </fieldset>
       </form>
