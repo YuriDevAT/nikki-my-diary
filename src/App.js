@@ -21,7 +21,10 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="h-screen bg-gradient-to-br from-lila-light to-rose-light">
+      <div
+        className="h-screen bg-gradient-to-br from-lila-light 
+      to-rose-light"
+      >
         <NavBar />
         <div className="container mx-auto">
           <LanguageSelector />

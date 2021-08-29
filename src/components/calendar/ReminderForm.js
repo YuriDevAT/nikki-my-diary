@@ -15,17 +15,17 @@ const ReminderForm = ({
 
   return (
     <div
-      className={`modal w-96 h-96 shadow-2xl
-      bg-green-light rounded-xl absolute
-      z-50 inset-0 top-10 mx-auto px-2 flex justify-around items-center ${showHideModal}`}
+      className={`modal w-96 h-96 shadow-2xl bg-green-light rounded-xl 
+      absolute z-50 inset-0 top-10 mx-auto px-2 flex justify-around items-center
+      ${showHideModal}`}
     >
       <form
         onSubmit={handleReminderSubmitForm}
         className="bg-white-pure p-6 rounded-md shadow-lg text-md h-80"
       >
         <fieldset
-          className="p-3 border border-gray-light flex flex-col
-        sm:h-full justify-around rounded-md w-full"
+          className="p-3 border border-gray-light flex flex-col sm:h-full 
+          justify-around rounded-md w-full"
         >
           <legend className="text-md p-2">
             <Text tid="calendarForm" />

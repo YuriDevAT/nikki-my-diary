@@ -11,7 +11,10 @@ const EntryList = ({
   <>
     {!entries ||
       (entries.length === 0 && (
-        <div className="mx-auto h-full flex items-center flex-col px-6 relative justify-around">
+        <div
+          className="mx-auto h-full flex items-center flex-col px-6 relative 
+        justify-around"
+        >
           <p>
             <Text tid="entryWarning" />
           </p>

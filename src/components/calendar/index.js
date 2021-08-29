@@ -100,7 +100,10 @@ const CalendarView = () => {
           <h3>{dictionary.calendarText}</h3>
           <AddReminder handleShow={handleShow} />
         </div>
-        <div className="shadow-inner bg-white-pure pl-4 py-4 overflow-auto rounded mt-4 xl:m-0">
+        <div
+          className="shadow-inner bg-white-pure pl-4 py-4 overflow-auto
+        rounded mt-4 xl:m-0"
+        >
           <ReminderList
             reminders={reminders}
             setReminders={setReminders}

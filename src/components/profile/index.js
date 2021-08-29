@@ -150,7 +150,10 @@ const ProfileView = () => {
             className="absolute -left-7 -bottom-7"
           />
         </div>
-        <div className="container w-2/5 h-4/5 shadow-inner bg-white-pure overflow-auto rounded flex flex-wrap justify-around">
+        <div
+          className="container w-2/5 h-4/5 shadow-inner bg-white-pure 
+        overflow-auto rounded flex flex-wrap justify-around"
+        >
           <EntryList
             entries={entries}
             setEntries={setEntries}

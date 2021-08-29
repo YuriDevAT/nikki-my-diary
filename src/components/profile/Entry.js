@@ -20,8 +20,9 @@ const Entry = ({
 
   return (
     <div
-      className={`container modal w-4/5 rounded mx-auto z-40 bg-white-pure h-4/5 px-14 
-      py-2 absolute inset-0 top-16 shadow-md backdrop-blur-md ${showHideModal}`}
+      className={`container modal w-4/5 rounded mx-auto z-40 bg-white-pure 
+      h-4/5 px-14 py-2 absolute inset-0 top-16 shadow-md backdrop-blur-md 
+      ${showHideModal}`}
     >
       <div>
         <img

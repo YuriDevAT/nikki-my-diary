@@ -6,7 +6,10 @@ const ReminderList = ({ reminders, setReminders, handleDeleteClick }) => (
   <div className="w-96">
     {!reminders ||
       (reminders.length === 0 && (
-        <div className="h-full flex items-center flex-col px-6 relative justify-around">
+        <div
+          className="h-full flex items-center flex-col px-6 relative
+        justify-around"
+        >
           <p>
             <Text tid="calendarWarning" />
           </p>

@@ -33,7 +33,8 @@ const HomeView = () => (
     >
       <div
         className="sm:w-1/4 px-4 sm:px-0 bg-gradient-to-br from-green-light 
-      to-green-dark rounded-md shadow-md py-2 relative w-full m-2 sm:m-0 sm:h-96"
+      to-green-dark rounded-md shadow-md py-2 relative w-full m-2 sm:m-0
+      sm:h-96"
       >
         <h2 className="text-2xl py-4 text-lila-dark">
           <Text tid="sectionHeader-2" />
@@ -45,7 +46,8 @@ const HomeView = () => (
           src="/img/pics/kawai1.png"
           alt=""
           width=""
-          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44 xl:w-56"
+          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44
+          xl:w-56"
         />
       </div>
       <div
@@ -62,7 +64,8 @@ const HomeView = () => (
           src="/img/pics/kawai3.png"
           alt=""
           width="60%"
-          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44 xl:w-56"
+          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44
+          xl:w-56"
         />
       </div>
       <div
@@ -79,7 +82,8 @@ const HomeView = () => (
           src="/img/pics/kawai2.png"
           alt=""
           width="60%"
-          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44 xl:w-56"
+          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44
+          xl:w-56"
         />
       </div>
     </section>
