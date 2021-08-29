@@ -10,7 +10,7 @@ body {
     #e7e7e7 40%,
     #e7e7e7 100%
   ); */
-  /* background-image: linear-gradient(#d1c1d7, #f6cbd1); */
+  background-image: linear-gradient(to right, #f9fafb, #d1d5db);
 }
 
 .react-calendar {

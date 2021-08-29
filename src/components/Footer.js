@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="container text-center py-8 text-lg tracking-wider">
+  <footer className="container text-center py-8 text-lg tracking-wider mx-auto">
     <p>
       made with <span className="text-rose-dark">&#10084;</span> and &#9835;
       2021 by{' '}

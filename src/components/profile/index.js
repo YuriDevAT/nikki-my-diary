@@ -105,7 +105,7 @@ const ProfileView = () => {
   return (
     <div
       className="sm:h-2/3 h-full container text-lg relative rounded-3xl 
-    bg-white-base bg-opacity-50 pb-8 mb-8"
+    bg-white-base bg-opacity-50 pb-8 mb-8 mx-auto"
     >
       <div className="container py-8">
         <h1 className="text-center text-3xl">

@@ -21,9 +21,11 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="container mx-auto h-screen">
+      <div className="h-screen bg-gradient-to-br from-lila-light to-rose-light">
         <NavBar />
-        <LanguageSelector />
+        <div className="container mx-auto">
+          <LanguageSelector />
+        </div>
         <Suspense fallback={<Loading />}>
           <Switch>
             <Route exact path="/" component={Home} />

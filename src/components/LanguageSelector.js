@@ -12,7 +12,7 @@ export default function LanguageSelector() {
     <select
       onChange={handleLanguageChange}
       value={userLanguage}
-      className="rounded-md py-2 my-2"
+      className="rounded-md py-2 my-2 w-24"
     >
       {Object.entries(languageOptions).map(([id, name]) => (
         <option key={id} value={id}>

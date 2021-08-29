@@ -69,7 +69,7 @@ const CalendarView = () => {
   return (
     <div
       className="container text-lg relative rounded-3xl bg-white-base
-    bg-opacity-50 h-2/3"
+    bg-opacity-50 h-2/3 mx-auto"
     >
       <div className="container pt-8 pb-12">
         <h1 className="text-center text-3xl">{dictionary.calendarHeader}</h1>
