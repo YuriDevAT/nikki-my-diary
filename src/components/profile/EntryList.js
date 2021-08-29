@@ -2,22 +2,22 @@ import React from 'react';
 import Entries from './Entries';
 import { Text } from '../../context/Language';
 
-const EntrieList = ({
+const EntryList = ({
   entries,
   setEntries,
   handleEditClick,
   handleDeleteClick,
 }) => (
   <div>
-    {!entries || (entries.length === 0 && <Text tid="entrieWarning" />)}
+    {!entries || (entries.length === 0 && <Text tid="entryWarning" />)}
     <div
       className="mt-4 p-2 w-full relative flex justify-around shadow-inner bg-white-pure
     flex-wrap rounded"
     >
-      {entries.map((entrie) => (
+      {entries.map((entry) => (
         <Entries
-          key={entrie.id}
-          entrie={entrie}
+          key={entry.id}
+          entry={entry}
           entries={entries}
           setEntries={setEntries}
           handleEditClick={handleEditClick}
@@ -28,4 +28,4 @@ const EntrieList = ({
   </div>
 );
 
-export default EntrieList;
+export default EntryList;

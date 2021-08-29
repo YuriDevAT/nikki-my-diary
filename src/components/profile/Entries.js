@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
-import Entrie from './Entrie';
+import Entry from './Entry';
 
-const Entries = ({ entrie, handleEditClick, handleDeleteClick }) => {
-  const [showEntrie, setShowEntrie] = useState(false);
+const Entries = ({ entry, handleEditClick, handleDeleteClick }) => {
+  const [showEntry, setShowEntry] = useState(false);
 
-  const handleEntrieClose = () => setShowEntrie(false);
-  const handleEntrieShow = () => setShowEntrie(true);
+  const handleEntryClose = () => setShowEntry(false);
+  const handleEntryShow = () => setShowEntry(true);
 
   return (
     <>
-      {showEntrie && <div className="opacity-30 fixed inset-0 z-40 bg-black" />}
+      {showEntry && <div className="opacity-30 fixed inset-0 z-40 bg-black" />}
       <button
         type="button"
-        key={entrie.id}
+        key={entry.id}
         className="shadow-md w-64 m-2 rounded"
-        onClick={handleEntrieShow}
+        onClick={handleEntryShow}
       >
         <div className="flex flex-col justify-between overflow-hidden rounded">
-          <p className="bg-lila-dark px-2 py-4">{entrie.date}</p>
-          <p className="bg-white px-2 py-4">{entrie.title}</p>
+          <p className="bg-lila-dark px-2 py-4">{entry.date}</p>
+          <p className="bg-white px-2 py-4">{entry.title}</p>
         </div>
       </button>
-      <Entrie
-        entrie={entrie}
+      <Entry
+        entry={entry}
         onEditClick={handleEditClick}
         onDeleteClick={handleDeleteClick}
-        showEntrie={showEntrie}
-        handleEntrieClose={handleEntrieClose}
+        showEntry={showEntry}
+        handleEntryClose={handleEntryClose}
       />
     </>
   );

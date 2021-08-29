@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { LanguageContext } from '../../context/Language';
 
-const EntrieForm = ({
-  entrie,
+const EntryForm = ({
+  entry,
   onAddFormSubmit,
   onAddInputChange,
   onHandleDateChange,
@@ -14,7 +14,7 @@ const EntrieForm = ({
   onTitleChange,
 }) => {
   const showHideModal = showModal ? 'block' : 'hidden';
-  const isInvalid = entrie === '' || title === '';
+  const isInvalid = entry === '' || title === '';
   const { dictionary } = useContext(LanguageContext);
 
   return (
@@ -31,8 +31,8 @@ const EntrieForm = ({
         border-opacity-25"
       >
         <fieldset className="p-3 border border-white-pure rounded-md w-full">
-          <legend className="text-md p-2">{dictionary.entrieFormLegend}</legend>
-          <label htmlFor="title">{dictionary.entrieTitle}</label>
+          <legend className="text-md p-2">{dictionary.entryFormLegend}</legend>
+          <label htmlFor="title">{dictionary.entryTitle}</label>
           <input
             type="text"
             id="title"
@@ -46,18 +46,18 @@ const EntrieForm = ({
           />
           <div className="flex justify-around flex-wrap">
             <label>
-              {dictionary.entrieMood}
+              {dictionary.entryMood}
               <select
                 onChange={onHandleMoodChange}
                 aria-label="your mood"
                 className="p-2 pl-2 rounded-md border border-gray-light m-4 
                 shadow-inner cursor-pointer"
               >
-                <option>{dictionary.entrieMood1}</option>
-                <option>{dictionary.entrieMood2}</option>
-                <option>{dictionary.entrieMood3}</option>
-                <option>{dictionary.entrieMood4}</option>
-                <option>{dictionary.entrieMood5}</option>
+                <option>{dictionary.entryMood1}</option>
+                <option>{dictionary.entryMood2}</option>
+                <option>{dictionary.entryMood3}</option>
+                <option>{dictionary.entryMood4}</option>
+                <option>{dictionary.entryMood5}</option>
               </select>
             </label>
             <label htmlFor="date" className="pl-2 rounded-md m-4 ">
@@ -73,13 +73,13 @@ const EntrieForm = ({
               />
             </label>
           </div>
-          <label htmlFor="entrie">
-            {dictionary.entrieEntrie}
+          <label htmlFor="entry">
+            {dictionary.entryEntry}
             <textarea
-              name="entrie"
+              name="entry"
               type="text"
-              id="entrie"
-              value={entrie}
+              id="entry"
+              value={entry}
               onChange={onAddInputChange}
               className="w-full h-52 py-2 border pl-2 border-gray-primary
               rounded-md shadow-inner sm:resize-none"
@@ -92,7 +92,7 @@ const EntrieForm = ({
             className={`bg-lila-dark w-full py-4 mt-2 rounded-md shadow-sm
             uppercase ${isInvalid && 'opacity-50'}`}
           >
-            {dictionary.entrieButton}
+            {dictionary.entryButton}
           </button>
         </fieldset>
       </form>
@@ -108,4 +108,4 @@ const EntrieForm = ({
   );
 };
 
-export default EntrieForm;
+export default EntryForm;

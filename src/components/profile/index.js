@@ -1,19 +1,19 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { v4 as uuid } from 'uuid';
-import AddEntrie from './AddEntrie';
-import EditEntrie from './EditEntrie';
-import EntrieList from './EntrieList';
-import EntrieForm from './EntrieForm';
+import AddEntry from './AddEntry';
+import EditEntry from './EditEntry';
+import EntryList from './EntryList';
+import EntryForm from './EntryForm';
 import { LanguageContext } from '../../context/Language';
 import Quote from './Quote';
 
 const ProfileView = () => {
   const { user } = useAuth0();
   const { name } = user;
-  const [entrie, setEntrie] = useState('');
+  const [entry, setEntry] = useState('');
   const [isEditing, setIsEditing] = useState(false);
-  const [currentEntrie, setCurrentEntrie] = useState({});
+  const [currentEntry, setCurrentEntry] = useState({});
   const [mood, setMood] = useState('');
   const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState('');
@@ -25,7 +25,7 @@ const ProfileView = () => {
     return [];
   });
 
-  const entrieCount = entries.length;
+  const entryCount = entries.length;
   const { dictionary } = useContext(LanguageContext);
 
   const [showModal, setShowModal] = useState(false);
@@ -40,7 +40,7 @@ const ProfileView = () => {
   const handleAddFormSubmit = (e) => {
     e.preventDefault();
 
-    if (entrie !== '') {
+    if (entry !== '') {
       setEntries([
         ...entries,
         {
@@ -48,11 +48,11 @@ const ProfileView = () => {
           title,
           mood,
           date,
-          text: entrie.trim(),
+          text: entry.trim(),
         },
       ]);
     }
-    setEntrie('');
+    setEntry('');
     setTitle('');
   };
 
@@ -69,22 +69,22 @@ const ProfileView = () => {
   };
 
   const handleAddInputChange = (e) => {
-    setEntrie(e.target.value);
+    setEntry(e.target.value);
   };
 
   // eslint-disable-next-line no-shadow
-  const handleEditClick = (entrie) => {
+  const handleEditClick = (entry) => {
     setIsEditing(true);
-    setCurrentEntrie({ ...entrie });
+    setCurrentEntry({ ...entry });
   };
 
   const handleEditInputChange = (e) => {
-    setCurrentEntrie({ ...currentEntrie, text: e.target.value });
+    setCurrentEntry({ ...currentEntry, text: e.target.value });
   };
 
-  const handleUpdateEntrie = (id, updatedEntrie) => {
+  const handleUpdateEntry = (id, updatedEntry) => {
     const updatedItem = entries.map((item) =>
-      item.id === id ? updatedEntrie : item
+      item.id === id ? updatedEntry : item
     );
     setIsEditing(false);
     setEntries(updatedItem);
@@ -92,13 +92,13 @@ const ProfileView = () => {
 
   const handleEditFormSubmit = (e) => {
     e.preventDefault();
-    handleUpdateEntrie(currentEntrie.id, currentEntrie);
+    handleUpdateEntry(currentEntry.id, currentEntry);
   };
 
   const handleDeleteClick = (id) => {
-    if (window.confirm(dictionary.entrieDelete)) {
-      const removeEntrie = entries.filter((item) => item.id !== id);
-      setEntries(removeEntrie);
+    if (window.confirm(dictionary.entryDelete)) {
+      const removeEntry = entries.filter((item) => item.id !== id);
+      setEntries(removeEntry);
     }
   };
 
@@ -113,8 +113,8 @@ const ProfileView = () => {
           {name}?
         </h1>
       </div>
-      <EntrieForm
-        entrie={entrie}
+      <EntryForm
+        entry={entry}
         onAddInputChange={handleAddInputChange}
         onAddFormSubmit={handleAddFormSubmit}
         date={date}
@@ -128,7 +128,7 @@ const ProfileView = () => {
       {showModal && <div className="opacity-30 fixed inset-0 z-20 bg-black" />}
       <h2 className="text-right mr-2">
         {dictionary.entriesCounter}
-        {entrieCount}
+        {entryCount}
       </h2>
       <div className="flex justify-around h-full">
         <div
@@ -139,7 +139,7 @@ const ProfileView = () => {
           <Quote />
         </div>
         <div className="w-1/2 overflow-auto h-4/5">
-          <EntrieList
+          <EntryList
             entries={entries}
             setEntries={setEntries}
             handleEditClick={handleEditClick}
@@ -149,8 +149,8 @@ const ProfileView = () => {
       </div>
       {isEditing && (
         <>
-          <EditEntrie
-            currentEntrie={currentEntrie}
+          <EditEntry
+            currentEntry={currentEntry}
             setIsEditing={setIsEditing}
             onEditInputChange={handleEditInputChange}
             onEditFormSubmit={handleEditFormSubmit}
@@ -158,7 +158,7 @@ const ProfileView = () => {
           <div className="opacity-30 fixed inset-0 z-40 bg-black" />
         </>
       )}
-      <AddEntrie handleShow={handleShow} />
+      <AddEntry handleShow={handleShow} />
     </div>
   );
 };

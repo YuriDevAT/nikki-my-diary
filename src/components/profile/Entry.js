@@ -8,14 +8,14 @@ import motivated from './img/motivated.png';
 import okay from './img/okay.png';
 import { LanguageContext } from '../../context/Language';
 
-const Entrie = ({
-  entrie,
+const Entry = ({
+  entry,
   onEditClick,
   onDeleteClick,
-  showEntrie,
-  handleEntrieClose,
+  showEntry,
+  handleEntryClose,
 }) => {
-  const showHideModal = showEntrie ? 'block' : 'hidden';
+  const showHideModal = showEntry ? 'block' : 'hidden';
   const { dictionary } = useContext(LanguageContext);
 
   return (
@@ -26,13 +26,13 @@ const Entrie = ({
       <div>
         <img
           src={
-            entrie.mood === dictionary.entrieMood1
+            entry.mood === dictionary.entryMood1
               ? happy
-              : entrie.mood === dictionary.entrieMood3
+              : entry.mood === dictionary.entryMood3
               ? sad
-              : entrie.mood === dictionary.entrieMood2
+              : entry.mood === dictionary.entryMood2
               ? okay
-              : entrie.mood === dictionary.entrieMood4
+              : entry.mood === dictionary.entryMood4
               ? motivated
               : mixed
           }
@@ -41,15 +41,15 @@ const Entrie = ({
         />
       </div>
       <div className="h-4/5 text-center">
-        <p className="text-left">{entrie.date}</p>
-        <h2 className="text-3xl pb-4">{entrie.title}</h2>
-        <p>{entrie.text}</p>
+        <p className="text-left">{entry.date}</p>
+        <h2 className="text-3xl pb-4">{entry.title}</h2>
+        <p>{entry.text}</p>
       </div>
       <div
         className="w-full flex justify-around py-8 border-t-2 
       border-gray-primary absolute bottom-0 left-0"
       >
-        <button type="button" onClick={() => onEditClick(entrie)} className="">
+        <button type="button" onClick={() => onEditClick(entry)} className="">
           <abbr title="Edit">
             <img
               src="/img/icons/edit-pencil.svg"
@@ -60,7 +60,7 @@ const Entrie = ({
         </button>
         <button
           type="button"
-          onClick={() => onDeleteClick(entrie.id)}
+          onClick={() => onDeleteClick(entry.id)}
           className=""
         >
           <abbr title="Delete">
@@ -70,7 +70,7 @@ const Entrie = ({
       </div>
       <button
         type="button"
-        onClick={handleEntrieClose}
+        onClick={handleEntryClose}
         className="absolute top-4 right-4 rounded-full w-10 h-10 flex 
         justify-center bg-rose-light shadow-2xl"
       >
@@ -80,4 +80,4 @@ const Entrie = ({
   );
 };
 
-export default Entrie;
+export default Entry;

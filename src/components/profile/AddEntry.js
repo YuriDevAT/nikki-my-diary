@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddEntrie = ({ handleShow }) => (
+const AddEntry = ({ handleShow }) => (
   <button
     type="submit"
     className="w-20 h-20 mr-4 rounded-full bg-green-dark shadow-2xl fixed 
@@ -11,4 +11,4 @@ const AddEntrie = ({ handleShow }) => (
   </button>
 );
 
-export default AddEntrie;
+export default AddEntry;
