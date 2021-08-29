@@ -5,7 +5,7 @@ const Footer = () => {
   const { dictionary } = useContext(LanguageContext);
 
   return (
-    <footer className="container text-center py-16 text-lg tracking-wider mx-auto">
+    <footer className="container text-center pt-36 sm:py-16 text-lg tracking-wider mx-auto">
       <p>
         {dictionary.footerMade}
         <span className="text-rose-dark">&#10084;</span> {dictionary.footerBind}{' '}

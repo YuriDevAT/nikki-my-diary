@@ -29,7 +29,7 @@ const HomeView = () => (
     </section>
     <section
       className="flex justify-around text-center h-full w-full bg-opacity-60 
-    bg-white-base mt-48 py-8 rounded-3xl flex-wrap"
+    bg-white-base sm:mt-48 py-8 rounded-3xl flex-wrap"
     >
       <div
         className="sm:w-1/4 px-4 sm:px-0 bg-gradient-to-br from-green-light 
