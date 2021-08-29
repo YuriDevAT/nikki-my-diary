@@ -130,9 +130,9 @@ const ProfileView = () => {
         {dictionary.entriesCounter}
         {entryCount}
       </h2>
-      <div className="flex justify-around h-full">
+      <div className="flex justify-around h-full flex-wrap">
         <div
-          className="w-1/4 h-72 bg-blue-dark p-12 border-2 text-white-pure
+          className="w-3/5 sm:w-1/4 h-72 bg-blue-dark p-12 border-2 text-white-pure
         border-white-pure bg-opacity-70 rounded-t-2xl rounded-tr-none 
         rounded-b-2xl rounded-bl-none mt-16 relative"
         >
@@ -151,8 +151,8 @@ const ProfileView = () => {
           />
         </div>
         <div
-          className="container w-2/5 h-4/5 shadow-inner bg-white-pure 
-        overflow-auto rounded flex flex-wrap justify-around"
+          className="container sm:w-2/5 h-4/5 shadow-inner bg-white-pure 
+        overflow-auto rounded flex flex-wrap justify-around sm:m-0 mt-10"
         >
           <EntryList
             entries={entries}
