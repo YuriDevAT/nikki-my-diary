@@ -36,8 +36,7 @@ const HomeView = () => (
       >
         <h2 className="text-2xl py-4 text-lila-dark">Write everyday</h2>
         <h3 className="text-xl px-16">
-          Writing about your day every night to bring your Japanese skills to
-          the next level.
+          Write about your day to bring your Japanese skills to the next level.
         </h3>
         <img
           src="/img/pics/kawai1.png"
