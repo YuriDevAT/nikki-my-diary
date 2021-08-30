@@ -1,8 +1,3 @@
-:bangbang: In progress. I am updating my progress here after every finished step.
-
-:exclamation:This is a project created for the Auth0 x Hashnode Hackathon in
-August 2021.
-
 # Description
 
 Nikki - My Diary will be an online journal where users can pen down their
@@ -16,6 +11,10 @@ Therefore, Nikki - My Diary is being created. It makes it easy for students to
 write down their feelings from everywhere, setting reminders to keep progress
 and motivates the user by sending quotes.
 
+**Blog article:** [Nikki - Online Journal App. A project for the Auth0 x Hashnode Hackathon](https://yuridevat.hashnode.dev/nikki-online-journal-app)
+
+![Thumbnail](https://github.com/YuriDevAT/nikki-my-diary/blob/main/public/thumbnail-nikki.png)
+
 # Project Setup
 
 The app contains 3 views:
@@ -24,27 +23,16 @@ The app contains 3 views:
 - Profile view - where the user can add their diary entries
 - Calendar view - where the user can set reminders
 
-Techstack: ReactJS, Auth0, TailwindCSS.
+**Techstack:** ReactJS, Auth0, TailwindCSS.
 
-# Current progress
+---
 
-All views have their functionalities and basic styles. The home view contains a
-hello message, the profile view lets the user add entries via modal and view
-them in a grid, and the calendar view contains a calendar with the current date,
-where you can add reminders.
+Live view by clicking the badge: [![Netlify Status](https://api.netlify.com/api/v1/badges/f9a7f8d3-58ca-44ed-a038-ae8d2efd31a5/deploy-status)](https:/nikki-my-diary.netlify.app/)
 
-## Home branch
+You can also clone the project and open it in localhost, or enjoy the preview video below instead :smile:
 
-I am currently designing the app with Figma. The home view needs much styling,
-therefore, it will not be updated soon.
+https://user-images.githubusercontent.com/54622834/131357795-922dc916-6b35-49c3-9179-8dbd25fdc459.mov
 
-## Profile view
-
-Everything works as expected. Styling needs to be done.
-
-## Calendar view
-
-I am working on the functionality to show the entries on a specific date.
 
 # Dependencies
 
