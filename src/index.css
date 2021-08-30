@@ -24,7 +24,7 @@ body {
 
 .react-calendar__navigation {
   background-color: #eea0aa;
-  color: #fff;
+  color: #000;
   min-height: 70px;
   line-height: 1.5em;
   border-top-left-radius: 8px;
@@ -47,6 +47,7 @@ body {
 
 .react-calendar__tile--hasActive {
   background: #eea0aa !important;
+  color: black !important;
 }
 
 .react-calendar__tile--hasActive:enabled:hover,
@@ -56,6 +57,7 @@ body {
 
 .react-calendar__tile--active {
   background: #eea0aa !important;
+  color: black !important;
 }
 
 .react-calendar__tile--active:enabled:hover,

@@ -58,6 +58,7 @@ const ReminderForm = ({
           </label>
           <button
             type="submit"
+            aria-disabled="true"
             className={`bg-rose-dark py-4 rounded-md shadow-sm uppercase ${
               isInvalid && 'opacity-50'
             }`}

@@ -31,7 +31,7 @@ const EditEntry = ({
       <button
         type="submit"
         onClick={onEditFormSubmit}
-        className="bg-blue-light px-3 py-3 mt-2 text-white-pure
+        className="bg-blue-dark px-3 py-3 mt-2 text-white-pure
         rounded-full shadow-md uppercase"
       >
         <Text tid="entryUpdate" />
