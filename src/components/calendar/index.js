@@ -21,7 +21,12 @@ const CalendarView = () => {
   });
   const [showModal, setShowModal] = useState(false);
 
-  const handleClose = () => setShowModal(false);
+  const handleClose = (e) => {
+    e.preventDefault();
+    setShowModal(false);
+    setReminder('');
+  };
+
   const handleShow = () => setShowModal(true);
 
   const { dictionary } = useContext(LanguageContext);

@@ -30,7 +30,13 @@ const ProfileView = () => {
 
   const [showModal, setShowModal] = useState(false);
 
-  const handleClose = () => setShowModal(false);
+  const handleClose = (e) => {
+    e.preventDefault();
+    setShowModal(false);
+    setTitle('');
+    setEntry('');
+  };
+
   const handleShow = () => setShowModal(true);
 
   useEffect(() => {
