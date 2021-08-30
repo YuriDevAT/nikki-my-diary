@@ -70,7 +70,7 @@ const ReminderForm = ({
         type="button"
         onClick={onClose}
         className="absolute top-4 left-4 rounded-full w-10 h-10 flex 
-        justify-center bg-rose-light shadow-2xl"
+        justify-center bg-rose-light shadow-2xl items-center"
       >
         <img src="/img/icons/close.svg" alt="X" width="20" height="20" />
       </button>
