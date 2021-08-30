@@ -64,8 +64,8 @@ const HomeView = () => (
           src="/img/pics/kawai3.png"
           alt=""
           width="60%"
-          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-44
-          xl:w-56"
+          className="sm:absolute bottom-0 left-0 right-0 mx-auto w-24 sm:w-36
+          xl:w-52"
         />
       </div>
       <div
