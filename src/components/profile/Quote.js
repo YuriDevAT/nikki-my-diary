@@ -43,7 +43,7 @@ const Quote = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div>
+        <div className="overflow-auto pt-2 h-full">
           <h1>{quote}</h1>
           <p className="text-right italic text-sm">{author}</p>
         </div>
