@@ -41,7 +41,7 @@ const Entry = ({
           className="absolute h-44 left-2 top-6 opacity-20 sm:opacity-50"
         />
       </div>
-      <div className="h-4/5 text-center">
+      <div className="h-4/5 text-center overflow-auto">
         <p className="text-left">{entry.date}</p>
         <h2 className="text-3xl pb-4">{entry.title}</h2>
         <p>{entry.text}</p>

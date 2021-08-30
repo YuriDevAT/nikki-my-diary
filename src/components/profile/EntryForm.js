@@ -81,7 +81,7 @@ const EntryForm = ({
               id="entry"
               value={entry}
               onChange={onAddInputChange}
-              className="w-full h-52 py-2 border pl-2 border-gray-primary
+              className="w-full h-44 py-2 border pl-2 border-gray-primary
               rounded-md shadow-inner sm:resize-none"
               required
               placeholder="Write something..."
