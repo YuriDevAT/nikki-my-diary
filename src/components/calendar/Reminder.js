@@ -25,7 +25,7 @@ const Reminder = ({ reminder, reminders, setReminders, handleDeleteClick }) => {
         <input type="checkbox" onClick={handleComplete} aria-label="checkbox" />
         <div className="ml-4 text-left">
           <p className="text-xs">{reminder.date}</p>
-          <p className="">{reminder.text}</p>
+          <p className="h-7 w-72 overflow-hidden">{reminder.text}</p>
         </div>
         <button
           type="button"
