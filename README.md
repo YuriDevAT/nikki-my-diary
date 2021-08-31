@@ -1,6 +1,6 @@
 # Description
 
-Nikki - My Diary will be an online journal where users can pen down their
+Nikki - My Diary is an online journal where users can pen down their
 thoughts and feelings to improve their Japanese Skills. Nikki (jap. 日記 (Kanji)、
 にっき (Hiragana) means diary, and it is still common on Japan to use a diary to
 write down their daily lifes. Besides studying Japanese Grammar or vocabulary
