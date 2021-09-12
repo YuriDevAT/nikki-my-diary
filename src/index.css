@@ -118,23 +118,34 @@ input[type='submit']:hover {
 }
 
 .bike-card {
-  width: 200px;
+  width: 250px;
   height: 350px;
   background-color: white;
   padding: 5px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.bike-content h3 {
+  padding-left: 10px;
+  margin-bottom: 0;
 }
 
 .bike-content p {
-  font-size: 10px;
+  font-size: 12px;
   text-align: left;
   height: 100%;
-  padding: 0 0 0 4px;
+  padding: 0 0 0 10px;
   margin: 2px 0;
 }
 
 button {
   background-color: inherit;
   border: none;
+}
+
+.bike-buttons {
+  text-align: center;
 }
 
 .auth-button {
@@ -147,6 +158,12 @@ button {
 .icons {
   width: 15px;
   height: 15px;
+}
+
+.searchbar {
+  width: 250px;
+  float: right;
+  margin-top: -20px;
 }
 
 .modal-bg {
@@ -189,4 +206,9 @@ footer {
   right: 0;
   text-align: center;
   padding: 15px 0;
+  font-size: 14px;
+}
+
+.loader {
+  margin: 0 auto;
 }

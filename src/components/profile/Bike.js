@@ -8,30 +8,20 @@ const Bike = ({ bike, onEditClick, onDeleteClick }) => (
       <h3>
         {bike.brand} <span>{bike.model}</span>
       </h3>
+      <p>
+        <i>{bike.category}</i>
+      </p>
       <img src="/img/pics/3.png" alt={bike.brand} width="100%" />
       <p>
-        <b>
-          <i>Displacement: </i>
-        </b>
+        <b>Displacement:</b>
         {bike.displacement}cc
       </p>
       <p>
-        <b>
-          <i>Times: </i>
-        </b>
+        <b>Times:</b>
         {bike.times}ps
       </p>
       <p>
-        <b>
-          <i>Category: </i>
-        </b>
-        {bike.category}
-      </p>
-      <p>
-        <b>
-          <i>Price: </i>
-        </b>
-        €{bike.price}
+        <b>Price:</b>€{bike.price}
       </p>
     </div>
     <div className="bike-buttons">

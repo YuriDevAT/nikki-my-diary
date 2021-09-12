@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 
 const About = () => (
   <div>
@@ -34,7 +35,7 @@ const About = () => (
           id="subject"
           name="subject"
           placeholder="Write something.."
-          style={{ height: '200px' }}
+          style={{ height: '150px' }}
         />
         <label>
           <input type="checkbox" name="product-list" /> Request product list
@@ -42,6 +43,7 @@ const About = () => (
         <input type="button" value="SUBMIT" />
       </fieldset>
     </form>
+    <Footer />
   </div>
 );
 
