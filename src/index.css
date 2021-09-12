@@ -1,71 +1,129 @@
-@tailwind base;
-@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
-body {
-  font-family: 'Dosis', monospace;
-  background-color: #fafafa;
-  background-image: linear-gradient(to right, #f9fafb, #d1d5db);
+@import url('https://fonts.googleapis.com/css2?family=Livvic&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
 }
 
-.react-calendar {
-  border-radius: 8px;
-  width: 400px !important;
-  height: 420px;
-  min-height: 420px;
-  border: none !important;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  font-family: 'Dosis', monospace !important;
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
-@media screen and (max-width: 400px) {
-  .react-calendar {
-    width: 100% !important;
-    height: 100% !important;
+
+.app {
+  width: 75%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 640px) {
+  .app {
+    width: 100%;
   }
 }
 
-.react-calendar__navigation {
-  background-color: #eea0aa;
-  color: #000;
-  min-height: 70px;
-  line-height: 1.5em;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+.profile {
+  position: relative;
 }
 
-.react-calendar__navigation button:enabled:hover,
-.react-calendar__navigation button:enabled:focus {
-  background-color: #f6cbd1 !important;
+.bike-form {
+  width: 500px;
+  float: right;
+  background-color: white;
+  padding: 15px;
 }
 
-.react-calendar__tile--now {
-  background: #f6cbd1 !important;
+.about-form {
+  width: 750px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: white;
 }
 
-.react-calendar__tile--now:enabled:hover,
-.react-calendar__tile--now:enabled:focus {
-  background: #f6cbd1 !important;
+h1 {
+  font-family: 'Livvic', sans-serif;
+  text-align: center;
 }
 
-.react-calendar__tile--hasActive {
-  background: #eea0aa !important;
-  color: black !important;
+p {
+  text-align: center;
+  padding: 16px 0;
 }
 
-.react-calendar__tile--hasActive:enabled:hover,
-.react-calendar__tile--hasActive:enabled:focus {
-  background: #eea0aa !important;
+input[type='text'],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 6px 0 16px;
+  resize: none;
 }
 
-.react-calendar__tile--active {
-  background: #eea0aa !important;
-  color: black !important;
+input[type='checkbox'] {
+  margin: 6px 0 16px;
 }
 
-.react-calendar__tile--active:enabled:hover,
-.react-calendar__tile--active:enabled:focus {
-  background: #eea0aa !important;
+input[type='button'],
+input[type='submit'] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 6px;
 }
 
-@tailwind components;
+input[type='button']:hover,
+input[type='submit']:hover {
+  background-color: #45a049;
+}
+
+.bike-list {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.bike-card {
+  width: 200px;
+  height: 350px;
+  background-color: white;
+  padding: 5px 0;
+}
+
+.bike-content p {
+  font-size: 10px;
+  text-align: left;
+  height: 100%;
+  padding: 0 0 0 4px;
+  margin: 2px 0;
+}
+
+button {
+  background-color: inherit;
+  border: none;
+}
+.icons {
+  width: 15px;
+  height: 15px;
+}
+
+.modal-bg {
+  position: fixed;
+  opacity: 0.3;
+  inset: 0;
+  z-index: 2;
+  background-color: black;
+}
 
 .modal {
   -webkit-animation-name: zoom;
@@ -91,5 +149,3 @@ body {
     transform: scale(1);
   }
 }
-
-@tailwind utilities;

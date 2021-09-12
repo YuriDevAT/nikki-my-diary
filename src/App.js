@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
-import { NavBar } from './components';
-import Loading from './components/Loading';
+import { NavBar, Loading } from './components';
 import ProtectedRoute from './auth/protected-route';
 import './index.css';
 
@@ -18,10 +17,7 @@ function App() {
   }
 
   return (
-    <div
-      className="h-screen bg-gradient-to-br from-lila-light 
-      to-rose-light"
-    >
+    <div className="app">
       <NavBar />
       <Suspense fallback={<Loading />}>
         <Switch>

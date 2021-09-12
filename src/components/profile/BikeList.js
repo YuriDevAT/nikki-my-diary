@@ -1,29 +1,20 @@
 import React from 'react';
-import Bikes from './Bikes';
+import Bike from './Bike';
 
 const BikeList = ({ bikes, setBikes, handleEditClick, handleDeleteClick }) => (
-  <>
-    {!bikes ||
-      (bikes.length === 0 && (
-        <div
-          className="mx-auto h-full flex items-center flex-col px-6 relative 
-        justify-around"
-        >
-          <p>No bikes to sell.</p>
-          <img src="/img/pics/kawai3.png" alt="" width="75%" />
-        </div>
-      ))}
+  <div className="bike-list">
+    {!bikes || (bikes.length === 0 && <p>No bikes to sell.</p>)}
     {bikes.map((bike) => (
-      <Bikes
+      <Bike
         key={bike.id}
         bike={bike}
         bikes={bikes}
         setBikes={setBikes}
-        handleEditClick={handleEditClick}
-        handleDeleteClick={handleDeleteClick}
+        onEditClick={handleEditClick}
+        onDeleteClick={handleDeleteClick}
       />
     ))}
-  </>
+  </div>
 );
 
 export default BikeList;

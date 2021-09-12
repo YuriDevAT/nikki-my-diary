@@ -7,7 +7,7 @@ const MainNav = () => (
       Catalogue
     </NavLink>
     <NavLink to="/profile" exact>
-      Profile
+      Sell a Bike
     </NavLink>
     <NavLink to="/about" exact>
       About Us

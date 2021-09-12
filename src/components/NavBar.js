@@ -3,9 +3,9 @@ import MainNav from './MainNav';
 import AuthNav from './AuthNav';
 
 const NavBar = () => (
-  <div className="container min-h-36 mx-auto">
+  <div className="container min-h-18 mx-auto">
     <nav className="h-full flex justify-around flex-wrap">
-      <div className="flex items-center py-4">
+      <div className="flex items-center">
         <img
           src="/img/logo.png"
           alt="welcome message"
