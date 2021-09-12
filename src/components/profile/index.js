@@ -143,7 +143,7 @@ const ProfileView = () => {
         onDisplacementChange={handleDisplacementChange}
         onClose={handleClose}
       />
-      <h2 className="">Bikes to sell: {BikeCount}</h2>
+      <p>Bikes to sell: {BikeCount}</p>
       <BikeList
         bikes={bikes}
         setBikes={setBikes}

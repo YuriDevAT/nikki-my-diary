@@ -3,7 +3,9 @@ import React from 'react';
 const About = () => (
   <div>
     <h1>Contact us</h1>
-    <p>We are happy to receive any feedback and requests about our products.</p>
+    <p style={{ textAlign: 'center', padding: '14px 0' }}>
+      We are happy to receive any feedback and requests about our products.
+    </p>
     <form className="about-form">
       <fieldset>
         <legend>Contact us</legend>
@@ -35,10 +37,9 @@ const About = () => (
           style={{ height: '200px' }}
         />
         <label>
-          <input type="checkbox" checked="checked" name="product-list" />{' '}
-          Request product list
+          <input type="checkbox" name="product-list" /> Request product list
         </label>
-        <input type="button" value="Submit" />
+        <input type="button" value="SUBMIT" />
       </fieldset>
     </form>
   </div>

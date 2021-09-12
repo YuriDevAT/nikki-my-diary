@@ -24,15 +24,37 @@ body {
   }
 }
 
+.nav-bar {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.main-nav a {
+  color: black;
+  text-decoration: none;
+}
+
 .profile {
   position: relative;
 }
 
 .bike-form {
-  width: 500px;
+  width: 400px;
   float: right;
   background-color: white;
   padding: 15px;
+}
+
+.bike-form label {
+  font-size: 14px;
 }
 
 .about-form {
@@ -47,21 +69,23 @@ h1 {
   text-align: center;
 }
 
-p {
-  text-align: center;
-  padding: 16px 0;
-}
-
 input[type='text'],
 select,
 textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin: 6px 0 16px;
+  margin: 2px 0 10px;
   resize: none;
+}
+
+.about-form input[type='text'],
+select,
+textarea {
+  padding: 12px;
+  margin: 6px 0 16px;
 }
 
 input[type='checkbox'] {
@@ -77,7 +101,7 @@ input[type='submit'] {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-  margin-top: 6px;
+  margin-top: 2px;
 }
 
 input[type='button']:hover,
@@ -112,6 +136,14 @@ button {
   background-color: inherit;
   border: none;
 }
+
+.auth-button {
+  background-color: darkblue;
+  padding: 16px 20px;
+  border-radius: 5px;
+  color: white;
+}
+
 .icons {
   width: 15px;
   height: 15px;
@@ -148,4 +180,13 @@ button {
   to {
     transform: scale(1);
   }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 15px 0;
 }

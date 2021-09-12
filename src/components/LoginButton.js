@@ -7,9 +7,9 @@ const LoginButton = () => {
   return (
     <button
       type="button"
-      className="text-sm rounded-full uppercase w-32 h-12 cursor-pointer 
-      bg-green-dark shadow-md"
+      title="sign in"
       onClick={() => loginWithRedirect()}
+      className="auth-button"
     >
       Login
     </button>

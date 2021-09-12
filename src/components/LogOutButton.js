@@ -8,8 +8,7 @@ const LogOutButton = () => {
     <button
       type="button"
       title="Sign out"
-      className="text-sm rounded-full uppercase w-32 h-12 cursor-pointer 
-      text-black border border-black shadow-md bg-white-base font-semibold"
+      className="auth-button"
       onClick={() =>
         logout({
           returnTo: window.location.origin,

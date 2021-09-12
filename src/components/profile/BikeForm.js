@@ -78,7 +78,7 @@ const BikeForm = ({
         required
         placeholder="Add a price"
       />
-      <input type="submit" value="Add Bike" />
+      <input type="submit" value="ADD BIKE" />
     </fieldset>
   </form>
 );

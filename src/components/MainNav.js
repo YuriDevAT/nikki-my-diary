@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const MainNav = () => (
-  <div className="sm:w-96 w-80 flex justify-around m-2 text-lg">
+  <div className="main-nav">
     <NavLink to="/" exact>
       Catalogue
     </NavLink>

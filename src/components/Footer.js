@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Footer = () => (
-  <footer className="container text-center pt-36 sm:py-16 text-lg tracking-wider mx-auto">
+  <footer>
     <p>
-      This website was made by
+      This website was made by{' '}
       <a target="_blank" rel="noopener noreferrer" href="lorenzo.at">
-        <span>
-          <u> Lorenzo </u>
+        <span style={{ color: 'black' }}>
+          <u>Lorenzo</u>
         </span>
-      </a>
+      </a>{' '}
       2021. All rights reserved.
     </p>
   </footer>
