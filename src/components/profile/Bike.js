@@ -13,15 +13,15 @@ const Bike = ({ bike, onEditClick, onDeleteClick }) => (
       </p>
       <img src="/img/pics/3.png" alt={bike.brand} width="100%" />
       <p>
-        <b>Displacement:</b>
+        <b>Displacement: </b>
         {bike.displacement}cc
       </p>
       <p>
-        <b>Times:</b>
+        <b>Times: </b>
         {bike.times}ps
       </p>
       <p>
-        <b>Price:</b>€{bike.price}
+        <b>Price: </b>€{bike.price}
       </p>
     </div>
     <div className="bike-buttons">

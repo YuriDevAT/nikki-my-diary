@@ -16,7 +16,6 @@ const SearchBar = ({ value, setValue }) => {
         aria-label="Search list for item"
         type="text"
         placeholder="Search list.."
-        value={value}
         onChange={handleChange}
       />
       {value && (

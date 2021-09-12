@@ -6,39 +6,22 @@ const EditBike = ({
   onEditInputChange,
   onEditFormSubmit,
 }) => (
-  <form
-    onSubmit={onEditFormSubmit}
-    className="bg-gray-light w-full sm:w-1/2 py-3 px-6 h-96 rounded-md 
-    shadow-lg text-md z-50 backdrop-blur-2xl absolute top-20 left-0 right-0 
-    sm:mx-auto"
-  >
+  <form onSubmit={onEditFormSubmit} className="edit-form">
     <fieldset className="p-3 border border-white rounded-md w-full">
-      <legend className="text-md p-2">Update information</legend>
-      <textarea
+      <legend>Update price</legend>
+      <input
         name="editBike"
         type="text"
         aria-label="edit bike"
-        rows="8"
-        className="w-full resize-none pl-2"
-        value={currentBike.text}
+        value={currentBike.price}
         onChange={onEditInputChange}
       />
     </fieldset>
     <div className="flex justify-around">
-      <button
-        type="submit"
-        onClick={onEditFormSubmit}
-        className="bg-blue-dark px-3 py-3 mt-2 text-white-pure
-        rounded-full shadow-md uppercase"
-      >
+      <button type="submit" onClick={onEditFormSubmit}>
         Update
       </button>
-      <button
-        type="button"
-        onClick={() => setIsEditing(false)}
-        className="bg-white-pure px-3 py-3 mt-2 rounded-full shadow-md 
-        uppercase border border-blue-dark text-blue-dark"
-      >
+      <button type="button" onClick={() => setIsEditing(false)}>
         Cancel
       </button>
     </div>

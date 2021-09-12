@@ -100,7 +100,7 @@ const ProfileView = () => {
   };
 
   const handleEditInputChange = (e) => {
-    setCurrentBike({ ...currentBike, text: e.target.value });
+    setCurrentBike({ ...currentBike, price: e.target.value });
   };
 
   const handleUpdateBike = (id, updatedBike) => {

@@ -109,12 +109,17 @@ input[type='submit']:hover {
   background-color: #45a049;
 }
 
-.bike-list {
-  width: 50%;
+.bike-list,
+.catalogue-list {
+  width: 70%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.catalogue-list {
+  width: 100%;
 }
 
 .bike-card {
@@ -124,6 +129,7 @@ input[type='submit']:hover {
   padding: 5px 0;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 15px;
 }
 
 .bike-content h3 {
@@ -136,7 +142,7 @@ input[type='submit']:hover {
   text-align: left;
   height: 100%;
   padding: 0 0 0 10px;
-  margin: 2px 0;
+  margin: 4px 0;
 }
 
 button {
@@ -146,6 +152,21 @@ button {
 
 .bike-buttons {
   text-align: center;
+}
+
+.edit-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  padding: 10px;
+  z-index: 10;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .auth-button {
