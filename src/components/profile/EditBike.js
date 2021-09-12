@@ -1,8 +1,7 @@
 import React from 'react';
-import { Text } from '../../context/Language';
 
-const EditEntry = ({
-  currentEntry,
+const EditBike = ({
+  currentBike,
   setIsEditing,
   onEditInputChange,
   onEditFormSubmit,
@@ -14,16 +13,14 @@ const EditEntry = ({
     sm:mx-auto"
   >
     <fieldset className="p-3 border border-white rounded-md w-full">
-      <legend className="text-md p-2">
-        <Text tid="entryEdit" />
-      </legend>
+      <legend className="text-md p-2">Update information</legend>
       <textarea
-        name="editEntry"
+        name="editBike"
         type="text"
-        aria-label="edit Entry"
+        aria-label="edit bike"
         rows="8"
         className="w-full resize-none pl-2"
-        value={currentEntry.text}
+        value={currentBike.text}
         onChange={onEditInputChange}
       />
     </fieldset>
@@ -34,7 +31,7 @@ const EditEntry = ({
         className="bg-blue-dark px-3 py-3 mt-2 text-white-pure
         rounded-full shadow-md uppercase"
       >
-        <Text tid="entryUpdate" />
+        Update
       </button>
       <button
         type="button"
@@ -42,10 +39,10 @@ const EditEntry = ({
         className="bg-white-pure px-3 py-3 mt-2 rounded-full shadow-md 
         uppercase border border-blue-dark text-blue-dark"
       >
-        <Text tid="entryCancel" />
+        Cancel
       </button>
     </div>
   </form>
 );
 
-export default EditEntry;
+export default EditBike;

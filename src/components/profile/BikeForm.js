@@ -1,12 +1,10 @@
-import React, { useContext } from 'react';
-import { LanguageContext } from '../../context/Language';
+import React from 'react';
 
-const EntryForm = ({
-  entry,
+const BikeForm = ({
+  bike,
   onAddFormSubmit,
   onAddInputChange,
   onHandleDateChange,
-  onHandleMoodChange,
   date,
   title,
   showModal,
@@ -14,8 +12,7 @@ const EntryForm = ({
   onTitleChange,
 }) => {
   const showHideModal = showModal ? 'block' : 'hidden';
-  const isInvalid = entry === '' || title === '';
-  const { dictionary } = useContext(LanguageContext);
+  const isInvalid = bike === '' || title === '';
 
   return (
     <div
@@ -31,8 +28,8 @@ const EntryForm = ({
         border-opacity-25"
       >
         <fieldset className="p-3 border border-white-pure rounded-md w-full">
-          <legend className="text-md p-2">{dictionary.entryFormLegend}</legend>
-          <label htmlFor="title">{dictionary.entryTitle}</label>
+          <legend className="text-md p-2">Sell a bike</legend>
+          <label htmlFor="title">Information</label>
           <input
             type="text"
             id="title"
@@ -45,23 +42,8 @@ const EntryForm = ({
             placeholder="Add a title to this entry"
           />
           <div className="flex justify-around">
-            <label>
-              {dictionary.entryMood}
-              <select
-                onChange={onHandleMoodChange}
-                aria-label="your mood"
-                className="p-2 pl-2 rounded-md border w-24 border-gray-light 
-                sm:m-4 shadow-inner cursor-pointer"
-              >
-                <option>{dictionary.entryMood1}</option>
-                <option>{dictionary.entryMood2}</option>
-                <option>{dictionary.entryMood3}</option>
-                <option>{dictionary.entryMood4}</option>
-                <option>{dictionary.entryMood5}</option>
-              </select>
-            </label>
             <label htmlFor="date" className="pl-2 rounded-md m-4 ">
-              {dictionary.formDate}
+              model
               <input
                 type="date"
                 id="date"
@@ -74,12 +56,12 @@ const EntryForm = ({
             </label>
           </div>
           <label htmlFor="entry">
-            {dictionary.entryEntry}
+            Times
             <textarea
               name="entry"
               type="text"
               id="entry"
-              value={entry}
+              value={bike}
               onChange={onAddInputChange}
               className="w-full h-44 py-2 border pl-2 border-gray-primary
               rounded-md shadow-inner sm:resize-none"
@@ -93,7 +75,7 @@ const EntryForm = ({
             className={`bg-green-dark w-full py-4 mt-2 rounded-md shadow-sm
             uppercase ${isInvalid && 'opacity-50'}`}
           >
-            {dictionary.entryButton}
+            Add bike
           </button>
         </fieldset>
       </form>
@@ -109,4 +91,4 @@ const EntryForm = ({
   );
 };
 
-export default EntryForm;
+export default BikeForm;

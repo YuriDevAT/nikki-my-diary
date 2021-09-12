@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Text } from '../context/Language';
 
 const LogOutButton = () => {
   const { logout } = useAuth0();
@@ -17,7 +16,7 @@ const LogOutButton = () => {
         })
       }
     >
-      <Text tid="LogOutButton" />
+      Log Out
     </button>
   );
 };

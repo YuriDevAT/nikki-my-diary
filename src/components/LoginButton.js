@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Text } from '../context/Language';
 
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
@@ -12,7 +11,7 @@ const LoginButton = () => {
       bg-green-dark shadow-md"
       onClick={() => loginWithRedirect()}
     >
-      <Text tid="loginButton" />
+      Login
     </button>
   );
 };

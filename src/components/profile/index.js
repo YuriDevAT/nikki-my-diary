@@ -1,32 +1,29 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import { v4 as uuid } from 'uuid';
-import AddEntry from './AddEntry';
-import EditEntry from './EditEntry';
-import EntryList from './EntryList';
-import EntryForm from './EntryForm';
-import { LanguageContext } from '../../context/Language';
-import Quote from './Quote';
+import AddBike from './AddBike';
+import EditBike from './EditBike';
+import BikeList from './BikeList';
+import BikeForm from './BikeForm';
 
 const ProfileView = () => {
   const { user } = useAuth0();
   const { name } = user;
-  const [entry, setEntry] = useState('');
+  const [bike, setBike] = useState('');
   const [isEditing, setIsEditing] = useState(false);
-  const [currentEntry, setCurrentEntry] = useState({});
+  const [currentBike, setCurrentBike] = useState({});
   const [mood, setMood] = useState('');
   const [date, setDate] = useState(new Date());
   const [title, setTitle] = useState('');
-  const [entries, setEntries] = useState(() => {
-    const savedEntries = localStorage.getItem('entries');
-    if (savedEntries) {
-      return JSON.parse(savedEntries);
+  const [bikes, setBikes] = useState(() => {
+    const savedBikes = localStorage.getItem('bikes');
+    if (savedBikes) {
+      return JSON.parse(savedBikes);
     }
     return [];
   });
 
-  const entryCount = entries.length;
-  const { dictionary } = useContext(LanguageContext);
+  const BikeCount = bikes.length;
 
   const [showModal, setShowModal] = useState(false);
 
@@ -34,31 +31,31 @@ const ProfileView = () => {
     e.preventDefault();
     setShowModal(false);
     setTitle('');
-    setEntry('');
+    setBike('');
   };
 
   const handleShow = () => setShowModal(true);
 
   useEffect(() => {
-    localStorage.setItem('entries', JSON.stringify(entries));
-  }, [entries]);
+    localStorage.setItem('bikes', JSON.stringify(bikes));
+  }, [bikes]);
 
   const handleAddFormSubmit = (e) => {
     e.preventDefault();
 
-    if (entry !== '') {
-      setEntries([
-        ...entries,
+    if (bike !== '') {
+      setBikes([
+        ...bikes,
         {
           id: uuid(),
           title,
           mood,
           date,
-          text: entry.trim(),
+          text: bike.trim(),
         },
       ]);
     }
-    setEntry('');
+    setBike('');
     setTitle('');
   };
 
@@ -75,36 +72,36 @@ const ProfileView = () => {
   };
 
   const handleAddInputChange = (e) => {
-    setEntry(e.target.value);
+    setBike(e.target.value);
   };
 
   // eslint-disable-next-line no-shadow
-  const handleEditClick = (entry) => {
+  const handleEditClick = (bike) => {
     setIsEditing(true);
-    setCurrentEntry({ ...entry });
+    setCurrentBike({ ...bike });
   };
 
   const handleEditInputChange = (e) => {
-    setCurrentEntry({ ...currentEntry, text: e.target.value });
+    setCurrentBike({ ...currentBike, text: e.target.value });
   };
 
-  const handleUpdateEntry = (id, updatedEntry) => {
-    const updatedItem = entries.map((item) =>
-      item.id === id ? updatedEntry : item
+  const handleUpdateBike = (id, updatedBike) => {
+    const updatedItem = bikes.map((item) =>
+      item.id === id ? updatedBike : item
     );
     setIsEditing(false);
-    setEntries(updatedItem);
+    setBikes(updatedItem);
   };
 
   const handleEditFormSubmit = (e) => {
     e.preventDefault();
-    handleUpdateEntry(currentEntry.id, currentEntry);
+    handleUpdateBike(currentBike.id, currentBike);
   };
 
   const handleDeleteClick = (id) => {
-    if (window.confirm(dictionary.entryDelete)) {
-      const removeEntry = entries.filter((item) => item.id !== id);
-      setEntries(removeEntry);
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      const removeBike = bikes.filter((item) => item.id !== id);
+      setBikes(removeBike);
     }
   };
 
@@ -115,12 +112,12 @@ const ProfileView = () => {
     >
       <div className="container py-8">
         <h1 className="text-center text-3xl">
-          {dictionary.profileHeader}
-          {name}?
+          Hello,
+          {name}. Sell a bike.
         </h1>
       </div>
-      <EntryForm
-        entry={entry}
+      <BikeForm
+        bike={bike}
         onAddInputChange={handleAddInputChange}
         onAddFormSubmit={handleAddFormSubmit}
         date={date}
@@ -133,8 +130,8 @@ const ProfileView = () => {
       />
       {showModal && <div className="opacity-30 fixed inset-0 z-20 bg-black" />}
       <h2 className="text-right mr-2">
-        {dictionary.entriesCounter}
-        {entryCount}
+        Bikes to sell:
+        {BikeCount}
       </h2>
       <div className="flex justify-around h-full flex-wrap">
         <div
@@ -148,7 +145,6 @@ const ProfileView = () => {
             width="100"
             className="absolute -right-8 -top-10"
           />
-          <Quote />
           <img
             src="/img/pics/flowers-left.png"
             alt=""
@@ -160,9 +156,9 @@ const ProfileView = () => {
           className="container sm:w-2/5 h-4/5 shadow-inner bg-white-pure 
         overflow-auto rounded flex flex-wrap justify-around sm:m-0 mt-10"
         >
-          <EntryList
-            entries={entries}
-            setEntries={setEntries}
+          <BikeList
+            bikes={bikes}
+            setBikes={setBikes}
             handleEditClick={handleEditClick}
             handleDeleteClick={handleDeleteClick}
           />
@@ -170,8 +166,8 @@ const ProfileView = () => {
       </div>
       {isEditing && (
         <>
-          <EditEntry
-            currentEntry={currentEntry}
+          <EditBike
+            currentBike={currentBike}
             setIsEditing={setIsEditing}
             onEditInputChange={handleEditInputChange}
             onEditFormSubmit={handleEditFormSubmit}
@@ -179,7 +175,7 @@ const ProfileView = () => {
           <div className="opacity-30 fixed inset-0 z-40 bg-black" />
         </>
       )}
-      <AddEntry handleShow={handleShow} />
+      <AddBike handleShow={handleShow} />
     </div>
   );
 };
